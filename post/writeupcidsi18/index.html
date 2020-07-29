@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" data-figures="" class="page">
+  <head>  <title>WriteUp CTF CIDSI 2018 | Drayko&#39;s Blog</title>
+  <meta charset='utf-8'>
+  <meta name="generator" content="Hugo 0.74.2" />
+  <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+  <meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
+<script async src="https://www.googletagmanager.com/gtag/js?id=XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'XXXXXXXXXX');
+</script>
+  
+<meta property = "og:locale" content = "en_US" />
+<meta property="og:type" content="article">
+<meta name="description" content="Este es el final de una serie de posts de CTFs que fueron rumbo al Congreso Internacional De Seguridad Informática (CIDSI)">
+<meta name = "twitter:card" content = "summary" />
+<meta name = "twitter:creator" content = "@draykoes">
+<meta name = "twitter:title" content = "WriteUp CTF CIDSI 2018" />
+<meta property = "og:url" content = "https://drayko.github.io/post/writeupcidsi18/" />
+<meta property = "og:title" content = "WriteUp CTF CIDSI 2018" />
+<meta property = "og:description" content = "Este es el final de una serie de posts de CTFs que fueron rumbo al Congreso Internacional De Seguridad Informática (CIDSI)" />
+<meta property = "og:image" content = "https://blog.scesi.umss.edu.bo/content/images/2019/02/43680061_2060615360917994_5357017926962511872_n.jpg" />
+<link rel='apple-touch-icon' sizes='180x180' href='https://drayko.github.io/icons/apple-touch-icon.png'>
+<link rel='icon' type='image/png' sizes='32x32' href='https://drayko.github.io/icons/favicon-32x32.png'>
+<link rel='icon' type='image/png' sizes='16x16' href='https://drayko.github.io/icons/favicon-16x16.png'>
+<link rel='manifest' href='https://drayko.github.io/icons/site.webmanifest'>
+<link rel="mask-icon" href= 'https://drayko.github.io/safari-pinned-tab.svg' color="#002538">
+<meta name="msapplication-TileColor" content="#002538">
+<meta name="theme-color" content="#002538">
+
+  <link rel='canonical' href='https://drayko.github.io/post/writeupcidsi18/'>
+    
+
+    
+    <link rel="preload" href="https://drayko.github.io/css/styles.4855bf764b01d1ca6c31d2ab0088f01d8d7fd5e7b862438d91eb254cf7d6a39df120d9225db4b38b8514f8883cacb66ec821af0ebc16cfe89676e36fe45ba699.css" integrity = 'sha512-SFW/dksB0cpsMdKrAIjwHY1/1ee4YkONkeslTPfWo53xINkiXbSzi4UU&#43;Ig8rLZuyCGvDrwWz&#43;iWduNv5FummQ==' as="style">
+    <link rel="preload" href="https://drayko.github.io/js/bundle.d0cd226648ea2a3f4168d7c7ded23dd2910fdf46daec739c6dda56fe78a36f47d181c07a10d6c13f459bd7b2359584b4474e8d2864b81e1556a6b95ee73653d7.js" as="script">
+
+    
+    <link rel = 'stylesheet' href = 'https://drayko.github.io/css/styles.4855bf764b01d1ca6c31d2ab0088f01d8d7fd5e7b862438d91eb254cf7d6a39df120d9225db4b38b8514f8883cacb66ec821af0ebc16cfe89676e36fe45ba699.css' integrity = 'sha512-SFW/dksB0cpsMdKrAIjwHY1/1ee4YkONkeslTPfWo53xINkiXbSzi4UU&#43;Ig8rLZuyCGvDrwWz&#43;iWduNv5FummQ=='>
+  </head>
+  
+  
+    
+  
+  <body data-code="15" data-lines="false" id="documentTop">
+
+<header class = 'nav_header' >
+  <nav class = 'nav'>
+    <a href='https://drayko.github.io/' class = 'nav_brand nav_item'>
+      <img src="https://drayko.github.io/logos/logo.png" class="logo">
+      <div class = 'nav_close'>
+        <img src = 'https://drayko.github.io/icons/bar.svg' class="nav_close_icon">
+      </div>
+       |> Drayko's Blog
+    </a>
+    <div class = 'nav_body nav_body_left'>
+      <div class = 'nav_parent'>
+        <a href = 'https://drayko.github.io/' class = 'nav_item'>Home </a>
+      </div>
+      <div class = 'nav_parent'>
+        <a href = 'https://drayko.github.io/about/' class = 'nav_item'>About </a>
+      </div>
+<div class='follow'>
+  <a href='https://github.com/drayko'>
+    <svg class="icon">
+      <use xlink:href="#github"></use>
+    </svg>
+  </a>
+  <a href='https://twitter.com/draykoes'>
+    <svg class="icon">
+      <use xlink:href="#twitter"></use>
+    </svg>
+  </a>
+  <a href='https://www.linkedin.com/in/drayko'>
+    <svg class="icon">
+      <use xlink:href="#linkedin"></use>
+    </svg>
+  </a>
+<div class = 'color_mode'>
+  <input type = 'checkbox' class = 'color_choice' id = 'mode'>
+</div>
+
+</div>
+
+    </div>
+  </nav>
+</header>
+
+    <main>
+  
+<div class = 'grid-inverse wrap content'>
+  <article class='post_content'>
+    <h1 class='post_title'>WriteUp CTF CIDSI 2018</h1><div class = 'post_meta'>
+  <svg class="icon">
+    <use xlink:href="#calendar"></use>
+  </svg>
+  <span class="post_date">
+    Feb 18, 2019</span>
+  <a href = 'https://drayko.github.io/tags/ctf' class = 'post_tag button button_translucent'>CTF
+  </a>
+  <a href = 'https://drayko.github.io/tags/writeup' class = 'post_tag button button_translucent'>WriteUp
+  </a>
+</div>
+
+    <div class='post_share'>
+  Comparte en:
+  <a href="https://twitter.com/intent/tweet?text=WriteUp%20CTF%20CIDSI%202018&url=https%3a%2f%2fdrayko.github.io%2fpost%2fwriteupcidsi18%2f&tw_p=tweetbutton" class="twitter" title="Share on Twitter" target="_blank" rel="nofollow">
+    <svg class="icon">
+      <use xlink:href="#twitter"></use>
+    </svg>
+  </a>
+  
+  <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdrayko.github.io%2fpost%2fwriteupcidsi18%2f&t=WriteUp%20CTF%20CIDSI%202018" class="facebook" title="Share on Facebook" target="_blank" rel="nofollow">
+    <svg class="icon">
+      <use xlink:href="#facebook"></use>
+    </svg>
+  </a>
+  <script>
+    function shareViaLinkedin() {
+      window.open('http://www.linkedin.com/shareArticle?mini=true&url='+encodeURIComponent("https://drayko.github.io/post/writeupcidsi18/"), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+    }
+  </script>
+  <a href="#linkedinshare" id = "linkedinshare" class="linkedin" title="Share on LinkedIn" rel="nofollow" onclick="shareViaLinkedin()">
+    <svg class="icon">
+      <use xlink:href="#linkedin"></use>
+    </svg>
+  </a>
+  <a href="https://drayko.github.io/post/writeupcidsi18/" title="Copy Link" class="link link_yank">
+    <svg class="icon">
+      <use xlink:href="#yank"></use>
+    </svg>
+  </a>
+</div>
+
+    
+    <p>Este CTF estuvo compuesto por 74 equipos de universidades convocadas a nivel nacional para nivel de pregrado y posgrado en el Congreso Internacional De Seguridad Informática (CIDSI) que fue organizado por la Agencia de Gobierno Electrónico y Tecnologías de Información y Comunicación (AGETIC) gracias a las gestiones del Centro de Gestión de Incidentes Informáticos(CGII) realizado del 29 de Noviembre al 1 de Diciembre del 2018.</p>
+<p>Terminando esta serie, y como mencione en el anterior <a href="https://blog.scesi.umss.edu.bo/writeup-ctfumss/">post</a>, en este participamos en Equipo como <strong>Dark Army</strong> con <a href="https://www.facebook.com/israel.arispe.16">Israel</a>, <a href="https://www.facebook.com/rrafalinux">Rafael</a> y mi <a href="http://twitter.com/DraykoEs">persona</a>, logrando resolver todos los retos; Sin embargo no pudimos recuperar todos los enunciados o las flags en especifico(Como fueron escritas en forma <em>literal</em> en el evento), pero están explicadas tal y como lo resolvimos en el CTF, el cual duro dos medias jornadas.</p>
+<p><strong>Nivel 1</strong></p>
+<p><em>1.1. Análisis de trafico 1</em></p>
+<blockquote>
+<p>Bienvenidos. Una compañía dedicada a la banca los acaba de contratar para poder realizar un análisis de tráfico. El problema radica en que hay un empleado que esta filtrando direcciones de correo electrónico, al mismo tiempo otro empleado comenzó a pasar passwords que tienen privilegios de modificación de los salarios de los empleados. Tu misión es encontrar esa contraseña</p>
+</blockquote>
+<p>Pues para empezar nos dan <a href="https://mega.nz/#!fBg2wQKa!kdee9u24oGPWz0e0LEk_KAD5J_gsgPa8plzzuSgdZdk">una captura de trafico</a>, en la cual al buscar con <a href="https://es.wikipedia.org/wiki/Wireshark">Wireshark</a> encontramos una petición con el usuario y contraseña.</p>
+<p><img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsi1.png" alt="captura de un parte de los paquetes ya filtrados"></p>
+<p>entonces la flag es:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>007
+</code></pre></div><hr>
+<p><em>1.2 Web crawlers</em></p>
+<blockquote>
+<p>Lastimosamente motores de búsqueda están indexando muchos páginas de este sitio web que son confidenciales para nosotros ! Sabes cual es el archivo para evitar que esto siga pasando ? ¿ Nadie quiere sitios totalmente indexados verdad?</p>
+</blockquote>
+<p>Esto es bastante fácil, la Flag esta dentro de los <a href="https://support.google.com/webmasters/answer/6062608?hl=es">robots.txt</a>, el cual proporciona información a los rastreadores de buscadores sobre las páginas o los archivos que pueden solicitar o no de tu sitio web.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>http://url/robots.txt
+</code></pre></div><hr>
+<p><em>1.3 Backups</em></p>
+<blockquote>
+<p>Petróleos del Caribe nos pidió guardar un backup de su archivo jsp principal Lastimosamente el ingeniero a cargo se fue a una planta en medio del mar y no nos puede decir la extensión con los que los guardó. El director de suministros requiere el backup con urgencia, me ayudas a identificar en que archivo esta?. Hazlo pronto mi cargo esta en juego Recuerda que las extensiones mas comunes de backups son:</p>
+<ul>
+<li>bak</li>
+<li>old</li>
+<li>bakup</li>
+<li>save</li>
+</ul>
+</blockquote>
+<p>En este había que se algo observativos, tanto en la pista como en lo que tenemos frente a nosotros, nos dice el jsp principal, lo que vendria a significar el index.jsp ademas que la pagina actual es <code>http://url/index.jsp</code></p>
+<p>Asi que probando con las extenciones que nos sugieren, se logra llegar a la respuesta</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>http://url/index.jsp.bakup
+</code></pre></div><p>El cual contiene</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>&lt;%@ page contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34; language=&#34;java&#34; import=&#34;java.sql.*,java.io.*,java.net.*,org.owasp.encoder.Encode, dbProcs.*, utils.*&#34; errorPage=&#34;&#34; %&gt;
+<span class="ln"> 2</span>&lt;%@ page import=&#34;java.util.Locale&#34;%&gt;
+<span class="ln"> 3</span>&lt;%@ include file=&#34;translation.jsp&#34; %&gt;
+<span class="ln"> 4</span>&lt;%
+<span class="ln"> 5</span>	ShepherdLogManager.logEvent(request.getRemoteAddr(), request.getHeader(&#34;X-Forwarded-For&#34;), &#34;DEBUG: index.jsp *************************&#34;);
+<span class="ln"> 6</span>	Locale lang = new Locale(Validate.validateLanguage(request.getSession()));
+<span class="ln"> 7</span>/**
+<span class="ln"> 8</span>El flag/bandera es: 402051f4be0cc3aad33bcf3ac3d6532b
+<span class="ln"> 9</span> */
+<span class="ln">10</span>%&gt; 
+</code></pre></div><p>entonces ahi es que nos da la flag</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>402051f4be0cc3aad33bcf3ac3d6532b
+</code></pre></div><hr>
+<p><em>1.4 Programa programador</em></p>
+<blockquote>
+<p>Uno de tus amigos te dejó una pista en el desarrollo de código java, pero debes resolver un acertijo matemático antes de dar con el resultado. El flag/bandera es la clave para ingresar a su sistema (El número menor que puedas encontrar). Pero esto es fácil para ti, total no son ecuaciones diferenciales</p>
+</blockquote>
+<p>nos dan un archivo en java</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="ln"> 1</span><span class="kn">package</span> <span class="nn">exploit</span><span class="o">;</span>
+<span class="ln"> 2</span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+<span class="ln"> 3</span>
+<span class="ln"> 4</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KeithLikesToTroll</span> <span class="o">{</span>
+<span class="ln"> 5</span>	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+<span class="ln"> 6</span>		<span class="kt">int</span> <span class="n">clave</span><span class="o">;</span>
+<span class="ln"> 7</span>
+<span class="ln"> 8</span>		<span class="n">Scanner</span> <span class="n">scn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+<span class="ln"> 9</span>		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&#34;Introdusca la llave: &#34;</span><span class="o">);</span>
+<span class="ln">10</span>		<span class="n">clave</span> <span class="o">=</span> <span class="n">scn</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+<span class="ln">11</span>		<span class="n">scn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="ln">12</span>
+<span class="ln">13</span>		<span class="k">if</span><span class="o">(</span><span class="n">1338557220</span> <span class="o">/</span> <span class="n">clave</span> <span class="o">*</span> <span class="n">clave</span> <span class="o">!=</span> <span class="n">1338557220</span> <span class="o">&amp;&amp;</span> <span class="n">clave</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">){</span>
+<span class="ln">14</span>			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Autenticacion correcta. La bandera es un número pequeño que te dejara entrar.&#34;</span><span class="o">);</span>
+<span class="ln">15</span>		<span class="o">}</span><span class="k">else</span><span class="o">{</span>
+<span class="ln">16</span>			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Autenticacion incorrecta.&#34;</span><span class="o">);</span>
+<span class="ln">17</span>		<span class="o">}</span>
+<span class="ln">18</span>	<span class="o">}</span>
+<span class="ln">19</span><span class="o">}</span>
+</code></pre></div><p>El cual habría q compilarlo y ejecutarlo de manera q el menor numero resultante de correcto, con fuerza bruta se puede llegar rápidamente a este.</p>
+<p>La Flag:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>8
+</code></pre></div><hr>
+<p><em>1.5 Wifi admin panel</em></p>
+<blockquote>
+<p>Estamos de vacaciones en el Caribe, lastimosamente por culpa de tu amigo el vuelo nos acaba de dejar y son 5 largas horas de espera en el aeropuerto. Otro de tus amigos se dio cuenta que pueden ingresar a internet gratis en el aeropuerto pero para ello debes ingresar al router ¿ Te animas a probar como loguearte?</p>
+</blockquote>
+<p><img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsismc.png" alt="captura del login"></p>
+<p>Para esto necesitamos observar bien, y la pista que nos dan es SMC Networks, el cual es una marca que produce Routers entre otras cosas, el cual con un poco de busqueda <a href="https://www.router-reset.com/default-password-ip-list/SMC">tenemos algunas combinaciones</a> de Usuarios y Contraseñas por defecto el cual probamos hasta hallar el correcto y conseguir la flag</p>
+<hr>
+<p><strong>Nivel 2</strong>
+<em>2.1 Esteganografia</em></p>
+<blockquote>
+<p>Sabías que la técnica de ocultar mensajes u objetos dentro de imágenes de modo que no se perciba su existencia es esteganografia?. A nosotros nos encanta esta técnica. Así que dejare esta imagen por aquí y me iré muy lentamente</p>
+<p><a href="https://mega.nz/#!PR50FC5b!54bX1ROKIMlzeqMJ21VOlohCBPzvIiCjOed0bsGDTvw">imagen para descargar</a></p>
+</blockquote>
+<p>Este al principio nos desconcertó, sin embargo la solución es extrayendo cada cadena de caracteres imprimible en la imagen, usando <code>strings</code> <a href="http://www.linfo.org/strings.html">desde consola(en Linux)</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>strings 8c373fd1a.jpeg
+</code></pre></div><p>Y la Flag:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>1e5b77443345620c52d23c73dc87521c
+</code></pre></div><hr>
+<p><em>2.2 Forense</em></p>
+<blockquote>
+<p>Un peligroso delincuente esta pasando mensajes ocultos en los pdf que envía su cómplice en el extranjero. Puedes hacer un análisis, ya casi eres un hacker Encontraste tu bandera?
+<a href="https://mega.nz/#!HFgyEaCZ!GWz3y3qfn5cxs2Vb7JOxdvjqzCKOFSm3qL4L1Gd4nuA">Descargar documento</a></p>
+</blockquote>
+<p>En este caso, analizar los metadatos nos da el botín; Con el uso de <a href="https://en.wikipedia.org/wiki/ExifTool">Exiftool</a>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>exiftool CIDSI2018.pdf
+</code></pre></div><p>Y la Flag:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>c47d187067c6cf9
+</code></pre></div><hr>
+<p><em>2.3 Inyección SQL</em></p>
+<blockquote>
+<p>Sabemos que el coyote compra todos sus artefactos de ACME, nos ayudas a mostrar todas las tuplas de la tabla para encontrar la trampa con la que finalmente atrape a su némesis?
+<img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/sql.png" alt="buscador a testear"></p>
+</blockquote>
+<p>Al ver este pensé que llevaría un tiempo, sin embargo al intentar cualquier inyección aparecía una copia de la consulta realizada en la parte superior, muy al estilo Bricks. Por lo cual hallar la solución fue muy rápido, con una típica inyección de bypass.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="ln">1</span><span class="s1">&#39;)or(&#39;</span><span class="mi">1</span><span class="s1">&#39;)=(&#39;</span><span class="mi">1</span>
+</code></pre></div><p>Lo cual nos dio la Flag.</p>
+<hr>
+<p><em>2.4 Ingeniería inversa</em></p>
+<blockquote>
+<p>Una de los peligros mas grandes en aplicaciones móviles es la ingeniería inversa. Porque podemos inspeccionar el código fuente y encontrar llaves de API, passwords, etc. Ocultar introducción Encontramos un archivo apk mientras revisabas recursos compartidos, por suerte lo guardamos ahora queremos saber que contiene Sera que puedes con el reto?. Existen varias herramientas para hacer ingeniería inversa a un archivo APK
+<a href="https://mega.nz/#!CAgDzIhQ!oIUMDCtFxLuahZ3xTmtDbii8kv8Gc4-7ZtrE5VS7maM">Descargar APK</a></p>
+</blockquote>
+<p>Como menciona en el enunciado, existen varias herramientas, preferí usar <a href="https://github.com/iBotPeaches/Apktool">Apktool</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>apktool d reversing.apk
+</code></pre></div><p>lo cual nos brinda una carpeta con todo lo extraido, en el cual se puede realizar una busqueda rápida con <a href="https://es.wikipedia.org/wiki/Grep">grep</a></p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>user@pc:# grep <span class="s2">&#34;bandera&#34;</span> . -R
+<span class="ln">2</span>./reversing/smali/com/mobshep/reverseengineer/Reverse_Engineering.smali:    const-string v0, <span class="s2">&#34;El flag/bandera es 9yfdsj3md0lq75&#34;</span>
+</code></pre></div><p>y la Flag!</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>9yfdsj3md0lq75
+</code></pre></div><hr>
+<p><strong>Nivel 3</strong></p>
+<p><em>3.1 Análisis de trafico 2</em></p>
+<blockquote>
+<p>Estamos realizando un análisis de tráfico porque detectamos que alguien esta filtrando información confidencial y es tan grande la cantidad de información que encima la comprimieron protegido por contraseña, pero hallar el password es fácil para ti. Ayudanos a encontrar el password que nos ayude a tener acceso a nuestra bandera
+<a href="https://mega.nz/#!HYxF0KDC!jJcMHVg_k_p0SkvE4qo0z6sk9Z7U60UQ-qRgWhYmPnw">Descargar captura</a></p>
+</blockquote>
+<p><img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsizip1.png" alt="una parte de la captura de paquetes"></p>
+<p>Encontrar el zip no fue difícil, solo había que exportarlo con <code>Export Packet Bytes</code> o exportando todos los objetos. Una vez llegado a este punto el zip que obtenemos esta protegido con contraseña como menciona el enunciado, para eso tuvimos que observar la captura</p>
+<p><img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsizip2.png" alt="una pista en la captura"></p>
+<p>la contraseña del zip</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>azulcrema
+</code></pre></div><p>y la flag!!</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>IW{HTTP_BASIC_AUTH_IS_EASY}
+</code></pre></div><hr>
+<p><em>3.2 Lista de usuarios</em></p>
+<blockquote>
+<p>Un grupo de usuarios decidió quejarse porque no hay café en la cafetería, puedes creerlo?. Y uno de los usuarios parece que es el que se esta robando el café, claro que el muy vivo se oculto de la lista. Me ayudas a encontrarlo y devolver el café a nuestras vidas
+<img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsiuseres.png" alt="lista de usuarios"></p>
+</blockquote>
+<p>En este demore en darme cuenta, nos daban a elegir entre consultar la información de 5 usuarios, sin embargo, no había algo relevante entre ellos, intente buscar inspeccionando los elementos, y las peticiones, sin embargo la pista estaba en como se realizaban las peticiones.</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>POST /challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646e0f313a4 HTTP/1.1
+<span class="ln"> 2</span>Host: 192.168.3.100
+<span class="ln"> 3</span>Accept: **
+<span class="ln"> 4</span>Accept-Language: en-US,en:q-0.5
+<span class="ln"> 5</span>Accept-Encoding: gzip, deflate
+<span class="ln"> 6</span>Referer: https://192.168.3.100/challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646eOf313a4.jsp
+<span class="ln"> 7</span>Content-Type: application/X-wWW-form-urlencoded
+<span class="ln"> 8</span>X-Requested-With: XMLHttpRequest
+<span class="ln"> 9</span>Content-Length: 45
+<span class="ln">10</span>Connection: close
+<span class="ln">11</span>
+<span class="ln">12</span>userId%5B%5D=cfcd208495d565ef66e7dff9f98764da
+</code></pre></div><p>La petición se identificaba de esta manera: <code>cfcd208495d565ef66e7dff9f98764da</code>, lo cual al verificar era un MD5 y en valor <code>0</code> en texto plano:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>cfcd208495d565ef66e7dff9f98764da = 0
+</code></pre></div><p>Al verificar los demás, funcionaban de la misma forma, así que genere una lista de números hasheados en MD5 para hacer peticiones hasta encontrar el usuario oculto, el cual no era mas del numero <code>20</code>.</p>
+<hr>
+<p><em>3.3 HASHDUMP</em></p>
+<blockquote>
+<p>Encontrar la contraseña de administracion</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sistemas:500:9E689B23C4D33D88E4C560258374B547:7E058F739B8A1E67C00815FC1E5E0E25:::
+<span class="ln">2</span>Guest:501:NO PASSWORD*********************:NO PASSWORD*********************:::
+<span class="ln">3</span>nonadmin:1005:NO PASSWORD*********************:0CF3760C0B0EB9F570AACE7040DF6DB7:::
+<span class="ln">4</span>contabilidad:1013:23AC1B85C36D31AAE45E0AE1804A24B0:DE6D8B1780A4F0714242AC53A6C2B2E8:::
+<span class="ln">5</span>administrador:1014:CE9F401800DF01AFFF959C003A9671D0:A7B9ECDD64AA492E449E0A619FD16E4B:::
+<span class="ln">6</span>gerencia:1015:4978646A5C99C2834D6A97A372D4BC83:C7994B298128024418AD0E9C5038570C:::
+</code></pre></div><p>Podemos ver que es un dump de los hashes de Windows(NTLM)</p>
+<p>Este tomo tiempo darse cuenta del truco, a simple vista uno piensa que la cuenta de administración seria la que lleva tal nombre o similar, sin embargo el truco estaba en el <a href="https://en.wikipedia.org/wiki/Relative_identifier">RID</a>. El <code>500</code> pertenece a la cuenta de administración creada durante la instalacion de Sistema Operativo, apesar que en este caso se llama <code>sistemas</code></p>
+<p>Entonces nos queda 2 vías encontralo por fuerza bruta/diccionario o buscarla, para ganar tiempo mejor buscarla y así tenemos, la flag!</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>coldplay
+</code></pre></div><hr>
+<p><strong>Nivel 4</strong>
+<em>4.1 Cracking rar</em></p>
+<blockquote>
+<p>Los usuarios de la aseguradora SEGURITAS tienen loco al personal de sistemas con sus famosos cambios. Como si fueran a cambiar el mundo. Si eres astuto podrás acceder a la bandera que esta compreso y protegido con contraseña Un empleado de sistemas tiene una pista para ti. Su id de una popular red social es 0x5afa18273c14</p>
+<ul>
+<li><a href="https://mega.nz/#!KVpVEAwK!25833wfpu32YvtYX6RbQqtptLLPI5LHbmyDaZvel-n4">Descargar</a></li>
+</ul>
+</blockquote>
+<p>Primero el <code>id</code> debemos convertirlo del Hexadecimal, entonces obtenemos: <code>100030193548308</code></p>
+<p>Ahora en facebook buscamos el perfil: <code>https://www.facebook.com/100030193548308</code> en el cual encontramos fotografías del empleado difundiendo información critica de la empresa como que para archivos <code>rar</code> la contraseña debe ser un numero de longitud <code>5</code>, entonces lo único que nos queda es crackear el rar con un diccionario con todas las posibilidades de 5 dígitos numerales con <a href="https://es.wikipedia.org/wiki/John_the_Ripper">John The Ripper</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>john --wordlist<span class="o">=</span>six --format<span class="o">=</span>rar5 hashrar
+</code></pre></div><p><code>hashrar</code> es el file donde se encuentra el hash del RAR, entonces, tenemos la contraseña.</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>60372
+</code></pre></div><p>Con esto podemos sacar la flag dentro del comprimido:</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>8743b52063cd84097a65d1633f5c74f5
+</code></pre></div><hr>
+<p><em>4.2 Sitio web banco</em></p>
+<blockquote>
+<p>Para completar este reto debes crearte una cuenta de banco y trasferirle mas de 10000 bs. Cuando tengas esa cantidad en tu cuenta de banco, simplemente deslogeate y logueate de nuevo para que se te recompense con el flag/bandera
+<img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsibanco1.png" alt="panel del banco"></p>
+</blockquote>
+<p>Para empezar hay que registrarse, y en la plataforma nos da la posibilidad de transferir dinero a otras cuentas</p>
+<p><img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsibanco2.png" alt="panel de transferencia"></p>
+<p>Sin embargo interceptando las peticiones era inseguras, similar a esto:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cuentaOrigen=4&amp;cuentaDestino=2&amp;monto=1200
+</code></pre></div><p>entonces modificando la petición, podemos invertir esto</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>cuentaOrigen=2&amp;cuentaDestino=4&amp;monto=1200
+</code></pre></div><p>de esta manera nos transferimos dinero a nosotros mismos, ahi el resultado:</p>
+<p><img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsibanco3.png" alt="Resultado"></p>
+<p>Voilà!</p>
+<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>0738FF78AE98A11F579A70F3F98468097426D4652B32A5F978818FC9CCB66CE74371A28833CC1A52854697C734D66249DB8E9AAB67F024262436EC8220C9OF11
+</code></pre></div><hr>
+<p><strong>Nivel 5</strong></p>
+<p><em>5.1 Exploiting</em></p>
+<blockquote>
+<p>Estamos haciendo un desarrollo seguro, Tu reto es cambiar el flujo del programa para que se ejecute la función oculta vencer Una vez que lo logres te felicitare por tu éxito. La bandera es la dirección hexadecimal de la función vencer con el formato correcto (0x11223344)
+<a href="https://mega.nz/#!jMhziKpa!Anhy2D_GuOI2qw3umtPfFQA2ydNJJgCPOJbq8Jg3ZCA">Descargar programa</a></p>
+</blockquote>
+<p>Para este teníamos que utilizar <a href="https://es.wikipedia.org/wiki/Interactive_Disassembler">IdaPro</a>, y buscar la dirección.</p>
+<p><img src="https://blog.scesi.umss.edu.bo/content/images/2019/02/cidsilast.png" alt="captura del IdaPro"></p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>0x080484BB
+</code></pre></div><p>Y esito seria!</p>
+<p>Sin embargo no pudimos sacar el 1er puesto por seis puntos, por el tema que quienes resolvían primero un reto tenían puntos extras, pero quedamos muy contentos con el gran equipo que formamos; quedando en 2do lugar entre tantos equipos.</p>
+<p>Cualquier duda, consulta o reclamo <a href="http://t.me/DraykoEs">pueden escribirme</a>, espero les gustara el WriteUp.</p>
+<p>-Hackers are People Too 😜</p>
+<p><em>links de interés</em></p>
+<ul>
+<li>
+<p>Tabla completa de posiciones de pregrado/posgrado, <a href="https://www.cgii.gob.bo/eventos/cidsi2018/competencia.html">click aqui</a>
+los retos eran los mismos para ambos grados</p>
+</li>
+<li>
+<p>Para ver información de evento <a href="https://www.cgii.gob.bo/eventos/cidsi2018/">aqui</a></p>
+</li>
+</ul>
+<p><em>links de la Serie</em></p>
+<ul>
+<li><a href="https://blog.scesi.umss.edu.bo/writeup-ctfumss/">CTF UMSS WriteUp</a></li>
+<li><a href="https://blog.scesi.umss.edu.bo/writeup-ctfumss/">WirteUp CTF UMSS 2018</a></li>
+</ul>
+  </article>
+<aside class="sidebar">
+  <section class="sidebar_inner">
+    
+    <h2>Drayko Escobar</h2>
+    <div>
+      Security Specialist, perpetual student, teacher, continual incremental improvement.
+    </div>
+    <a href = 'https://drayko.github.io/about/' class="button mt-1" role="button">Leer mas..</a>
+    <div style="position:relative;padding-top: 15px;">
+      <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#FFFFFF !important;background-color:#FF813F !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 28px !important;letter-spacing:0.6px !important;box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;text-decoration: none !important;box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;opacity: 0.85 !important;color:#FFFFFF !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/drayko"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a Pizza"><span style="margin-left:5px;font-size:28px !important;">Buy me a Pizza!</span></a>
+    </div>
+    <h2 class="mt-4">Posts Destacados</h2>
+    
+    <ul>
+    
+    </ul>
+    <h2 class="mt-4">Posts Recientes</h2>
+    <ul class="flex-column">
+      
+      <li>
+        <a href="https://drayko.github.io/post/la-primera-computadora-en-bolivia/" class="nav-link">La primera computadora en Bolivia</a>
+      </li>
+      <li>
+        <a href="https://drayko.github.io/post/writeupdemocidsi18/" class="nav-link">Write Up del CTF Demo CIDSI 2018</a>
+      </li>
+    </ul> 
+    
+    <div>
+      <h2 class="mt-4 taxonomy" id="categories-section">categories</h2>
+      <nav class="tags_nav">
+        
+      </nav>
+    </div>
+    
+    <div>
+      <h2 class="mt-4 taxonomy" id="tags-section">tags</h2>
+      <nav class="tags_nav">
+        <a href='https://drayko.github.io/tags/ctf/' class=" post_tag button button_translucent">
+          CTF
+          <span class='button_tally'>2</span>
+        </a>
+        
+        <a href='https://drayko.github.io/tags/writeup/' class=" post_tag button button_translucent">
+          WRITEUP
+          <span class='button_tally'>2</span>
+        </a>
+        
+        <a href='https://drayko.github.io/tags/curiosidades/' class=" post_tag button button_translucent">
+          CURIOSIDADES
+          <span class='button_tally'>1</span>
+        </a>
+        
+        
+      </nav>
+    </div>
+    
+  </section>
+</aside>
+
+</div>
+    </main><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.001 18.001" id="twitter">
+    <path d="M15.891 4.013c.808-.496 1.343-1.173 1.605-2.034a8.68 8.68 0 0 1-2.351.861c-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078a3.56 3.56 0 0 0-1.076 2.605c0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388a3.623 3.623 0 0 0 2.115 1.291c-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841a3.652 3.652 0 0 0 2.152.743C4.148 14.173 2.625 14.69.902 14.69c-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974a10.77 10.77 0 0 0 1.172-4.892v-.468a7.788 7.788 0 0 0 1.84-1.921 8.142 8.142 0 0 1-2.11.593z"
+      ></path>
+  </symbol>
+  <symbol aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="mail">
+    <path  d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="calendar">
+    <path d="M452 40h-24V0h-40v40H124V0H84v40H60C26.916 40 0 66.916 0 100v352c0 33.084 26.916 60 60 60h392c33.084 0 60-26.916 60-60V100c0-33.084-26.916-60-60-60zm20 412c0 11.028-8.972 20-20 20H60c-11.028 0-20-8.972-20-20V188h432v264zm0-304H40v-48c0-11.028 8.972-20 20-20h24v40h40V80h264v40h40V80h24c11.028 0 20 8.972 20 20v48z"></path>
+    <path d="M76 230h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 310h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zM76 390h40v40H76zm80 0h40v40h-40zm80 0h40v40h-40zm80 0h40v40h-40zm80-80h40v40h-40z"></path>
+  </symbol>
+  <symbol viewBox="-21 0 512 512" xmlns="http://www.w3.org/2000/svg" id="yank">
+    <path d="M410.668 405.332H165.332c-32.363 0-58.664-26.3-58.664-58.664v-288c0-32.363 26.3-58.668 58.664-58.668h181.504c21.059 0 41.687 8.535 56.555 23.445l42.496 42.496c15.125 15.125 23.445 35.223 23.445 56.575v224.152c0 32.363-26.3 58.664-58.664 58.664zM165.332 32c-14.7 0-26.664 11.969-26.664 26.668v288c0 14.7 11.965 26.664 26.664 26.664h245.336c14.7 0 26.664-11.965 26.664-26.664V122.516c0-12.82-4.992-24.871-14.059-33.942l-42.496-42.496C371.84 37.121 359.488 32 346.836 32zm0 0"></path>
+    <path d="M314.668 512h-256C26.305 512 0 485.695 0 453.332V112c0-32.363 26.305-58.668 58.668-58.668h10.664c8.832 0 16 7.168 16 16s-7.168 16-16 16H58.668C43.968 85.332 32 97.301 32 112v341.332C32 468.032 43.969 480 58.668 480h256c14.7 0 26.664-11.969 26.664-26.668v-10.664c0-8.832 7.168-16 16-16s16 7.168 16 16v10.664c0 32.363-26.3 58.668-58.664 58.668zM368 181.332H208c-8.832 0-16-7.168-16-16s7.168-16 16-16h160c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 0"></path>
+    <path d="M368 245.332H208c-8.832 0-16-7.168-16-16s7.168-16 16-16h160c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 64H208c-8.832 0-16-7.168-16-16s7.168-16 16-16h160c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="github">
+    <path d="M255.968 5.329C114.624 5.329 0 120.401 0 262.353c0 113.536 73.344 209.856 175.104 243.872 12.8 2.368 17.472-5.568 17.472-12.384 0-6.112-.224-22.272-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464-11.616-29.696-28.416-37.6-28.416-37.6-23.264-15.936 1.728-15.616 1.728-15.616 25.696 1.824 39.2 26.496 39.2 26.496 22.848 39.264 59.936 27.936 74.528 21.344 2.304-16.608 8.928-27.936 16.256-34.368-56.832-6.496-116.608-28.544-116.608-127.008 0-28.064 9.984-51.008 26.368-68.992-2.656-6.496-11.424-32.64 2.496-68 0 0 21.504-6.912 70.4 26.336 20.416-5.696 42.304-8.544 64.096-8.64 21.728.128 43.648 2.944 64.096 8.672 48.864-33.248 70.336-26.336 70.336-26.336 13.952 35.392 5.184 61.504 2.56 68 16.416 17.984 26.304 40.928 26.304 68.992 0 98.72-59.84 120.448-116.864 126.816 9.184 7.936 17.376 23.616 17.376 47.584 0 34.368-.32 62.08-.32 70.496 0 6.88 4.608 14.88 17.6 12.352C438.72 472.145 512 375.857 512 262.353 512 120.401 397.376 5.329 255.968 5.329z"></path>
+  </symbol>
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="rss">
+    <circle cx="3.429" cy="20.571" r="3.429"></circle>
+    <path d="M11.429 24h4.57C15.999 15.179 8.821 8.001 0 8v4.572c6.302.001 11.429 5.126 11.429 11.428z"></path>
+    <path d="M24 24C24 10.766 13.234 0 0 0v4.571c10.714 0 19.43 8.714 19.43 19.429z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="linkedin">
+    <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h362c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zM181 406h-60V196h60zm0-240h-60v-60h60zm210 240h-60V286c0-16.54-13.46-30-30-30s-30 13.46-30 30v120h-60V196h60v11.309C286.719 202.422 296.93 196 316 196c40.691.043 75 36.547 75 79.688zm0 0"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" id="arrow">
+    <path d="M604.501 440.509L325.398 134.956c-5.331-5.357-12.423-7.627-19.386-7.27-6.989-.357-14.056 1.913-19.387 7.27L7.499 440.509c-9.999 10.024-9.999 26.298 0 36.323s26.223 10.024 36.222 0l262.293-287.164L568.28 476.832c9.999 10.024 26.222 10.024 36.221 0 9.999-10.023 9.999-26.298 0-36.323z"></path>
+  </symbol>
+  <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="carly">
+    <path d="M504.971 239.029L448 182.059V84c0-46.317-37.682-84-84-84h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c19.851 0 36 16.149 36 36v108c0 6.365 2.529 12.47 7.029 16.971L454.059 256l-47.029 47.029A24.002 24.002 0 0 0 400 320v108c0 19.851-16.149 36-36 36h-44c-13.255 0-24 10.745-24 24s10.745 24 24 24h44c46.318 0 84-37.683 84-84v-98.059l56.971-56.971c9.372-9.372 9.372-24.568 0-33.941zM112 192V84c0-19.851 16.149-36 36-36h44c13.255 0 24-10.745 24-24S205.255 0 192 0h-44c-46.318 0-84 37.683-84 84v98.059l-56.971 56.97c-9.373 9.373-9.373 24.568 0 33.941L64 329.941V428c0 46.317 37.682 84 84 84h44c13.255 0 24-10.745 24-24s-10.745-24-24-24h-44c-19.851 0-36-16.149-36-36V320c0-6.365-2.529-12.47-7.029-16.971L57.941 256l47.029-47.029A24.002 24.002 0 0 0 112 192z"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="copy">
+    <path d="M366.345 406.069H66.207c-9.751 0-17.655-7.904-17.655-17.655V17.655C48.552 7.904 56.456 0 66.207 0h300.138C376.096 0 384 7.904 384 17.655v370.759c0 9.751-7.904 17.655-17.655 17.655z" fill="#f1f4fb"></path>
+    <path d="M384 388.414v-76.992c-.907.322-1.869.494-2.751.882-6.307-6.593-14.733-11.025-24.111-11.964a40.49 40.49 0 0 0-8.448.039v-92.93c0-21.903-17.82-39.723-39.723-39.724a40.5 40.5 0 0 0-4.036.202c-20.012 2.004-35.689 19.916-35.689 40.781v101.773l-21.581 21.581c-15.241 15.241-21.393 36.866-16.456 57.847l3.802 16.16h131.338c9.75 0 17.655-7.905 17.655-17.655z"
+      fill="#d5dced"></path>
+    <circle cx="128" cy="105.931" r="26.483" fill="#b4e66e"></circle>
+    <circle cx="128" cy="203.034" r="26.483" fill="#dae169"></circle>
+    <circle cx="128" cy="300.138" r="26.483" fill="#ffdc64"></circle>
+    <path d="M331.034 229.517H189.793c-4.879 0-8.828-3.953-8.828-8.828s3.948-8.828 8.828-8.828h141.241c4.879 0 8.828 3.953 8.828 8.828s-3.948 8.828-8.828 8.828z" fill="#7f8499"></path>
+    <path d="M295.724 194.207H189.793a8.826 8.826 0 0 1-8.828-8.828 8.826 8.826 0 0 1 8.828-8.828h105.931a8.826 8.826 0 0 1 8.828 8.828 8.826 8.826 0 0 1-8.828 8.828z" fill="#5b5d6e"></path>
+    <path d="M331.034 326.621H189.793c-4.879 0-8.828-3.953-8.828-8.828s3.948-8.828 8.828-8.828h141.241c4.879 0 8.828 3.953 8.828 8.828s-3.948 8.828-8.828 8.828z" fill="#7f8499"></path>
+    <path d="M295.724 291.31H189.793c-4.879 0-8.828-3.953-8.828-8.828s3.948-8.828 8.828-8.828h105.931c4.879 0 8.828 3.953 8.828 8.828s-3.948 8.828-8.828 8.828z" fill="#5b5d6e"></path>
+    <path d="M331.034 132.414H189.793a8.826 8.826 0 0 1-8.828-8.828 8.826 8.826 0 0 1 8.828-8.828h141.241a8.826 8.826 0 0 1 8.828 8.828 8.826 8.826 0 0 1-8.828 8.828z" fill="#7f8499"></path>
+    <path d="M295.724 97.103H189.793a8.826 8.826 0 0 1-8.828-8.828 8.826 8.826 0 0 1 8.828-8.828h105.931a8.826 8.826 0 0 1 8.828 8.828 8.825 8.825 0 0 1-8.828 8.828z" fill="#5b5d6e"></path>
+    <path d="M443.656 335.563c-13.21-1.323-24.345 9.015-24.345 21.954v-7.569c0-11.544-8.306-22.063-19.794-23.213-13.209-1.323-24.344 9.015-24.344 21.954v-7.569c0-11.544-8.306-22.063-19.794-23.213-13.209-1.323-24.344 9.015-24.344 21.954V207.448c0-12.939-11.135-23.277-24.345-21.954-11.486 1.15-19.793 11.669-19.793 23.213v109.086l-26.752 26.752a44.14 44.14 0 0 0-11.754 41.32l18.47 78.495c6.567 27.913 31.475 47.64 60.15 47.64h74.645c34.127 0 61.793-27.666 61.793-61.793v-91.431c-.001-11.544-8.306-22.063-19.793-23.213z"
+      fill="#f0c087"></path>
+    <path d="M339.862 361.377a8.829 8.829 0 0 0 8.828-8.828v-34.194c-10.052 2.061-17.655 10.844-17.655 21.506v12.687a8.827 8.827 0 0 0 8.827 8.829zM384 370.205a8.829 8.829 0 0 0 8.828-8.828v-34.194c-10.052 2.061-17.655 10.844-17.655 21.506v12.687a8.827 8.827 0 0 0 8.827 8.829zm44.138 8.827a8.829 8.829 0 0 0 8.828-8.828V336.01c-10.052 2.061-17.655 10.844-17.655 21.506v12.687a8.827 8.827 0 0 0 8.827 8.829zM288.885 464.36l-20.467-86.985a28.482 28.482 0 0 1 7.585-26.663l10.893-10.894v22.113a8.829 8.829 0 0 0 17.656 0V185.933c-10.344 2.173-17.655 11.972-17.655 22.773v109.087l-26.752 26.752a44.14 44.14 0 0 0-11.754 41.32l18.47 78.495c6.567 27.913 31.475 47.64 60.15 47.64h22.026c-28.677 0-53.584-19.727-60.152-47.64z"
+      fill="#e6af78"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.001 512.001" id="closeme">
+    <path d="M284.286 256.002L506.143 34.144c7.811-7.811 7.811-20.475 0-28.285-7.811-7.81-20.475-7.811-28.285 0L256 227.717 34.143 5.859c-7.811-7.811-20.475-7.811-28.285 0-7.81 7.811-7.811 20.475 0 28.285l221.857 221.857L5.858 477.859c-7.811 7.811-7.811 20.475 0 28.285a19.938 19.938 0 0 0 14.143 5.857 19.94 19.94 0 0 0 14.143-5.857L256 284.287l221.857 221.857c3.905 3.905 9.024 5.857 14.143 5.857s10.237-1.952 14.143-5.857c7.811-7.811 7.811-20.475 0-28.285L284.286 256.002z"></path>
+  </symbol>
+</svg>
+
+  <span class = 'year' hidden></span>
+<a class='to_top' href="#documentTop">
+  <svg class="icon">
+    <use xlink:href="#arrow"></use>
+  </svg>
+</a>
+
+
+    <script src = 'https://drayko.github.io/js/bundle.d0cd226648ea2a3f4168d7c7ded23dd2910fdf46daec739c6dda56fe78a36f47d181c07a10d6c13f459bd7b2359584b4474e8d2864b81e1556a6b95ee73653d7.js'></script>
+  </body>
+</html>
