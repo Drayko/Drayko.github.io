@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Drayko&#39;s Blog</title>
+    <link>https://drayko.github.io/</link>
+    <description>Recent content on Drayko&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 26 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://drayko.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Drayko</title>
+      <link>https://drayko.github.io/about/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://drayko.github.io/about/</guid>
+      <description>Hace siete años empecé con la información de seguridad. Tengo más conocimientos acerca de web testing y pentesting con algunos premios en eso y también en otras áreas. Me interesa poder contribuir a la mejora de la seguridad informática en la sociedad de lo importante que es; no es un gasto, es una inversión.</description>
+    </item>
+    
+    <item>
+      <title>La primera computadora en Bolivia</title>
+      <link>https://drayko.github.io/post/draykopost/</link>
+      <pubDate>Sun, 26 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://drayko.github.io/post/draykopost/</guid>
+      <description>&lt;p&gt;Si bien este post no es algo técnico como acostumbro, me parece bastante interesante.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://drayko.github.io/archives/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
