@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSH on Try Harder Blog | Drayko Escobar</title>
+    <link>https://drayko.github.io/tags/ssh/</link>
+    <description>Recent content in SSH on Try Harder Blog | Drayko Escobar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://drayko.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conexión SSH fuera de la red local</title>
+      <link>https://drayko.github.io/post/ssh-fuera-de-la-red-local/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://drayko.github.io/post/ssh-fuera-de-la-red-local/</guid>
+      <description>&lt;p&gt;Este post surgio por un trabajo de la universidad(para una Raspberry) sin embargo me sirvio con otras necesidades similares, para conectarse de manera remota sin necesidad de abrir puertos en el router.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

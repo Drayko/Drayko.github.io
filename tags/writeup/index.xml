@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WriteUp on Drayko&#39;s Blog</title>
+    <title>WriteUp on Try Harder Blog | Drayko Escobar</title>
     <link>https://drayko.github.io/tags/writeup/</link>
-    <description>Recent content in WriteUp on Drayko&#39;s Blog</description>
+    <description>Recent content in WriteUp on Try Harder Blog | Drayko Escobar</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 18 Feb 2019 00:00:00 +0000</lastBuildDate>
     
@@ -12,19 +12,28 @@
     
     <item>
       <title>WriteUp CTF CIDSI 2018</title>
-      <link>https://drayko.github.io/post/writeupcidsi18/</link>
+      <link>https://drayko.github.io/post/writeup-cidsi18/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://drayko.github.io/post/writeupcidsi18/</guid>
+      <guid>https://drayko.github.io/post/writeup-cidsi18/</guid>
       <description>&lt;p&gt;Este CTF estuvo compuesto por 74 equipos de universidades convocadas a nivel nacional para nivel de pregrado y posgrado en el Congreso Internacional De Seguridad Informática (CIDSI) que fue organizado por la Agencia de Gobierno Electrónico y Tecnologías de Información y Comunicación (AGETIC) gracias a las gestiones del Centro de Gestión de Incidentes Informáticos(CGII) realizado del 29 de Noviembre al 1 de Diciembre del 2018.&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>Write Up CTF UMSS 2018</title>
+      <link>https://drayko.github.io/post/writeup-ctfumss18/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://drayko.github.io/post/writeup-ctfumss18/</guid>
+      <description>&lt;p&gt;Esta es la segunda parte de la serie de CTFs rumbo al CIDSI 2018. Esta vez el CTF fue realizado en la Universidad Mayor de San Simón (UMSS),  manera de eliminatorias para los que iríamos al evento(CIDSI) representando a nuestra universidad&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Write Up del CTF Demo CIDSI 2018</title>
-      <link>https://drayko.github.io/post/writeupdemocidsi18/</link>
+      <link>https://drayko.github.io/post/writeup-democidsi18/</link>
       <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://drayko.github.io/post/writeupdemocidsi18/</guid>
+      <guid>https://drayko.github.io/post/writeup-democidsi18/</guid>
       <description>&lt;p&gt;Que tal?!&lt;/p&gt;
 &lt;p&gt;Este es el inicio de una serie de posts de CTFs que fueron rumbo al Congreso Internacional De Seguridad Informática (CIDSI)&lt;/p&gt;</description>
     </item>
