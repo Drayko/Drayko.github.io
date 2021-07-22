@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ngrok on Drayko&#39;s Blog</title>
+    <link>https://drayko.github.io/es/tags/ngrok/</link>
+    <description>Recent content in Ngrok on Drayko&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://drayko.github.io/es/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Conexión SSH fuera de la red local</title>
+      <link>https://drayko.github.io/es/post/ssh-fuera-de-la-red-local/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://drayko.github.io/es/post/ssh-fuera-de-la-red-local/</guid>
+      <description>
+        
+          &lt;p&gt;Este post surgio por un trabajo de la universidad(para una Raspberry) sin embargo me sirvio con otras necesidades similares, para conectarse de manera remota sin necesidad de abrir puertos en el router.&lt;/p&gt;
+&lt;p&gt;Para lograr una conexión SSH(u otro protocolo) fuera del área local, de manera sencilla, me parece esta, por distintos motivos(podría ser habilitando puertos en el router, solo que esto según la operadora puede llegar a ser muy difícil de lograr por sus políticas entre otras cosas), entonces continuemos, se necesita instalar &lt;a href=&#34;https://ngrok.com/download&#34;&gt;Ngrok&lt;/a&gt;
+&lt;img src=&#34;https://drayko.github.io/images/ssh-fuera-de-la-red-local/Screenshot_2020-05-18_18-04-53.png&#34; alt=&#34;captura sitio oficial de ngrok&#34;&gt;&lt;/p&gt;
+&lt;p&gt;En el caso de una Raspberry se necesita la versión &lt;a href=&#34;https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip&#34;&gt;Linux(ARM)&lt;/a&gt; o en consola:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;luego se hace el unzip tal como explica el tutorial de ngrok en consola:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;unzip ngrok-stable-linux-arm.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Lo siguiente es registrarse y/o ingresar en ngrok, y una vez ahí se van a &lt;a href=&#34;https://dashboard.ngrok.com/auth/your-authtoken&#34;&gt;este link&lt;/a&gt; donde les mostrara el token para su cuenta
+Una vez sabiendo su token ejecutan en su dispositivo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;./ngrok authtoken XXXXXtuTokenAquiXXXXXXX
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;con eso estaría configurado, solo falta poner a la escucha el puerto 22, que se utiliza SSH, de la siguiente forma&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;./ngrok tcp &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;es entonces cuando les muestra el Host y puerto al que apuntara
+&lt;img src=&#34;https://drayko.github.io/images/ssh-fuera-de-la-red-local/Screenshot_2020-05-18_18-25-33.png&#34; alt=&#34;PoC ngrok&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Lo cual muestra en Forwarding la dirección TCP y puerto que nos habilitan para trabajar con nuestra Raspberry.&lt;/p&gt;
+&lt;p&gt;En este caso era 0.tcp.ngrok.io y puerto 17271, es decir que en vez de nuestra ip local y puerto por defecto(22), se debe especificar estos para acceder fuera del área local a nuestro dipositivo, es decir:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ssh pi@0.tcp.ngrok.io -p17271
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y esito sería :D En la pagina de ngrok pueden revisar la variedad e protocolos disponbles, con la misma logica&lt;/p&gt;
+&lt;p&gt;-Hackers are People Too 😜&lt;/p&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

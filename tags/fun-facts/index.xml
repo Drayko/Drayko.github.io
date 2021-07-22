@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fun facts on Drayko&#39;s Blog</title>
+    <link>https://drayko.github.io/tags/fun-facts/</link>
+    <description>Recent content in fun facts on Drayko&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Aug 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://drayko.github.io/tags/fun-facts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The first computer in Bolivia</title>
+      <link>https://drayko.github.io/post/la-primera-computadora-en-bolivia/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://drayko.github.io/post/la-primera-computadora-en-bolivia/</guid>
+      <description>
+        
+          &lt;p&gt;Although this post is not something technical as usual, I find it quite interesting about the first computer in Bolivia.&lt;/p&gt;
+&lt;p&gt;Someone sent on the mailing list of the Free Software Community of Bolivia a link to a post in &lt;a href=&#34;https://medium.com/@mapmeld/first-computer-by-country-81fa47963234&#34;&gt;medium&lt;/a&gt;. Where some of the documented articles about the first computers in each country were listed, and discovering that Bolivia was on that list was interesting (the &lt;a href=&#34;https://dl.acm.org/doi/10.1145/800163.805187&#34;&gt;paper&lt;/a&gt; is among the ACM library).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/la-primera-computadora-en-bolivia/ibm1440.png&#34; alt=&#34;ibm1440&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The first computer, according to this article, is a &lt;a href=&#34;https://es.wikipedia.org/wiki/IBM_1440&#34;&gt;IBM 1440&lt;/a&gt; (as seen in the image), which the Bolivian Mining Corporation acquired (COMIBOL).&lt;/p&gt;
+&lt;p&gt;The article was published in 1969. It explains that the department created to use the machine had already been in operation for 3.5 years. So I deduce that the computer arrived in 1965 or 1966 (if anyone could confirm this, it would be incredible).&lt;/p&gt;
+&lt;p&gt;However, the complicated thing at the beginning, as in almost any new equipment, was to find trained workers to use this machine. That was available for the accounting processes of the corporation, something that questioned the usefulness given the cost of the computer. So aptitude tests were made for its management, where 500 people applied, but only six passed. They sent these staff to be trained in COBOL and FORTRAN IV to do the data processing.&lt;/p&gt;
+&lt;p&gt;Although it was a tremendous technological advance, there were still doubts about it and being criticized because the previous staff who carried out this accounting work by hand had to be practically fired.&lt;/p&gt;
+&lt;p&gt;The cost of technological advancement for specific jobs or careers continues to be devastating to this day due to the automation of processes and even more so when using &amp;quot;Artificial Intelligence&amp;quot; is already seen in so many areas that the human seems unnecessary.&lt;/p&gt;
+&lt;p&gt;However, it is not the end of the road for everyone; it is the law of life and nature that the strongest or the one who adapts the fastest survives. In this case, being hand in hand with technology, you don&#39;t have to give up.&lt;/p&gt;
+&lt;p&gt;-Hackers are People Too&lt;/p&gt;
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

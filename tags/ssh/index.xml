@@ -1,22 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SSH on Try Harder Blog | Drayko Escobar</title>
+    <title>SSH on Drayko&#39;s Blog</title>
     <link>https://drayko.github.io/tags/ssh/</link>
-    <description>Recent content in SSH on Try Harder Blog | Drayko Escobar</description>
+    <description>Recent content in SSH on Drayko&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://drayko.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://drayko.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Conexión SSH fuera de la red local</title>
+      <title>SSH connection outside the local network</title>
       <link>https://drayko.github.io/post/ssh-fuera-de-la-red-local/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://drayko.github.io/post/ssh-fuera-de-la-red-local/</guid>
-      <description>&lt;p&gt;Este post surgio por un trabajo de la universidad(para una Raspberry) sin embargo me sirvio con otras necesidades similares, para conectarse de manera remota sin necesidad de abrir puertos en el router.&lt;/p&gt;</description>
+      <description>
+        
+          &lt;p&gt;This post arose from a university job (for a Raspberry); however, it served me with other similar needs, to connect remotely without opening ports on the router.&lt;/p&gt;
+&lt;p&gt;To achieve an SSH connection (or another protocol) outside the local area, in a simple way, it seems this, for different reasons (it could be by enabling ports on the router, only that this according to the operator can become very difficult to achieve due to your policies among other things), then let&#39;s continue, you need to install &lt;a href=&#34;https://ngrok.com/download&#34;&gt;Ngrok&lt;/a&gt;
+&lt;img src=&#34;https://drayko.github.io/images/ssh-fuera-de-la-red-local/Screenshot_2020-05-18_18-04-53.png&#34; alt=&#34;capture of ngrok official site&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the case of a Raspberry you need the version &lt;a href=&#34;https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip&#34;&gt;Linux(ARM)&lt;/a&gt; or in console:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then the unzip is done as explained in the ngrok console tutorial:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;unzip ngrok-stable-linux-arm.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The next thing is to register and/or enter ngrok, and once there, go to &lt;a href=&#34;https://dashboard.ngrok.com/auth/your-authtoken&#34;&gt;this link&lt;/a&gt; where it will show the token for your account&lt;/p&gt;
+&lt;p&gt;Once knowing your token you have to execute on your device:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;./ngrok authtoken XXXXXHereYourTokenXXXXXXX
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With that it should be configured, all that remains is to listen to port 22, which is used by SSH, as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;./ngrok tcp &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;it is then when it shows them the Host and port it will point
+&lt;img src=&#34;https://drayko.github.io/images/ssh-fuera-de-la-red-local/Screenshot_2020-05-18_18-25-33.png&#34; alt=&#34;PoC ngrok&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This shows at Forwarding the TCP address and port that enables us to work with our Raspberry.&lt;/p&gt;
+&lt;p&gt;In this case, it was 0.tcp.ngrok.io and port 17271, that is, instead of our local IP and default port (22), these must be specified to access our device outside the local area, that is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;ssh pi@0.tcp.ngrok.io -p17271
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and that would be :D On the ngrok page you can review the variety and protocols available, with the same logic.&lt;/p&gt;
+&lt;p&gt;-Hackers are People Too 😜&lt;/p&gt;
+        
+      </description>
     </item>
     
   </channel>
