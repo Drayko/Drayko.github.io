@@ -351,6 +351,21 @@
   </url>
   
   <url>
+    <loc>https://drayko.github.io/es/search/</loc>
+    <priority>0.1</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://drayko.github.io/search/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://drayko.github.io/es/search/"
+                />
+  </url>
+  
+  <url>
     <loc>https://drayko.github.io/es/series/</loc>
     <xhtml:link
                 rel="alternate"

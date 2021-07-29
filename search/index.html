@@ -15,6 +15,8 @@
 </script>
 <meta property="og:locale" content="en" />
 
+<meta property="og:locale:alternate" content="es" />
+
 <meta property="og:type" content="article">
 <meta name="description" content="Search content in the blog!">
 <meta name="twitter:card" content="summary" />
@@ -119,6 +121,7 @@
 </header>
 
     <main>
+<script src="https://drayko.github.io/js/search.js"></script>
 <div class="wrap content">
   <form action="https://drayko.github.io/search">
     <input id="search-query" placeholder="Type here to search" name="s" style="width: auto;flex-grow: 2;margin: .2rem;
@@ -138,7 +141,7 @@
     <button id="search-btn" class="button mt-1" role="button" type="submit">Search</button>
   </form>
   <div id="search-results">
-    <h3>Matching pages</h3>
+    <h3>Matching pages...</h3>
   </div>
 
 <script id="search-result-template" type="text/x-js-template">
@@ -148,7 +151,8 @@
         <h3 class="post_link">${title}</h3>
       </div>
       <div class="excerpt_footer">
-        <p>${snippet}... <u>see more</u></p>
+        <p>${snippet}... </p>
+        <button id="search-btn" class="button mt-1" role="button" type="submit">Read More</button>
         
         ${ isset categories }<p>Categories: ${categories}</p>${ end }
       </div>
