@@ -6,12 +6,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174014317-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6W3895E12E"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'UA-174014317-1');
+  gtag('config', 'G-6W3895E12E');
 </script>
   
 <meta property="og:locale" content="en" />
@@ -39,8 +39,8 @@
     
     
     <link rel="preload" href="https://drayko.github.io/css/styles.6e08a155dea6d46b6c6ad7492628cfdcb4bb6b131f8868c6ef19747b1011adf7a73d5cca4ca931aa3a132bb72ac32629aed66464950cf0b380cbc0612a57325b.css" integrity = "sha512-bgihVd6m1GtsatdJJijP3LS7axMfiGjG7xl0exARrfenPVzKTKkxqjoTK7cqwyYprtZkZJUM8LOAy8BhKlcyWw==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://drayko.github.io/js/bundle.min.561d1ed863dd007c8cb8920ece38b9a5a981dd14f6c061a62d76f05c1300c49e807f84ae5755d3fedf81313befe03a31ab9b6792b38afa8e3bbb971e300d7cf5.js" as="script" integrity=
-    "sha512-Vh0e2GPdAHyMuJIOzji5pamB3RT2wGGmLXbwXBMAxJ6Af4SuV1XT/t&#43;BMTvv4Doxq5tnkrOK&#43;o47u5ceMA189Q==" crossorigin="anonymous">
+    <link rel="preload" href="https://drayko.github.io/js/bundle.min.46d7638edbb3eef6c98157e247f37410be3342575f271bd26066e23f74be20aa5cf1d1519041250f2051f7fae327ee6c2da7a5303fb9209cd69220f73ef68003.js" as="script" integrity=
+    "sha512-Rtdjjtuz7vbJgVfiR/N0EL4zQldfJxvSYGbiP3S&#43;IKpc8dFRkEElDyBR9/rjJ&#43;5sLaelMD&#43;5IJzWkiD3PvaAAw==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://drayko.github.io/css/styles.6e08a155dea6d46b6c6ad7492628cfdcb4bb6b131f8868c6ef19747b1011adf7a73d5cca4ca931aa3a132bb72ac32629aed66464950cf0b380cbc0612a57325b.css" integrity="sha512-bgihVd6m1GtsatdJJijP3LS7axMfiGjG7xl0exARrfenPVzKTKkxqjoTK7cqwyYprtZkZJUM8LOAy8BhKlcyWw==" crossorigin="anonymous">
@@ -181,15 +181,15 @@
 <p>Well, to begin with, they give us <a href="https://mega.nz/#!fBg2wQKa!kdee9u24oGPWWz0e0LEk_KAD5J_gsgPa8plzzuSgdZdk">a traffic capture</a>, in which when we search with <a href="https://es.wikipedia.org/wiki/Wireshark">Wireshark</a> we find a request with the username and password.</p>
 <p><img src="/images/writeup-cidsi18/cidsi1.png" alt="capture of a part of the packets already filtered"></p>
 <p>then the flag is:</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>007
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">007
+</span></span></code></pre></div><hr>
 <h3 id="12-web-crawlers">1.2 Web crawlers</h3>
 <blockquote>
 <p>Unfortunately search engines are indexing many pages of this website that are confidential to us! Do you know which file prevents this from happening? Nobody wants fully indexed sites right?</p>
 </blockquote>
 <p>This is quite easy, the Flag is inside the <a href="https://support.google.com/webmasters/answer/6062608?hl=es">robots.txt</a>, which provides information to the search engine crawlers about the pages or files that they can request or not from your website.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>http://url/robots.txt
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">http://url/robots.txt
+</span></span></code></pre></div><hr>
 <h3 id="13-backups">1.3 Backups</h3>
 <blockquote>
 <p>Petróleos del Caribe asked us to save a backup of its main jsp file. Unfortunately, the engineer in charge went to a plant in the middle of the sea and he can't tell us the extension with which he saved them. The supply manager requires the backup urgently, can you help me identify which file it is in? Do it soon my position is at stake. Remember that the most common backup extensions are:</p>
@@ -202,49 +202,49 @@
 </blockquote>
 <p>In this one we had to be somewhat observant, as much in the track as in what we have in front of us, it tells us the main jsp, which would come to mean the index.jsp in addition that the current page is <code>http://url/index.jsp</code>.</p>
 <p>So trying with the extensions that they suggest us, it is possible to arrive to the answer</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>http://url/index.jsp.bakup
-</code></pre></div><p>Which contains</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>&lt;%@ page contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34; language=&#34;java&#34; import=&#34;java.sql.*,java.io.*,java.net.*,org.owasp.encoder.Encode, dbProcs.*, utils.*&#34; errorPage=&#34;&#34; %&gt;
-<span class="ln"> 2</span>&lt;%@ page import=&#34;java.util.Locale&#34;%&gt;
-<span class="ln"> 3</span>&lt;%@ include file=&#34;translation.jsp&#34; %&gt;
-<span class="ln"> 4</span>&lt;%
-<span class="ln"> 5</span>	ShepherdLogManager.logEvent(request.getRemoteAddr(), request.getHeader(&#34;X-Forwarded-For&#34;), &#34;DEBUG: index.jsp *************************&#34;);
-<span class="ln"> 6</span>	Locale lang = new Locale(Validate.validateLanguage(request.getSession()));
-<span class="ln"> 7</span>/**
-<span class="ln"> 8</span>The flag/flag is: 402051f4be0cc3aad33bcf3ac3d6532b.
-<span class="ln"> 9</span> */
-<span class="ln">10</span>%&gt; 
-</code></pre></div><p>then that's where we get the flag</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>402051f4be0cc3aad33bcf3ac3d6532b
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">http://url/index.jsp.bakup
+</span></span></code></pre></div><p>Which contains</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">&lt;%@ page contentType=&#34;text/html; charset=UTF-8&#34; pageEncoding=&#34;UTF-8&#34; language=&#34;java&#34; import=&#34;java.sql.*,java.io.*,java.net.*,org.owasp.encoder.Encode, dbProcs.*, utils.*&#34; errorPage=&#34;&#34; %&gt;
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">&lt;%@ page import=&#34;java.util.Locale&#34;%&gt;
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">&lt;%@ include file=&#34;translation.jsp&#34; %&gt;
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">&lt;%
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">	ShepherdLogManager.logEvent(request.getRemoteAddr(), request.getHeader(&#34;X-Forwarded-For&#34;), &#34;DEBUG: index.jsp *************************&#34;);
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">	Locale lang = new Locale(Validate.validateLanguage(request.getSession()));
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">/**
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">The flag/flag is: 402051f4be0cc3aad33bcf3ac3d6532b.
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"> */
+</span></span><span class="line"><span class="ln">10</span><span class="cl">%&gt; 
+</span></span></code></pre></div><p>then that's where we get the flag</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">402051f4be0cc3aad33bcf3ac3d6532b
+</span></span></code></pre></div><hr>
 <h3 id="14-programmer-program">1.4 Programmer program</h3>
 <blockquote>
 <p>One of your friends left you a clue in java code development, but you must solve a mathematical puzzle before you can find the result. The flag is the key to enter his system (the smallest number you can find). But this is easy for you, they are not differential equations.</p>
 </blockquote>
 <p>give us a java file</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="ln"> 1</span><span class="kn">package</span> <span class="nn">exploit</span><span class="o">;</span>
-<span class="ln"> 2</span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
-<span class="ln"> 3</span>
-<span class="ln"> 4</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KeithLikesToTroll</span> <span class="o">{</span>
-<span class="ln"> 5</span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
-<span class="ln"> 6</span>        <span class="kt">int</span> <span class="n">clave</span><span class="o">;</span>
-<span class="ln"> 7</span>
-<span class="ln"> 8</span>        <span class="n">Scanner</span> <span class="n">scn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
-<span class="ln"> 9</span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&#34;Introdusca la llave: &#34;</span><span class="o">);</span>
-<span class="ln">10</span>        <span class="n">clave</span> <span class="o">=</span> <span class="n">scn</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
-<span class="ln">11</span>        <span class="n">scn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="ln">12</span>
-<span class="ln">13</span>        <span class="k">if</span><span class="o">(</span><span class="n">1338557220</span> <span class="o">/</span> <span class="n">clave</span> <span class="o">*</span> <span class="n">clave</span> <span class="o">!=</span> <span class="n">1338557220</span> <span class="o">&amp;&amp;</span> <span class="n">clave</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">){</span>
-<span class="ln">14</span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Autenticacion correcta. La bandera es un número pequeño que te dejara entrar.&#34;</span><span class="o">);</span>
-<span class="ln">15</span>        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-<span class="ln">16</span>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Autenticacion incorrecta.&#34;</span><span class="o">);</span>
-<span class="ln">17</span>        <span class="o">}</span>
-<span class="ln">18</span>    <span class="o">}</span>
-<span class="ln">19</span><span class="o">}</span>
-</code></pre></div><p>Which should be compiled and executed in such a way that the lowest number of correct, with brute force can be reached quickly.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">package</span> <span class="nn">exploit</span><span class="o">;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">KeithLikesToTroll</span> <span class="o">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="kt">int</span> <span class="n">clave</span><span class="o">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="n">Scanner</span> <span class="n">scn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&#34;Introdusca la llave: &#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="n">clave</span> <span class="o">=</span> <span class="n">scn</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="n">scn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">1338557220</span> <span class="o">/</span> <span class="n">clave</span> <span class="o">*</span> <span class="n">clave</span> <span class="o">!=</span> <span class="n">1338557220</span> <span class="o">&amp;&amp;</span> <span class="n">clave</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Autenticacion correcta. La bandera es un número pequeño que te dejara entrar.&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Autenticacion incorrecta.&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Which should be compiled and executed in such a way that the lowest number of correct, with brute force can be reached quickly.</p>
 <p>The Flag:</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>8
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">8
+</span></span></code></pre></div><hr>
 <h3 id="15-wifi-admin-panel">1.5 Wifi admin panel</h3>
 <blockquote>
 <p>We are on vacation in the Caribbean, unfortunately, because of your friend the flight has just left us and we are waiting for 5 long hours at the airport. Another one of your friends found out that they can access free internet at the airport but to do so you must log in to the router. Do you dare to try how to log in?</p>
@@ -259,28 +259,28 @@
 <p><a href="https://mega.nz/#!PR50FC5b!54bX1ROKIMlzeqMJ21VOlohCBPPzvIiCjOed0bsGDTvw">image to download</a></p>
 </blockquote>
 <p>This at first puzzled us, however, the solution is to extract each printable string in the image, using <code>strings</code> <a href="http://www.linfo.org/strings.html">from console(on Linux)</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>strings 8c373fd1a.jpeg
-</code></pre></div><p>And the Flag:</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>1e5b77443345620c52d23c73dc87521c
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">strings 8c373fd1a.jpeg
+</span></span></code></pre></div><p>And the Flag:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">1e5b77443345620c52d23c73dc87521c
+</span></span></code></pre></div><hr>
 <h3 id="22-forensics">2.2 Forensics</h3>
 <blockquote>
 <p>A dangerous criminal is passing hidden messages in pdfs sent by his accomplice abroad. You can do an analysis, you're almost a hacker. Did you find your flag?
 <a href="https://mega.nz/#!HFgyEaCZ!GWz3y3qfn5cxs2Vb7JOxdvjqzCKOFSm3qL4L1Gd4nuA">Download document</a></p>
 </blockquote>
 <p>In this case, parsing the metadata gives us the spoils; With the use of <a href="https://en.wikipedia.org/wiki/ExifTool">Exiftool</a>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>exiftool CIDSI2018.pdf
-</code></pre></div><p>And the Flag:</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>c47d187067c6cf9
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">exiftool CIDSI2018.pdf
+</span></span></code></pre></div><p>And the Flag:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">c47d187067c6cf9
+</span></span></code></pre></div><hr>
 <h3 id="23-sql-injection">2.3 SQL Injection</h3>
 <blockquote>
 <p>We know that the coyote buys all his artifacts from ACME, can you help us display all the tuples in the table to find the trap with which he finally catches his nemesis?</p>
 <p><img src="/images/writeup-cidsi18/sql.png" alt="search engine to test"></p>
 </blockquote>
 <p>When I saw this one I thought it would take a while, however when I tried any injection a copy of the query I made appeared at the top, very Bricks style. So finding the solution was very quick with a typical bypass injection.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sql" data-lang="sql"><span class="ln">1</span><span class="s1">&#39;)or(&#39;</span><span class="mi">1</span><span class="s1">&#39;)=(&#39;</span><span class="mi">1</span>
-</code></pre></div><p>Which gave us the Flag.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="ln">1</span><span class="cl"><span class="s1">&#39;)or(&#39;</span><span class="mi">1</span><span class="s1">&#39;)=(&#39;</span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></div><p>Which gave us the Flag.</p>
 <hr>
 <h3 id="24-reverse-engineering">2.4 Reverse Engineering</h3>
 <blockquote>
@@ -288,13 +288,13 @@
 <a href="https://mega.nz/#!CAgDzIhQ!oIUMDCtFxLuahZ3xTmtDbii8kv8Gc4-7ZtrE5VS7maM">Download APK</a></p>
 </blockquote>
 <p>As mentioned in the statement, there are several tools, I preferred to use <a href="https://github.com/iBotPeaches/Apktool">Apktool</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>apktool d reversing.apk
-</code></pre></div><p>which gives us a folder with everything extracted, in which you can do a quick search with <a href="https://es.wikipedia.org/wiki/Grep">grep</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>user@pc:# grep <span class="s2">&#34;flag&#34;</span> . -R
-<span class="ln">2</span>./reversing/smali/com/mobshep/reverseengineer/Reverse_Engineering.smali: const-string v0, <span class="s2">&#34;The flag/flag is 9yfdsj3md0lq75&#34;</span>
-</code></pre></div><p>and the Flag!</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>9yfdsj3md0lq75
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">apktool d reversing.apk
+</span></span></code></pre></div><p>which gives us a folder with everything extracted, in which you can do a quick search with <a href="https://es.wikipedia.org/wiki/Grep">grep</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">user@pc:# grep <span class="s2">&#34;flag&#34;</span> . -R
+</span></span><span class="line"><span class="ln">2</span><span class="cl">./reversing/smali/com/mobshep/reverseengineer/Reverse_Engineering.smali: const-string v0, <span class="s2">&#34;The flag/flag is 9yfdsj3md0lq75&#34;</span>
+</span></span></code></pre></div><p>and the Flag!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">9yfdsj3md0lq75
+</span></span></code></pre></div><hr>
 <h2 id="level-3">Level 3</h2>
 <h3 id="31-traffic-analysis-2">3.1 Traffic analysis 2.</h3>
 <blockquote>
@@ -305,47 +305,47 @@
 <p>Finding the zip was not difficult, we only had to export it with <code>Export Packet Bytes</code> or exporting all the objects. Once arrived at this point the zip that we obtain is protected with a password as mentioned in the statement, for that, we had to observe the capture</p>
 <p><img src="/images/writeup-cidsi18/cidsizip2.png" alt="a hint in the screenshot"></p>
 <p>the zip password</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>azulcrema
-</code></pre></div><p>and the flag!</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>IW{HTTP_BASIC_AUTH_IS_EASY}
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">azulcrema
+</span></span></code></pre></div><p>and the flag!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">IW{HTTP_BASIC_AUTH_IS_EASY}
+</span></span></code></pre></div><hr>
 <h3 id="32-user-list">3.2 User list</h3>
 <blockquote>
 <p>A group of users decided to complain because there is no coffee, can you believe it. And one of the users seems to be the one stealing the coffee, of course, he hid himself from the list. Help me find him and bring back the coffee to our lives.</p>
 <p><img src="/images/writeup-cidsi18/cidsiuseres.png" alt="list of users"></p>
 </blockquote>
 <p>In this one it took me a while to realize, we were given a choice between consulting the information of 5 users, however, there was not something relevant among them, I tried to search by inspecting the elements, and the requests, however, the clue was in how the requests were made.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span>POST /challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646e0f313a4 HTTP/1.1
-<span class="ln"> 2</span>Host: 192.168.3.100
-<span class="ln"> 3</span>Accept: **
-<span class="ln"> 4</span>Accept-Language: en-US,en:q-0.5
-<span class="ln"> 5</span>Accept-Encoding: gzip, deflate
-<span class="ln"> 6</span>Referer: https://192.168.3.100/challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646eOf313a4.jsp
-<span class="ln"> 7</span>Content-Type: application/X-WWW-form-urlencoded
-<span class="ln"> 8</span>X-Requested-With: XMLHttpRequest
-<span class="ln"> 9</span>Content-Length: 45
-<span class="ln">10</span>Connection: close
-<span class="ln">11</span>
-<span class="ln">12</span>userId%5B%5D=cfcd208495d565ef66e7dff9f98764da
-</code></pre></div><p>The request was identified this way: <code>cfcd208495d565ef66e7dff9f98764da</code>, which when verified was an MD5 and in plain text value <code>0</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>cfcd208495d565ef66e7dff9f98764da = 0
-</code></pre></div><p>When checking the others, they worked the same way, so I generated a list of MD5 hashed numbers to make requests until I found the hidden user, which was no more than the number <code>20</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl">POST /challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646e0f313a4 HTTP/1.1
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">Host: 192.168.3.100
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">Accept: **
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">Accept-Language: en-US,en:q-0.5
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">Accept-Encoding: gzip, deflate
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">Referer: https://192.168.3.100/challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646eOf313a4.jsp
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">Content-Type: application/X-WWW-form-urlencoded
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">X-Requested-With: XMLHttpRequest
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">Content-Length: 45
+</span></span><span class="line"><span class="ln">10</span><span class="cl">Connection: close
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl">userId%5B%5D=cfcd208495d565ef66e7dff9f98764da
+</span></span></code></pre></div><p>The request was identified this way: <code>cfcd208495d565ef66e7dff9f98764da</code>, which when verified was an MD5 and in plain text value <code>0</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">cfcd208495d565ef66e7dff9f98764da = 0
+</span></span></code></pre></div><p>When checking the others, they worked the same way, so I generated a list of MD5 hashed numbers to make requests until I found the hidden user, which was no more than the number <code>20</code>.</p>
 <hr>
 <h3 id="33-hashdump">3.3 HASHDUMP</h3>
 <blockquote>
 <p>Find the admin password</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>sistemas:500:9E689B23C4D33D88E4C560258374B547:7E058F739B8A1E67C00815FC1E5E0E25:::
-<span class="ln">2</span>Guest:501:NO PASSWORD*********************:NO PASSWORD*********************:::
-<span class="ln">3</span>nonadmin:1005:NO PASSWORD*********************:0CF3760C0B0EB9F570AACE7040DF6DB7:::
-<span class="ln">4</span>contabilidad:1013:23AC1B85C36D31AAE45E0AE1804A24B0:DE6D8B1780A4F0714242AC53A6C2B2E8:::
-<span class="ln">5</span>administrador:1014:CE9F401800DF01AFFF959C003A9671D0:A7B9ECDD64AA492E449E0A619FD16E4B:::
-<span class="ln">6</span>gerencia:1015:4978646A5C99C2834D6A97A372D4BC83:C7994B298128024418AD0E9C5038570C:::
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sistemas:500:9E689B23C4D33D88E4C560258374B547:7E058F739B8A1E67C00815FC1E5E0E25:::
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Guest:501:NO PASSWORD*********************:NO PASSWORD*********************:::
+</span></span><span class="line"><span class="ln">3</span><span class="cl">nonadmin:1005:NO PASSWORD*********************:0CF3760C0B0EB9F570AACE7040DF6DB7:::
+</span></span><span class="line"><span class="ln">4</span><span class="cl">contabilidad:1013:23AC1B85C36D31AAE45E0AE1804A24B0:DE6D8B1780A4F0714242AC53A6C2B2E8:::
+</span></span><span class="line"><span class="ln">5</span><span class="cl">administrador:1014:CE9F401800DF01AFFF959C003A9671D0:A7B9ECDD64AA492E449E0A619FD16E4B:::
+</span></span><span class="line"><span class="ln">6</span><span class="cl">gerencia:1015:4978646A5C99C2834D6A97A372D4BC83:C7994B298128024418AD0E9C5038570C:::
+</span></span></code></pre></div></blockquote>
 <p>We can see that it is a dump of the Windows (NTLM) hashes.</p>
 <p>This one took a while to figure out the trick, at first glance one would think that the admin account would be the one with such a name or similar, however, the trick was in the <a href="https://en.wikipedia.org/wiki/Relative_identifier">RID</a>. The <code>500</code> belongs to the administrator account created during the OS installation, although in this case it is called <code>sistemas</code>.</p>
 <p>Then we have 2 ways to find it by brute force/dictionary or to look for it, to save time better to look for it and so we have, the flag!</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>coldplay
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">coldplay
+</span></span></code></pre></div><hr>
 <h2 id="level-4">Level 4</h2>
 <h3 id="41-cracking-rar">4.1 Cracking rar</h3>
 <blockquote>
@@ -356,12 +356,12 @@
 </blockquote>
 <p>First the <code>id</code> must be converted from Hexadecimal, then we get: <code>100030193548308</code>.</p>
 <p>Now in facebook, we look for the profile: <code>https://www.facebook.com/100030193548308</code> in which we find pictures of the employee spreading critical information about the company like that for <code>rar</code> files the password must have a number of length <code>5</code>, then the only thing left is to crack the rar with a dictionary with all the possibilities of 5 digits numerals with <a href="https://es.wikipedia.org/wiki/John_the_Ripper">John The Ripper</a>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>john --wordlist<span class="o">=</span>six --format<span class="o">=</span>rar5 hashrar
-</code></pre></div><p><code>hashrar</code> is the file where the hash of the RAR is located, then, we have the password.</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>60372
-</code></pre></div><p>With this we can extract the flag inside the archive:</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>8743b52063cd84097a65d1633f5c74f5
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">john --wordlist<span class="o">=</span>six --format<span class="o">=</span>rar5 hashrar
+</span></span></code></pre></div><p><code>hashrar</code> is the file where the hash of the RAR is located, then, we have the password.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">60372
+</span></span></code></pre></div><p>With this we can extract the flag inside the archive:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">8743b52063cd84097a65d1633f5c74f5
+</span></span></code></pre></div><hr>
 <h3 id="42-website-bank">4.2 Website bank</h3>
 <blockquote>
 <p>To complete this challenge you must create a bank account and transfer more than 10000 bs to it. When you have that amount in your bank account, simply log out and log in again to be rewarded with the flag.</p>
@@ -370,14 +370,14 @@
 <p>To start with you have to register, and the platform gives us the possibility to transfer money to other accounts</p>
 <p><img src="/images/writeup-cidsi18/cidsibanco2.png" alt="transfer panel"></p>
 <p>However intercepting the requests was insecure, similar to this:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>accountSource=4&amp;accountDestination=2&amp;amount=1200
-</code></pre></div><p>so by modifying the request, we can reverse this</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>accountSource=2&amp;accountTarget=4&amp;amount=1200
-</code></pre></div><p>this way we transfer money to ourselves, here is the result:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">accountSource=4&amp;accountDestination=2&amp;amount=1200
+</span></span></code></pre></div><p>so by modifying the request, we can reverse this</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">accountSource=2&amp;accountTarget=4&amp;amount=1200
+</span></span></code></pre></div><p>this way we transfer money to ourselves, here is the result:</p>
 <p><img src="/images/writeup-cidsi18/cidsibanco3.png" alt="Result"></p>
 <p>Voila!</p>
-<div class="highlight"><pre class="chroma"><code class="language-text" data-lang="text"><span class="ln">1</span>0738FF78AE98A11F579A70F3F98468097426D4652B32A5F978818FC9CCB66CE74371A28833CC1A52854697C734D66249DB8E9AAB67F024262436EC8220C9OF11
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="ln">1</span><span class="cl">0738FF78AE98A11F579A70F3F98468097426D4652B32A5F978818FC9CCB66CE74371A28833CC1A52854697C734D66249DB8E9AAB67F024262436EC8220C9OF11
+</span></span></code></pre></div><hr>
 <h2 id="level-5">Level 5</h2>
 <h3 id="51-exploiting">5.1 Exploiting</h3>
 <blockquote>
@@ -386,8 +386,8 @@
 </blockquote>
 <p>For this one, we had to use <a href="https://es.wikipedia.org/wiki/Interactive_Disassembler">IdaPro</a>, and look for the address.</p>
 <p><img src="/images/writeup-cidsi18/cidsilast.png" alt="capture from IdaPro"></p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span>0x080484BB
-</code></pre></div><p>And that would be it!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">0x080484BB
+</span></span></code></pre></div><p>And that would be it!</p>
 <p>However we could not take 1st place by six points, because those who solved a challenge first had extra points, but we were very happy with the great team we formed; being in 2nd place among so many teams.</p>
 <p>Any doubt, question, or complaint <a href="http://t.me/DraykoEs">you can write me</a>, I hope you liked the WriteUp.</p>
 <p>-Hackers are People Too 😜</p>
@@ -635,7 +635,7 @@ the challenges were the same for both grades</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://drayko.github.io/js/bundle.min.561d1ed863dd007c8cb8920ece38b9a5a981dd14f6c061a62d76f05c1300c49e807f84ae5755d3fedf81313befe03a31ab9b6792b38afa8e3bbb971e300d7cf5.js" integrity="sha512-Vh0e2GPdAHyMuJIOzji5pamB3RT2wGGmLXbwXBMAxJ6Af4SuV1XT/t&#43;BMTvv4Doxq5tnkrOK&#43;o47u5ceMA189Q==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://drayko.github.io/js/bundle.min.46d7638edbb3eef6c98157e247f37410be3342575f271bd26066e23f74be20aa5cf1d1519041250f2051f7fae327ee6c2da7a5303fb9209cd69220f73ef68003.js" integrity="sha512-Rtdjjtuz7vbJgVfiR/N0EL4zQldfJxvSYGbiP3S&#43;IKpc8dFRkEElDyBR9/rjJ&#43;5sLaelMD&#43;5IJzWkiD3PvaAAw==" crossorigin="anonymous"></script>
     
   </body>
 </html>

@@ -6,12 +6,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174014317-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6W3895E12E"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'UA-174014317-1');
+  gtag('config', 'G-6W3895E12E');
 </script>
   
 <meta property="og:locale" content="es" />
@@ -39,8 +39,8 @@
     
     
     <link rel="preload" href="https://drayko.github.io/css/styles.6e08a155dea6d46b6c6ad7492628cfdcb4bb6b131f8868c6ef19747b1011adf7a73d5cca4ca931aa3a132bb72ac32629aed66464950cf0b380cbc0612a57325b.css" integrity = "sha512-bgihVd6m1GtsatdJJijP3LS7axMfiGjG7xl0exARrfenPVzKTKkxqjoTK7cqwyYprtZkZJUM8LOAy8BhKlcyWw==" as="style" crossorigin="anonymous">
-    <link rel="preload" href="https://drayko.github.io/js/bundle.min.561d1ed863dd007c8cb8920ece38b9a5a981dd14f6c061a62d76f05c1300c49e807f84ae5755d3fedf81313befe03a31ab9b6792b38afa8e3bbb971e300d7cf5.js" as="script" integrity=
-    "sha512-Vh0e2GPdAHyMuJIOzji5pamB3RT2wGGmLXbwXBMAxJ6Af4SuV1XT/t&#43;BMTvv4Doxq5tnkrOK&#43;o47u5ceMA189Q==" crossorigin="anonymous">
+    <link rel="preload" href="https://drayko.github.io/js/bundle.min.46d7638edbb3eef6c98157e247f37410be3342575f271bd26066e23f74be20aa5cf1d1519041250f2051f7fae327ee6c2da7a5303fb9209cd69220f73ef68003.js" as="script" integrity=
+    "sha512-Rtdjjtuz7vbJgVfiR/N0EL4zQldfJxvSYGbiP3S&#43;IKpc8dFRkEElDyBR9/rjJ&#43;5sLaelMD&#43;5IJzWkiD3PvaAAw==" crossorigin="anonymous">
 
     
     <link rel="stylesheet" type="text/css" href="https://drayko.github.io/css/styles.6e08a155dea6d46b6c6ad7492628cfdcb4bb6b131f8868c6ef19747b1011adf7a73d5cca4ca931aa3a132bb72ac32629aed66464950cf0b380cbc0612a57325b.css" integrity="sha512-bgihVd6m1GtsatdJJijP3LS7axMfiGjG7xl0exARrfenPVzKTKkxqjoTK7cqwyYprtZkZJUM8LOAy8BhKlcyWw==" crossorigin="anonymous">
@@ -176,20 +176,20 @@
 <p>Para lograr una conexión SSH(u otro protocolo) fuera del área local, de manera sencilla, me parece esta, por distintos motivos(podría ser habilitando puertos en el router, solo que esto según la operadora puede llegar a ser muy difícil de lograr por sus políticas entre otras cosas), entonces continuemos, se necesita instalar <a href="https://ngrok.com/download">Ngrok</a>
 <img src="/images/ssh-fuera-de-la-red-local/Screenshot_2020-05-18_18-04-53.png" alt="captura sitio oficial de ngrok"></p>
 <p>En el caso de una Raspberry se necesita la versión <a href="https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip">Linux(ARM)</a> o en consola:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
-</code></pre></div><p>luego se hace el unzip tal como explica el tutorial de ngrok en consola:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>unzip ngrok-stable-linux-arm.zip
-</code></pre></div><p>Lo siguiente es registrarse y/o ingresar en ngrok, y una vez ahí se van a <a href="https://dashboard.ngrok.com/auth/your-authtoken">este link</a> donde les mostrara el token para su cuenta
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
+</span></span></code></pre></div><p>luego se hace el unzip tal como explica el tutorial de ngrok en consola:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">unzip ngrok-stable-linux-arm.zip
+</span></span></code></pre></div><p>Lo siguiente es registrarse y/o ingresar en ngrok, y una vez ahí se van a <a href="https://dashboard.ngrok.com/auth/your-authtoken">este link</a> donde les mostrara el token para su cuenta
 Una vez sabiendo su token ejecutan en su dispositivo:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>./ngrok authtoken XXXXXtuTokenAquiXXXXXXX
-</code></pre></div><p>con eso estaría configurado, solo falta poner a la escucha el puerto 22, que se utiliza SSH, de la siguiente forma</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>./ngrok tcp <span class="m">22</span>
-</code></pre></div><p>es entonces cuando les muestra el Host y puerto al que apuntara
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">./ngrok authtoken XXXXXtuTokenAquiXXXXXXX
+</span></span></code></pre></div><p>con eso estaría configurado, solo falta poner a la escucha el puerto 22, que se utiliza SSH, de la siguiente forma</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">./ngrok tcp <span class="m">22</span>
+</span></span></code></pre></div><p>es entonces cuando les muestra el Host y puerto al que apuntara
 <img src="/images/ssh-fuera-de-la-red-local/Screenshot_2020-05-18_18-25-33.png" alt="PoC ngrok"></p>
 <p>Lo cual muestra en Forwarding la dirección TCP y puerto que nos habilitan para trabajar con nuestra Raspberry.</p>
 <p>En este caso era 0.tcp.ngrok.io y puerto 17271, es decir que en vez de nuestra ip local y puerto por defecto(22), se debe especificar estos para acceder fuera del área local a nuestro dipositivo, es decir:</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="ln">1</span>ssh pi@0.tcp.ngrok.io -p17271
-</code></pre></div><p>y esito sería :D En la pagina de ngrok pueden revisar la variedad e protocolos disponbles, con la misma logica</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">ssh pi@0.tcp.ngrok.io -p17271
+</span></span></code></pre></div><p>y esito sería :D En la pagina de ngrok pueden revisar la variedad e protocolos disponbles, con la misma logica</p>
 <p>-Hackers are People Too 😜</p>
 
 <div id="gitalk-container"></div>
@@ -420,7 +420,7 @@ Una vez sabiendo su token ejecutan en su dispositivo:</p>
   </div>
 </footer>
 
-    <script type="text/javascript" src="https://drayko.github.io/js/bundle.min.561d1ed863dd007c8cb8920ece38b9a5a981dd14f6c061a62d76f05c1300c49e807f84ae5755d3fedf81313befe03a31ab9b6792b38afa8e3bbb971e300d7cf5.js" integrity="sha512-Vh0e2GPdAHyMuJIOzji5pamB3RT2wGGmLXbwXBMAxJ6Af4SuV1XT/t&#43;BMTvv4Doxq5tnkrOK&#43;o47u5ceMA189Q==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://drayko.github.io/js/bundle.min.46d7638edbb3eef6c98157e247f37410be3342575f271bd26066e23f74be20aa5cf1d1519041250f2051f7fae327ee6c2da7a5303fb9209cd69220f73ef68003.js" integrity="sha512-Rtdjjtuz7vbJgVfiR/N0EL4zQldfJxvSYGbiP3S&#43;IKpc8dFRkEElDyBR9/rjJ&#43;5sLaelMD&#43;5IJzWkiD3PvaAAw==" crossorigin="anonymous"></script>
     
   </body>
 </html>

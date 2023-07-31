@@ -33,12 +33,12 @@
 &lt;p&gt;El repositorio es el siguiente: &lt;a href=&#34;https://github.com/Drayko/Bot-Bounty&#34;&gt;Bot Bounty&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;configuraciones-previas&#34;&gt;Configuraciones previas&lt;/h2&gt;
 &lt;p&gt;Para poder usarlo previamente deberán crearse un bot en Telegram reemplazar la API KEY que da por el valor que se especifica en el script en la línea 12.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;TOKEN&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;XXXXXX:XXXXXXXXXXXXXXXX&amp;#39;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además de registrar el ID de usuario(s) que usaran el bot, en la línea 14:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;authorizedUsers&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;123456789&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;987654321&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y ahora simplemente queda correr el script&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;$ python3 bot.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;tips&#34;&gt;Tips&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;TOKEN&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;XXXXXX:XXXXXXXXXXXXXXXX&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además de registrar el ID de usuario(s) que usaran el bot, en la línea 14:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;authorizedUsers&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;123456789&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;987654321&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y ahora simplemente queda correr el script&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ python3 bot.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;tips&#34;&gt;Tips&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Si el output del comando es demasiado grande, debe guardarla en un archivo y sin output.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;por ejemplo:&lt;/p&gt;
 &lt;ul&gt;
@@ -71,15 +71,15 @@
 &lt;p&gt;Pues para empezar nos dan &lt;a href=&#34;https://mega.nz/#!fBg2wQKa!kdee9u24oGPWz0e0LEk_KAD5J_gsgPa8plzzuSgdZdk&#34;&gt;una captura de trafico&lt;/a&gt;, en la cual al buscar con &lt;a href=&#34;https://es.wikipedia.org/wiki/Wireshark&#34;&gt;Wireshark&lt;/a&gt; encontramos una petición con el usuario y contraseña.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/writeup-cidsi18/cidsi1.png&#34; alt=&#34;captura de un parte de los paquetes ya filtrados&#34;&gt;&lt;/p&gt;
 &lt;p&gt;entonces la flag es:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;007
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;007
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;12-web-crawlers&#34;&gt;1.2 Web crawlers&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Lastimosamente motores de búsqueda están indexando muchos páginas de este sitio web que son confidenciales para nosotros ! Sabes cual es el archivo para evitar que esto siga pasando ? ¿ Nadie quiere sitios totalmente indexados verdad?&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Esto es bastante fácil, la Flag esta dentro de los &lt;a href=&#34;https://support.google.com/webmasters/answer/6062608?hl=es&#34;&gt;robots.txt&lt;/a&gt;, el cual proporciona información a los rastreadores de buscadores sobre las páginas o los archivos que pueden solicitar o no de tu sitio web.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;http://url/robots.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;http://url/robots.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;13-backups&#34;&gt;1.3 Backups&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Petróleos del Caribe nos pidió guardar un backup de su archivo jsp principal Lastimosamente el ingeniero a cargo se fue a una planta en medio del mar y no nos puede decir la extensión con los que los guardó. El director de suministros requiere el backup con urgencia, me ayudas a identificar en que archivo esta?. Hazlo pronto mi cargo esta en juego Recuerda que las extensiones mas comunes de backups son:&lt;/p&gt;
@@ -92,49 +92,49 @@
 &lt;/blockquote&gt;
 &lt;p&gt;En este había que se algo observativos, tanto en la pista como en lo que tenemos frente a nosotros, nos dice el jsp principal, lo que vendria a significar el index.jsp ademas que la pagina actual es &lt;code&gt;http://url/index.jsp&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Asi que probando con las extenciones que nos sugieren, se logra llegar a la respuesta&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;http://url/index.jsp.bakup
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El cual contiene&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&amp;lt;%@ page contentType=&amp;#34;text/html; charset=UTF-8&amp;#34; pageEncoding=&amp;#34;UTF-8&amp;#34; language=&amp;#34;java&amp;#34; import=&amp;#34;java.sql.*,java.io.*,java.net.*,org.owasp.encoder.Encode, dbProcs.*, utils.*&amp;#34; errorPage=&amp;#34;&amp;#34; %&amp;gt;
-&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&amp;lt;%@ page import=&amp;#34;java.util.Locale&amp;#34;%&amp;gt;
-&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&amp;lt;%@ include file=&amp;#34;translation.jsp&amp;#34; %&amp;gt;
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&amp;lt;%
-&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;	ShepherdLogManager.logEvent(request.getRemoteAddr(), request.getHeader(&amp;#34;X-Forwarded-For&amp;#34;), &amp;#34;DEBUG: index.jsp *************************&amp;#34;);
-&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;	Locale lang = new Locale(Validate.validateLanguage(request.getSession()));
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;/**
-&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;El flag/bandera es: 402051f4be0cc3aad33bcf3ac3d6532b
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt; */
-&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;%&amp;gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;entonces ahi es que nos da la flag&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;402051f4be0cc3aad33bcf3ac3d6532b
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;http://url/index.jsp.bakup
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El cual contiene&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;%@ page contentType=&amp;#34;text/html; charset=UTF-8&amp;#34; pageEncoding=&amp;#34;UTF-8&amp;#34; language=&amp;#34;java&amp;#34; import=&amp;#34;java.sql.*,java.io.*,java.net.*,org.owasp.encoder.Encode, dbProcs.*, utils.*&amp;#34; errorPage=&amp;#34;&amp;#34; %&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;%@ page import=&amp;#34;java.util.Locale&amp;#34;%&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;%@ include file=&amp;#34;translation.jsp&amp;#34; %&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;	ShepherdLogManager.logEvent(request.getRemoteAddr(), request.getHeader(&amp;#34;X-Forwarded-For&amp;#34;), &amp;#34;DEBUG: index.jsp *************************&amp;#34;);
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;	Locale lang = new Locale(Validate.validateLanguage(request.getSession()));
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;El flag/bandera es: 402051f4be0cc3aad33bcf3ac3d6532b
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt; */
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;%&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;entonces ahi es que nos da la flag&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;402051f4be0cc3aad33bcf3ac3d6532b
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;14-programa-programador&#34;&gt;1.4 Programa programador&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Uno de tus amigos te dejó una pista en el desarrollo de código java, pero debes resolver un acertijo matemático antes de dar con el resultado. El flag/bandera es la clave para ingresar a su sistema (El número menor que puedas encontrar). Pero esto es fácil para ti, total no son ecuaciones diferenciales&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;nos dan un archivo en java&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;exploit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;java.util.Scanner&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;KeithLikesToTroll&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;		&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;Scanner&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;scn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Scanner&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Introdusca la llave: &amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;scn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;nextInt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;scn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1338557220&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1338557220&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Autenticacion correcta. La bandera es un número pequeño que te dejara entrar.&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;		&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Autenticacion incorrecta.&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;		&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El cual habría q compilarlo y ejecutarlo de manera q el menor numero resultante de correcto, con fuerza bruta se puede llegar rápidamente a este.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;exploit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;java.util.Scanner&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;KeithLikesToTroll&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;n&#34;&gt;Scanner&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;scn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Scanner&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;in&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Introdusca la llave: &amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;scn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;nextInt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;n&#34;&gt;scn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1338557220&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1338557220&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clave&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;14&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Autenticacion correcta. La bandera es un número pequeño que te dejara entrar.&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;16&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Autenticacion incorrecta.&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;17&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;18&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;19&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El cual habría q compilarlo y ejecutarlo de manera q el menor numero resultante de correcto, con fuerza bruta se puede llegar rápidamente a este.&lt;/p&gt;
 &lt;p&gt;La Flag:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;8
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;8
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;15-wifi-admin-panel&#34;&gt;1.5 Wifi admin panel&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Estamos de vacaciones en el Caribe, lastimosamente por culpa de tu amigo el vuelo nos acaba de dejar y son 5 largas horas de espera en el aeropuerto. Otro de tus amigos se dio cuenta que pueden ingresar a internet gratis en el aeropuerto pero para ello debes ingresar al router ¿ Te animas a probar como loguearte?&lt;/p&gt;
@@ -149,28 +149,28 @@
 &lt;p&gt;&lt;a href=&#34;https://mega.nz/#!PR50FC5b!54bX1ROKIMlzeqMJ21VOlohCBPzvIiCjOed0bsGDTvw&#34;&gt;imagen para descargar&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Este al principio nos desconcertó, sin embargo la solución es extrayendo cada cadena de caracteres imprimible en la imagen, usando &lt;code&gt;strings&lt;/code&gt; &lt;a href=&#34;http://www.linfo.org/strings.html&#34;&gt;desde consola(en Linux)&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;strings 8c373fd1a.jpeg
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y la Flag:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;1e5b77443345620c52d23c73dc87521c
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;strings 8c373fd1a.jpeg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y la Flag:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;1e5b77443345620c52d23c73dc87521c
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;22-forense&#34;&gt;2.2 Forense&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Un peligroso delincuente esta pasando mensajes ocultos en los pdf que envía su cómplice en el extranjero. Puedes hacer un análisis, ya casi eres un hacker Encontraste tu bandera?
 &lt;a href=&#34;https://mega.nz/#!HFgyEaCZ!GWz3y3qfn5cxs2Vb7JOxdvjqzCKOFSm3qL4L1Gd4nuA&#34;&gt;Descargar documento&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;En este caso, analizar los metadatos nos da el botín; Con el uso de &lt;a href=&#34;https://en.wikipedia.org/wiki/ExifTool&#34;&gt;Exiftool&lt;/a&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;exiftool CIDSI2018.pdf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y la Flag:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;c47d187067c6cf9
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;exiftool CIDSI2018.pdf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y la Flag:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;c47d187067c6cf9
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;23-inyección-sql&#34;&gt;2.3 Inyección SQL&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Sabemos que el coyote compra todos sus artefactos de ACME, nos ayudas a mostrar todas las tuplas de la tabla para encontrar la trampa con la que finalmente atrape a su némesis?&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/writeup-cidsi18/sql.png&#34; alt=&#34;buscador a testear&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Al ver este pensé que llevaría un tiempo, sin embargo al intentar cualquier inyección aparecía una copia de la consulta realizada en la parte superior, muy al estilo Bricks. Por lo cual hallar la solución fue muy rápido, con una típica inyección de bypass.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;)or(&amp;#39;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;)=(&amp;#39;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Lo cual nos dio la Flag.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;)or(&amp;#39;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;)=(&amp;#39;&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Lo cual nos dio la Flag.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;24-ingeniería-inversa&#34;&gt;2.4 Ingeniería inversa&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -178,13 +178,13 @@
 &lt;a href=&#34;https://mega.nz/#!CAgDzIhQ!oIUMDCtFxLuahZ3xTmtDbii8kv8Gc4-7ZtrE5VS7maM&#34;&gt;Descargar APK&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Como menciona en el enunciado, existen varias herramientas, preferí usar &lt;a href=&#34;https://github.com/iBotPeaches/Apktool&#34;&gt;Apktool&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;apktool d reversing.apk
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;lo cual nos brinda una carpeta con todo lo extraido, en el cual se puede realizar una busqueda rápida con &lt;a href=&#34;https://es.wikipedia.org/wiki/Grep&#34;&gt;grep&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;user@pc:# grep &lt;span class=&#34;s2&#34;&gt;&amp;#34;bandera&amp;#34;&lt;/span&gt; . -R
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;./reversing/smali/com/mobshep/reverseengineer/Reverse_Engineering.smali:    const-string v0, &lt;span class=&#34;s2&#34;&gt;&amp;#34;El flag/bandera es 9yfdsj3md0lq75&amp;#34;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y la Flag!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;9yfdsj3md0lq75
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;apktool d reversing.apk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;lo cual nos brinda una carpeta con todo lo extraido, en el cual se puede realizar una busqueda rápida con &lt;a href=&#34;https://es.wikipedia.org/wiki/Grep&#34;&gt;grep&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;user@pc:# grep &lt;span class=&#34;s2&#34;&gt;&amp;#34;bandera&amp;#34;&lt;/span&gt; . -R
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;./reversing/smali/com/mobshep/reverseengineer/Reverse_Engineering.smali:    const-string v0, &lt;span class=&#34;s2&#34;&gt;&amp;#34;El flag/bandera es 9yfdsj3md0lq75&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y la Flag!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;9yfdsj3md0lq75
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;nivel-3&#34;&gt;Nivel 3&lt;/h2&gt;
 &lt;h3 id=&#34;31-análisis-de-trafico-2&#34;&gt;3.1 Análisis de trafico 2&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -195,47 +195,47 @@
 &lt;p&gt;Encontrar el zip no fue difícil, solo había que exportarlo con &lt;code&gt;Export Packet Bytes&lt;/code&gt; o exportando todos los objetos. Una vez llegado a este punto el zip que obtenemos esta protegido con contraseña como menciona el enunciado, para eso tuvimos que observar la captura&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/writeup-cidsi18/cidsizip2.png&#34; alt=&#34;una pista en la captura&#34;&gt;&lt;/p&gt;
 &lt;p&gt;la contraseña del zip&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;azulcrema
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y la flag!!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;IW{HTTP_BASIC_AUTH_IS_EASY}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;azulcrema
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y la flag!!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;IW{HTTP_BASIC_AUTH_IS_EASY}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;32-lista-de-usuarios&#34;&gt;3.2 Lista de usuarios&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Un grupo de usuarios decidió quejarse porque no hay café en la cafetería, puedes creerlo?. Y uno de los usuarios parece que es el que se esta robando el café, claro que el muy vivo se oculto de la lista. Me ayudas a encontrarlo y devolver el café a nuestras vidas&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/writeup-cidsi18/cidsiuseres.png&#34; alt=&#34;lista de usuarios&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;En este demore en darme cuenta, nos daban a elegir entre consultar la información de 5 usuarios, sin embargo, no había algo relevante entre ellos, intente buscar inspeccionando los elementos, y las peticiones, sin embargo la pista estaba en como se realizaban las peticiones.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;POST /challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646e0f313a4 HTTP/1.1
-&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;Host: 192.168.3.100
-&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;Accept: **
-&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;Accept-Language: en-US,en:q-0.5
-&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;Accept-Encoding: gzip, deflate
-&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;Referer: https://192.168.3.100/challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646eOf313a4.jsp
-&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;Content-Type: application/X-wWW-form-urlencoded
-&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;X-Requested-With: XMLHttpRequest
-&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;Content-Length: 45
-&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;Connection: close
-&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;
-&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;userId%5B%5D=cfcd208495d565ef66e7dff9f98764da
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La petición se identificaba de esta manera: &lt;code&gt;cfcd208495d565ef66e7dff9f98764da&lt;/code&gt;, lo cual al verificar era un MD5 y en valor &lt;code&gt;0&lt;/code&gt; en texto plano:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cfcd208495d565ef66e7dff9f98764da = 0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Al verificar los demás, funcionaban de la misma forma, así que genere una lista de números hasheados en MD5 para hacer peticiones hasta encontrar el usuario oculto, el cual no era mas del numero &lt;code&gt;20&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;POST /challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646e0f313a4 HTTP/1.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Host: 192.168.3.100
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Accept: **
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Accept-Language: en-US,en:q-0.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Accept-Encoding: gzip, deflate
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Referer: https://192.168.3.100/challenges/vc9b78627df2c032ceaf7375df1d847e47ed7abac2a4ce4cb6086646eOf313a4.jsp
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Content-Type: application/X-wWW-form-urlencoded
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 8&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;X-Requested-With: XMLHttpRequest
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt; 9&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Content-Length: 45
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Connection: close
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;11&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;12&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;userId%5B%5D=cfcd208495d565ef66e7dff9f98764da
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La petición se identificaba de esta manera: &lt;code&gt;cfcd208495d565ef66e7dff9f98764da&lt;/code&gt;, lo cual al verificar era un MD5 y en valor &lt;code&gt;0&lt;/code&gt; en texto plano:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;cfcd208495d565ef66e7dff9f98764da = 0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Al verificar los demás, funcionaban de la misma forma, así que genere una lista de números hasheados en MD5 para hacer peticiones hasta encontrar el usuario oculto, el cual no era mas del numero &lt;code&gt;20&lt;/code&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;33-hashdump&#34;&gt;3.3 HASHDUMP&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Encontrar la contraseña de administracion&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;sistemas:500:9E689B23C4D33D88E4C560258374B547:7E058F739B8A1E67C00815FC1E5E0E25:::
-&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;Guest:501:NO PASSWORD*********************:NO PASSWORD*********************:::
-&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;nonadmin:1005:NO PASSWORD*********************:0CF3760C0B0EB9F570AACE7040DF6DB7:::
-&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;contabilidad:1013:23AC1B85C36D31AAE45E0AE1804A24B0:DE6D8B1780A4F0714242AC53A6C2B2E8:::
-&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;administrador:1014:CE9F401800DF01AFFF959C003A9671D0:A7B9ECDD64AA492E449E0A619FD16E4B:::
-&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;gerencia:1015:4978646A5C99C2834D6A97A372D4BC83:C7994B298128024418AD0E9C5038570C:::
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podemos ver que es un dump de los hashes de Windows(NTLM)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;sistemas:500:9E689B23C4D33D88E4C560258374B547:7E058F739B8A1E67C00815FC1E5E0E25:::
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;Guest:501:NO PASSWORD*********************:NO PASSWORD*********************:::
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;nonadmin:1005:NO PASSWORD*********************:0CF3760C0B0EB9F570AACE7040DF6DB7:::
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;contabilidad:1013:23AC1B85C36D31AAE45E0AE1804A24B0:DE6D8B1780A4F0714242AC53A6C2B2E8:::
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;administrador:1014:CE9F401800DF01AFFF959C003A9671D0:A7B9ECDD64AA492E449E0A619FD16E4B:::
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;gerencia:1015:4978646A5C99C2834D6A97A372D4BC83:C7994B298128024418AD0E9C5038570C:::
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podemos ver que es un dump de los hashes de Windows(NTLM)&lt;/p&gt;
 &lt;p&gt;Este tomo tiempo darse cuenta del truco, a simple vista uno piensa que la cuenta de administración seria la que lleva tal nombre o similar, sin embargo el truco estaba en el &lt;a href=&#34;https://en.wikipedia.org/wiki/Relative_identifier&#34;&gt;RID&lt;/a&gt;. El &lt;code&gt;500&lt;/code&gt; pertenece a la cuenta de administración creada durante la instalacion de Sistema Operativo, apesar que en este caso se llama &lt;code&gt;sistemas&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Entonces nos queda 2 vías encontralo por fuerza bruta/diccionario o buscarla, para ganar tiempo mejor buscarla y así tenemos, la flag!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;coldplay
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;coldplay
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;nivel-4&#34;&gt;Nivel 4&lt;/h2&gt;
 &lt;h3 id=&#34;41-cracking-rar&#34;&gt;4.1 Cracking rar&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -246,12 +246,12 @@
 &lt;/blockquote&gt;
 &lt;p&gt;Primero el &lt;code&gt;id&lt;/code&gt; debemos convertirlo del Hexadecimal, entonces obtenemos: &lt;code&gt;100030193548308&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Ahora en facebook buscamos el perfil: &lt;code&gt;https://www.facebook.com/100030193548308&lt;/code&gt; en el cual encontramos fotografías del empleado difundiendo información critica de la empresa como que para archivos &lt;code&gt;rar&lt;/code&gt; la contraseña debe ser un numero de longitud &lt;code&gt;5&lt;/code&gt;, entonces lo único que nos queda es crackear el rar con un diccionario con todas las posibilidades de 5 dígitos numerales con &lt;a href=&#34;https://es.wikipedia.org/wiki/John_the_Ripper&#34;&gt;John The Ripper&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;john --wordlist&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;six --format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;rar5 hashrar
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;hashrar&lt;/code&gt; es el file donde se encuentra el hash del RAR, entonces, tenemos la contraseña.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;60372
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con esto podemos sacar la flag dentro del comprimido:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;8743b52063cd84097a65d1633f5c74f5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;john --wordlist&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;six --format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;rar5 hashrar
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;hashrar&lt;/code&gt; es el file donde se encuentra el hash del RAR, entonces, tenemos la contraseña.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;60372
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con esto podemos sacar la flag dentro del comprimido:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;8743b52063cd84097a65d1633f5c74f5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h3 id=&#34;42-sitio-web-banco&#34;&gt;4.2 Sitio web banco&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Para completar este reto debes crearte una cuenta de banco y trasferirle mas de 10000 bs. Cuando tengas esa cantidad en tu cuenta de banco, simplemente deslogeate y logueate de nuevo para que se te recompense con el flag/bandera
@@ -260,14 +260,14 @@
 &lt;p&gt;Para empezar hay que registrarse, y en la plataforma nos da la posibilidad de transferir dinero a otras cuentas&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/writeup-cidsi18/cidsibanco2.png&#34; alt=&#34;panel de transferencia&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Sin embargo interceptando las peticiones era inseguras, similar a esto:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cuentaOrigen=4&amp;amp;cuentaDestino=2&amp;amp;monto=1200
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;entonces modificando la petición, podemos invertir esto&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;cuentaOrigen=2&amp;amp;cuentaDestino=4&amp;amp;monto=1200
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;de esta manera nos transferimos dinero a nosotros mismos, ahi el resultado:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;cuentaOrigen=4&amp;amp;cuentaDestino=2&amp;amp;monto=1200
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;entonces modificando la petición, podemos invertir esto&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;cuentaOrigen=2&amp;amp;cuentaDestino=4&amp;amp;monto=1200
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;de esta manera nos transferimos dinero a nosotros mismos, ahi el resultado:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/writeup-cidsi18/cidsibanco3.png&#34; alt=&#34;Resultado&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Voilà!&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;0738FF78AE98A11F579A70F3F98468097426D4652B32A5F978818FC9CCB66CE74371A28833CC1A52854697C734D66249DB8E9AAB67F024262436EC8220C9OF11
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;0738FF78AE98A11F579A70F3F98468097426D4652B32A5F978818FC9CCB66CE74371A28833CC1A52854697C734D66249DB8E9AAB67F024262436EC8220C9OF11
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;nivel-5&#34;&gt;Nivel 5&lt;/h2&gt;
 &lt;h3 id=&#34;51-exploiting&#34;&gt;5.1 Exploiting&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -276,8 +276,8 @@
 &lt;/blockquote&gt;
 &lt;p&gt;Para este teníamos que utilizar &lt;a href=&#34;https://es.wikipedia.org/wiki/Interactive_Disassembler&#34;&gt;IdaPro&lt;/a&gt;, y buscar la dirección.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/writeup-cidsi18/cidsilast.png&#34; alt=&#34;captura del IdaPro&#34;&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;0x080484BB
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y esito seria!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;0x080484BB
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y esito seria!&lt;/p&gt;
 &lt;p&gt;Sin embargo no pudimos sacar el 1er puesto por seis puntos, por el tema que quienes resolvían primero un reto tenían puntos extras, pero quedamos muy contentos con el gran equipo que formamos; quedando en 2do lugar entre tantos equipos.&lt;/p&gt;
 &lt;p&gt;Cualquier duda, consulta o reclamo &lt;a href=&#34;http://t.me/DraykoEs&#34;&gt;pueden escribirme&lt;/a&gt;, espero les gustara el WriteUp.&lt;/p&gt;
 &lt;p&gt;-Hackers are People Too 😜&lt;/p&gt;
