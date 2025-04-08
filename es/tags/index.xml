@@ -2,109 +2,109 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Drayko Escobar Blog</title>
-    <link>https://drayko.github.io/es/tags/</link>
+    <link>http://localhost:1313/es/tags/</link>
     <description>Recent content in Tags on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://drayko.github.io/es/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/es/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bot</title>
-      <link>https://drayko.github.io/es/tags/bot/</link>
+      <link>http://localhost:1313/es/tags/bot/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/bot/</guid>
+      <guid>http://localhost:1313/es/tags/bot/</guid>
       <description></description>
     </item>
     <item>
       <title>Bug Bounty</title>
-      <link>https://drayko.github.io/es/tags/bug-bounty/</link>
+      <link>http://localhost:1313/es/tags/bug-bounty/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/bug-bounty/</guid>
+      <guid>http://localhost:1313/es/tags/bug-bounty/</guid>
       <description></description>
     </item>
     <item>
       <title>Featured</title>
-      <link>https://drayko.github.io/es/tags/featured/</link>
+      <link>http://localhost:1313/es/tags/featured/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/featured/</guid>
+      <guid>http://localhost:1313/es/tags/featured/</guid>
       <description></description>
     </item>
     <item>
       <title>Pentest</title>
-      <link>https://drayko.github.io/es/tags/pentest/</link>
+      <link>http://localhost:1313/es/tags/pentest/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/pentest/</guid>
+      <guid>http://localhost:1313/es/tags/pentest/</guid>
       <description></description>
     </item>
     <item>
       <title>Tool</title>
-      <link>https://drayko.github.io/es/tags/tool/</link>
+      <link>http://localhost:1313/es/tags/tool/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/tool/</guid>
+      <guid>http://localhost:1313/es/tags/tool/</guid>
       <description></description>
     </item>
     <item>
       <title>Curiosidades</title>
-      <link>https://drayko.github.io/es/tags/curiosidades/</link>
+      <link>http://localhost:1313/es/tags/curiosidades/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/curiosidades/</guid>
+      <guid>http://localhost:1313/es/tags/curiosidades/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>https://drayko.github.io/es/tags/network/</link>
+      <link>http://localhost:1313/es/tags/network/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/network/</guid>
+      <guid>http://localhost:1313/es/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Ngrok</title>
-      <link>https://drayko.github.io/es/tags/ngrok/</link>
+      <link>http://localhost:1313/es/tags/ngrok/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/ngrok/</guid>
+      <guid>http://localhost:1313/es/tags/ngrok/</guid>
       <description></description>
     </item>
     <item>
       <title>Paper</title>
-      <link>https://drayko.github.io/es/tags/paper/</link>
+      <link>http://localhost:1313/es/tags/paper/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/paper/</guid>
+      <guid>http://localhost:1313/es/tags/paper/</guid>
       <description></description>
     </item>
     <item>
       <title>Redes</title>
-      <link>https://drayko.github.io/es/tags/redes/</link>
+      <link>http://localhost:1313/es/tags/redes/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/redes/</guid>
+      <guid>http://localhost:1313/es/tags/redes/</guid>
       <description></description>
     </item>
     <item>
       <title>SSH</title>
-      <link>https://drayko.github.io/es/tags/ssh/</link>
+      <link>http://localhost:1313/es/tags/ssh/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/ssh/</guid>
+      <guid>http://localhost:1313/es/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
       <title>CTF</title>
-      <link>https://drayko.github.io/es/tags/ctf/</link>
+      <link>http://localhost:1313/es/tags/ctf/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/ctf/</guid>
+      <guid>http://localhost:1313/es/tags/ctf/</guid>
       <description></description>
     </item>
     <item>
       <title>WriteUp</title>
-      <link>https://drayko.github.io/es/tags/writeup/</link>
+      <link>http://localhost:1313/es/tags/writeup/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/writeup/</guid>
+      <guid>http://localhost:1313/es/tags/writeup/</guid>
       <description></description>
     </item>
     <item>
       <title>Tags Personalizados</title>
-      <link>https://drayko.github.io/es/tags/custom/</link>
+      <link>http://localhost:1313/es/tags/custom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/tags/custom/</guid>
+      <guid>http://localhost:1313/es/tags/custom/</guid>
       <description></description>
     </item>
   </channel>

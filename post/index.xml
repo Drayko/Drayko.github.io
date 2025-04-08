@@ -1,61 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Drayko Escobar Blog</title>
-    <link>https://drayko.github.io/post/</link>
-    <description>Recent content in Posts on Drayko Escobar Blog</description>
+    <title>Posts on My New Hugo Site</title>
+    <link>http://localhost/post/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo</generator>
-    <language>en-US</language>
-    <copyright>Drayko Escobar</copyright>
+    <language>en-us</language>
+    <managingEditor>user@example.com (Hugo Author)</managingEditor>
+    <webMaster>user@example.com (Hugo Author)</webMaster>
     <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://drayko.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bot Bounty, a bot for Pentesting &amp; Bug Bounty</title>
-      <link>https://drayko.github.io/post/bot-bounty-telegram-bot/</link>
-      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/post/bot-bounty-telegram-bot/</guid>
+      <link>http://localhost/post/bot-bounty-telegram-bot/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
+      <guid>http://localhost/post/bot-bounty-telegram-bot/</guid>
       <description>&lt;p&gt;This project is about a Telegram bot with the ability to execute terminal commands from your Telegram account and with the command response as messages.&lt;/p&gt;</description>
     </item>
     <item>
       <title>SSH connection outside the local network</title>
-      <link>https://drayko.github.io/post/ssh-connection-outside-the-local-network/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/post/ssh-connection-outside-the-local-network/</guid>
+      <link>http://localhost/post/ssh-connection-outside-the-local-network/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
+      <guid>http://localhost/post/ssh-connection-outside-the-local-network/</guid>
       <description>&lt;p&gt;This post arose from a university job (for a Raspberry); however, it served me with other similar needs, to connect remotely without opening ports on the router.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Taxonomy of DDoS Attacks and DDoS Defense Mechanisms</title>
-      <link>https://drayko.github.io/post/taxonomy-of-ddos/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/post/taxonomy-of-ddos/</guid>
+      <link>http://localhost/post/taxonomy-of-ddos/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
+      <guid>http://localhost/post/taxonomy-of-ddos/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;A Distributed Denial of Service (DDoS) attack is carried out by generating a large flow of information from multiple connection points towards a single destination. In this post, two types of taxonomies will be presented to classify them by attacks and countermeasures, highlighting similarities, characteristics, and strategies with the aim of designing appropriate measures.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;br&gt;&#xA;The development and use of DDoS attack techniques have increased over time, and attackers constantly modify their approaches. This study aims to cover both well-known attacks and potential modifications, divided by levels.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The first computer in Bolivia</title>
-      <link>https://drayko.github.io/post/the-first-computer-in-bolivia/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/post/the-first-computer-in-bolivia/</guid>
+      <link>http://localhost/post/the-first-computer-in-bolivia/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
+      <guid>http://localhost/post/the-first-computer-in-bolivia/</guid>
       <description>&lt;p&gt;Although this post is not something technical as usual, I find it quite interesting about the first computer in Bolivia.&lt;/p&gt;</description>
     </item>
     <item>
       <title>WriteUp CTF CIDSI 2018</title>
-      <link>https://drayko.github.io/post/writeup-cidsi18/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/post/writeup-cidsi18/</guid>
+      <link>http://localhost/post/writeup-cidsi18/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
+      <guid>http://localhost/post/writeup-cidsi18/</guid>
       <description>&lt;p&gt;This CTF was composed of 74 teams from universities convened nationally for undergraduate and graduate level at the International Congress Of Computer Security (CIDSI in Spanish) which was organized by the Agency of Electronic Government and Information and Communication Technologies (AGETIC in Spanish). Thanks to the efforts of the Computer Incident Management Center(CGII) held from November 29 to December 1, 2018.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Write Up CTF UMSS 2018</title>
-      <link>https://drayko.github.io/post/writeup-ctfumss18/</link>
-      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/post/writeup-ctfumss18/</guid>
+      <link>http://localhost/post/writeup-ctfumss18/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
+      <guid>http://localhost/post/writeup-ctfumss18/</guid>
       <description>&lt;p&gt;This is the second part of the series of CTFs heading to CIDSI 2018. This time the CTF was held at the Universidad Mayor de San Simón (UMSS), a way of qualifying for those who would go to the event (CIDSI) representing our university.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Write-Up: CIDSI 2018 Demo CTF</title>
-      <link>https://drayko.github.io/post/writeup-democidsi18/</link>
-      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/post/writeup-democidsi18/</guid>
+      <link>http://localhost/post/writeup-democidsi18/</link>
+      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
+      <guid>http://localhost/post/writeup-democidsi18/</guid>
       <description>&lt;p&gt;Hey there!&lt;/p&gt;&#xA;&lt;p&gt;This is the first post in a series covering CTF challenges held during the International Congress on Information Security (CIDSI), organized by the Agency for Electronic Government and Information and Communication Technologies (AGETIC), thanks to the efforts of the Cyber Incident Management Center (CGII). The event took place from November 29 to December 1, 2018.&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;ll start with the demo CTF challenge organized by CGII.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1. Submit the flag&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>

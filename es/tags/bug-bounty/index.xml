@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bug Bounty on Drayko Escobar Blog</title>
-    <link>https://drayko.github.io/es/tags/bug-bounty/</link>
+    <link>http://localhost:1313/es/tags/bug-bounty/</link>
     <description>Recent content in Bug Bounty on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://drayko.github.io/es/tags/bug-bounty/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/es/tags/bug-bounty/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bot Bounty, un bot para Pentesting y Bug Bounty</title>
-      <link>https://drayko.github.io/es/post/bot-bounty-telegram-bot/</link>
+      <link>http://localhost:1313/es/post/bot-bounty-telegram-bot/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/es/post/bot-bounty-telegram-bot/</guid>
+      <guid>http://localhost:1313/es/post/bot-bounty-telegram-bot/</guid>
       <description>&lt;p&gt;Este proyecto se trata de un bot de Telegram con la capacidad de ejecutar comandos de terminal desde tu cuenta de Telegram y con la respuesta del comando como mensajes.&lt;/p&gt;</description>
     </item>
   </channel>

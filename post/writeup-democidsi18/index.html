@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html lang="en-us" dir="ltr">
 <head>
-  <title>Write-Up: CIDSI 2018 Demo CTF :: Drayko Escobar Blog - Passion for cybersecurity</title>
+  <title>Write-Up: CIDSI 2018 Demo CTF :: My New Hugo Site - Example site for hugo-theme-tailwind</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,11 +17,11 @@ We&rsquo;ll start with the demo CTF challenge organized by CGII.
   name="keywords"
   content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
 />
-<meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" /><meta property="og:url" content="https://drayko.github.io/post/writeup-democidsi18/">
-  <meta property="og:site_name" content="Drayko Escobar Blog">
+<meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" /><meta property="og:url" content="http://localhost/post/writeup-democidsi18/">
+  <meta property="og:site_name" content="My New Hugo Site">
   <meta property="og:title" content="Write-Up: CIDSI 2018 Demo CTF">
   <meta property="og:description" content="This post kicks off a series covering CTF challenges leading up to the International Congress on Information Security (CIDSI)">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2019-02-15T00:00:00+00:00">
@@ -35,7 +35,7 @@ We&rsquo;ll start with the demo CTF challenge organized by CGII.
   <meta name="twitter:description" content="This post kicks off a series covering CTF challenges leading up to the International Congress on Information Security (CIDSI)">
 
 
-<link rel="canonical" href="https://drayko.github.io/post/writeup-democidsi18/" />
+<link rel="canonical" href="http://localhost/post/writeup-democidsi18/" />
 
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="/css/index.min.b03d2d218fbbf7435f0f24ce5c248d756c4afb8f172e4ffa7d4cf167c7718286.css">
@@ -44,43 +44,21 @@ We&rsquo;ll start with the demo CTF challenge organized by CGII.
 
 
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMCGWX0MQ9"></script>
-      <script>
-        var doNotTrack = false;
-        
-        
-        
-        
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-BMCGWX0MQ9');
-        }
-      </script>
 
 
 
 
   
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","author":{"@type":"Person","name":"Drayko Escobar"},"dateModified":"2019-02-15T00:00:00Z","datePublished":"2019-02-15T00:00:00Z","description":"Hey there!\nThis is the first post in a series covering CTF challenges held during the International Congress on Information Security (CIDSI), organized by the Agency for Electronic Government and Information and Communication Technologies (AGETIC), thanks to the efforts of the Cyber Incident Management Center (CGII). The event took place from November 29 to December 1, 2018.\nWe\u0026rsquo;ll start with the demo CTF challenge organized by CGII.\n1. Submit the flag\n","image":"https://drayko.github.io/post/writeup-democidsi18/images/43680061_2060615360917994_5357017926962511872_n.jpg","name":"Write-Up: CIDSI 2018 Demo CTF","url":"https://drayko.github.io/post/writeup-democidsi18/"}
-</script>
+  
 
 </head>
 <body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800"><header class="flex flex-none justify-center z-10">
     <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
   <div class="flex-none ml-2 md:ml-0">
     <a href="/" class="">
-      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/drayko_logo_ico.webp" alt="logo">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="https://placehold.co/512/webp" alt="logo">
     </a>
   </div>
-  
-  <h1 class="hidden md:flex flex-col justify-center mx-2">
-    <a href="/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
-      Drayko Escobar
-    </a>
-  </h1>
   
   <div class="flex-1"></div>
   <div class="flex-none">
@@ -88,71 +66,10 @@ We&rsquo;ll start with the demo CTF challenge organized by CGII.
 
 
 
-<nav class="h-full static">
-  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
-    <span class="sr-only">Open main menu</span>
-    <i class="w-8 h-8">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 6l16 0" />
-  <path d="M4 12l16 0" />
-  <path d="M4 18l16 0" />
-</svg>
-
-    </i>
-  </button>
-  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
-    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-xs md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
-    
-        <li id="post" class="">
-          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
-            href="/post/" title="Post">Post</a>
-        </li>
-      
-    
-        <li id="about" class="">
-          <a class="block px-3 py-3 hover:text-emerald-600"
-            href="/about/" title="About">About</a>
-        </li>
-      
-    
-    </ul>
-  </div>
-</nav>
-
 
   </div>
   
-  <div class="flex-none">
-    <div class="h-full static">
-      <button id="navbar-lang-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
-        <span class="sr-only">Open language switcher</span>
-        <i class="w-8 h-8">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c0 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
-
-        </i>
-      </button>
-      <div class="absolute hidden top-16 z-50" id="navbar-lang">
-        <ul class="flex flex-col rounded-xs px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
-          <li class="">
-            <span class="block px-3 py-3 cursor-default hover:text-emerald-600">English</span>
-            </li>
-        
-          <li class="">
-            <a class="block px-3 py-3 hover:text-emerald-600"
-              href="/es/post/writeup-democidsi18/" title="Español">Español</a></li>
-        
-        </ul>
-      </div>
-    </div>
-  </div>
+  <div class="flex-none mx-1"></div>
   
   <div class="flex-none md:hidden">
     <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
@@ -305,21 +222,7 @@ We&rsquo;ll start with the demo CTF challenge organized by CGII.
   </div>
 </div>
 
-      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
-  <div class="flex flex-row text-base gap-x-1">
-    <i class="h-6 w-6 flex-none">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-    class="icon icon-tabler icons-tabler-outline icon-tabler-user">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-    </i>
-    <span>Drayko Escobar</span>
-  </div>
-</div>
+      
 
       
         
@@ -341,7 +244,7 @@ We&rsquo;ll start with the demo CTF challenge organized by CGII.
 The flag is: 327a6c4304ad5938eaf0efb6cc3e53dc</p></blockquote>
 <p><em>Solution:</em>
 The challenge literally gives you the flag:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">327a6c4304ad5938eaf0efb6cc3e53dc
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>327a6c4304ad5938eaf0efb6cc3e53dc
 </span></span></code></pre></div><hr>
 <p><strong>2. Website</strong></p>
 <blockquote>
@@ -359,7 +262,7 @@ Inspect the page’s source code using F12 or Ctrl+U.</p>
 </div>
 </p>
 <p>And there it is:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">8ddeb2027a8c79b3c46510a6dcef9dda
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>8ddeb2027a8c79b3c46510a6dcef9dda
 </span></span></code></pre></div><hr>
 <p><strong>3. Admin Panel</strong></p>
 <blockquote>
@@ -379,7 +282,7 @@ There are many common/default credentials (check this <a href="https://github.co
 </div>
 </p>
 <p>Nice! Here&rsquo;s the flag:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">58FD79FEF76B8D579819C5FA615A25930F111C04627C3F374C5D7DF898A5FEADE1598AA0680BDF5B922ACBE396691FD1943A181E362F32FFCC0B29A6DD725BA0
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>58FD79FEF76B8D579819C5FA615A25930F111C04627C3F374C5D7DF898A5FEADE1598AA0680BDF5B922ACBE396691FD1943A181E362F32FFCC0B29A6DD725BA0
 </span></span></code></pre></div><hr>
 <p><strong>4. Cracking</strong></p>
 <blockquote>
@@ -388,7 +291,7 @@ There are many common/default credentials (check this <a href="https://github.co
 <p>A hacker friend doing a security assessment got access to a user database. If he can break a hash and log in, he’ll gain more privileges. Help him crack this outdated hash: <code>3cc31cd246149aec68079241e71e98f6</code></p></blockquote>
 <p><em>Solution:</em>
 Google the hash — luckily, it’s been indexed. Tools like Hashcat or John The Ripper could help too.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Pa$$w0rd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Pa$$w0rd
 </span></span></code></pre></div><hr>
 <p><strong>5. Cracking 2</strong></p>
 <blockquote>
@@ -396,7 +299,7 @@ Google the hash — luckily, it’s been indexed. Tools like Hashcat or John The
 <p><em>Solution:</em>
 Looks like Base64. Tools to detect encodings are easy to find online.</p>
 <p>The flag is:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">8703367098500534
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>8703367098500534
 </span></span></code></pre></div><hr>
 <p><strong>6. Cracking 3</strong></p>
 <blockquote>
@@ -406,7 +309,7 @@ Looks like Base64. Tools to detect encodings are easy to find online.</p>
 <p><em>Solution:</em>
 The hint points to Base32.
 The flag is:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">capricornio
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>capricornio
 </span></span></code></pre></div><hr>
 <p><strong>7. Cracking 4</strong></p>
 <blockquote>
@@ -416,7 +319,7 @@ The flag is:</p>
 This is a reference to <a href="https://en.wikipedia.org/wiki/ROT13" target="_blank" rel="noopener">ROT13</a>
 . Use any ROT13 decoder.</p>
 <p>The flag:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">lavidaesgenial
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>lavidaesgenial
 </span></span></code></pre></div><hr>
 <p><strong>8. Find user</strong></p>
 <blockquote>
@@ -425,7 +328,7 @@ This is a reference to <a href="https://en.wikipedia.org/wiki/ROT13" target="_bl
 <p><em>Solution:</em>
 This suggests a basic <a href="https://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noopener">XSS</a>
 . Try something like:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&#34;XSS&#34;</span><span class="p">)&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;XSS&#34;</span>)&lt;/<span style="color:#f92672">script</span>&gt;
 </span></span></code></pre></div><p>And voilà!</p>
 <p><div class="not-prose">
 <picture>
@@ -445,7 +348,7 @@ This suggests a basic <a href="https://en.wikipedia.org/wiki/Cross-site_scriptin
 </div>
 </p>
 <p>The flag:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">11B0C9EBB6D5A0E0E4AE5B1F604B9E8111FEDF991173667AEB2D14F91ACC3B62FB6A5FD4E9AF37BAF09932150BF0D89A3B89F2B9F135347799D95DB38A4AC515
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>11B0C9EBB6D5A0E0E4AE5B1F604B9E8111FEDF991173667AEB2D14F91ACC3B62FB6A5FD4E9AF37BAF09932150BF0D89A3B89F2B9F135347799D95DB38A4AC515
 </span></span></code></pre></div><hr>
 <p><strong>9. View profile</strong></p>
 <blockquote>
@@ -460,13 +363,13 @@ This suggests a basic <a href="https://en.wikipedia.org/wiki/Cross-site_scriptin
 </p>
 <p><em>Solution:</em>
 Check the request headers when clicking “Update profile”:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">POST</span> <span class="nn">/eventos/cidsi2018/ctfdemo/lessons/fdb94122d0f032821019c7edf09dc62ea21e25ca619ed9107bcc50e4a8dbc100</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">www.cgii.gob.bo</span>
-</span></span><span class="line"><span class="cl"><span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">username=tecnico
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> /eventos/cidsi2018/ctfdemo/lessons/fdb94122d0f032821019c7edf09dc62ea21e25ca619ed9107bcc50e4a8dbc100 <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">www.cgii.gob.bo</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">application/x-www-form-urlencoded</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>username=tecnico
 </span></span></code></pre></div><p>Change the <code>username</code> to:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">username=administrador
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>username=administrador
 </span></span></code></pre></div><p><div class="not-prose">
 <picture>
     <source type="image/webp" srcset="/post/writeup-democidsi18/images/ctfdemo7_hu_2ccd6b51815338fd.webp 320w, /post/writeup-democidsi18/images/ctfdemo7_hu_842040ccf13e17c8.webp 640w, /post/writeup-democidsi18/images/ctfdemo7_hu_9f4e9791028aa29e.webp 960w, /post/writeup-democidsi18/images/ctfdemo7_hu_675245ee4409569c.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
@@ -476,7 +379,7 @@ Check the request headers when clicking “Update profile”:</p>
 </div>
 </p>
 <p>And there’s your flag:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">E762A4B454B64E50ED992465C1FBD424A5FB7184E9AA89B901D9ACD9B311AB3D927647D3BBC1BC52BDDEC560A005F72638F2C69D0D60169EBF621ABE8BF14A74
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>E762A4B454B64E50ED992465C1FBD424A5FB7184E9AA89B901D9ACD9B311AB3D927647D3BBC1BC52BDDEC560A005F72638F2C69D0D60169EBF621ABE8BF14A74
 </span></span></code></pre></div><hr>
 <p><em>As we’d say in Bolivia&hellip; esito sería. More write-ups will be published and linked soon. Stay tuned!</em></p>
 <p><em>Hackers are People Too 😜</em></p>
@@ -499,7 +402,7 @@ Check the request headers when clicking “Update profile”:</p>
 <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
     <div class="flex flex-row">
         <span>Share on:</span>
-        <a href="https://x.com/intent/post?text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89&url=https%3a%2f%2fdrayko.github.io%2fpost%2fwriteup-democidsi18%2f&tw_p=tweetbutton"
+        <a href="https://x.com/intent/tweet?url=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89http%3a%2f%2flocalhost%2fpost%2fwriteup-democidsi18%2f"
             target="_blank" title="" class="flex flex-row mr-2">
             <span class="hidden">Twitter</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -509,12 +412,12 @@ Check the request headers when clicking “Update profile”:</p>
 </svg>
 </i>
         </a>
-        <a href="https://wa.me/?text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89 https%3a%2f%2fdrayko.github.io%2fpost%2fwriteup-democidsi18%2f"
+        <a href="https://wa.me/?text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89 http%3a%2f%2flocalhost%2fpost%2fwriteup-democidsi18%2f"
             target="_blank" title="" class="flex flex-row mr-2">
-            <span class="hidden">Whatsapp</span>
-            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg></i>
+            <span class="hidden"></span>
+            <i class="h-6 w-6 flex-none"></i>
         </a>
-        <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdrayko.github.io%2fpost%2fwriteup-democidsi18%2f&&t=Write-Up%3a%20CIDSI%202018%20Demo%20CTF" target="_blank"
+        <a href="https://www.facebook.com/sharer.php?u=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89http%3a%2f%2flocalhost%2fpost%2fwriteup-democidsi18%2f" target="_blank"
             title="" class="flex flex-row mr-2">
             <span class="hidden">Facebook</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -523,7 +426,7 @@ Check the request headers when clicking “Update profile”:</p>
 </svg>
 </i>
         </a>
-        <a href="https://www.linkedin.com/feed/?shareActive=true&text=https%3a%2f%2fdrayko.github.io%2fpost%2fwriteup-democidsi18%2f&title=Write-Up%3a%20CIDSI%202018%20Demo%20CTF"
+        <a href="https://www.linkedin.com/feed/?shareActive=true&text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89http%3a%2f%2flocalhost%2fpost%2fwriteup-democidsi18%2f"
             target="_blank" title="" class="flex flex-row mr-2">
             <span class="hidden">LinkedIn</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -557,61 +460,6 @@ Check the request headers when clicking “Update profile”:</p>
       
 
 
-  
-<script type="text/javascript">
-  (function() {
-    const themeToggle = document.querySelector('.darkmode-toggle input');
-    const light = 'light';
-    const dark = 'dark';
-    let isDark = localStorage.theme === dark || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    let theme = isDark ? dark : light;
-
-    const s = document.createElement('script');
-    s.type = 'text/javascript';
-    const dataset = {
-        repo: 'Drayko\/Drayko.github.io',
-        repoId: 'MDEwOlJlcG9zaXRvcnkyODM2MTA0MjY=',
-        category: 'Q\u0026A',
-        categoryId: 'DIC_kwDOEOeNOs4Co4JS',
-        mapping: 'pathname',
-        reactionsEnabled: '1',
-        emitMetadata: '0',
-        theme: theme,
-        lang: 'en',
-    };
-    s.src = 'https://giscus.app/client.js';
-    s.crossorigin = 'anonymous';
-    s.async = true;
-    Object.entries(dataset).forEach(function(a) {
-        return s.dataset[a[0]] = a[1];
-    });
-
-    const curScriptElement = document.currentScript;
-    curScriptElement.parentNode.insertBefore(s, curScriptElement);
-
-    function sendMessage(message) {
-      const iframe = document.querySelector('iframe.giscus-frame');
-      
-      if (!iframe) return;
-      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-    }
-
-    themeToggle.addEventListener('change', function () {
-      if (this.checked) {
-        theme = dark;
-      } else {
-        theme = light;
-      }
-      sendMessage({
-        setConfig: {
-          theme: theme,
-        }
-      });
-    });
-  })();
-</script>
-  
-
 
 
     </div>
@@ -625,105 +473,13 @@ Check the request headers when clicking “Update profile”:</p>
     
   
   
-    <a href="https://www.linkedin.com/in/drayko" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
-      <span class="hidden">LinkedIn</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path
-     stroke="none"
-     d="M0 0h24v24H0z"
-     fill="none"
-     id="path2" />
-  <path
-     d="m 1.5547568,1.5547568 m 0,2.6113108 A 2.6113108,2.6113108 0 0 1 4.1660676,1.5547568 H 19.833932 a 2.6113108,2.6113108 0 0 1 2.611311,2.6113108 V 19.833932 a 2.6113108,2.6113108 0 0 1 -2.611311,2.611311 H 4.1660676 A 2.6113108,2.6113108 0 0 1 1.5547568,19.833932 Z"
-     id="path4"/>
-  <path
-     d="m 6.7773784,10.694345 v 6.528277"
-     id="path6"/>
-  <path
-     d="m 6.7773784,6.7773784 v 0.013057"
-     id="path8"/>
-  <path
-     d="M 12,17.222622 V 10.694345"
-     id="path10"/>
-  <path
-     d="m 17.222622,17.222622 v -3.916967 a 2.611311,2.611311 0 0 0 -5.222622,0"
-     id="path12"/>
-</svg>
- </i>
-    </a>
-  
-  
-  
-    <a href="https://github.com/drayko" target="_blank" title="Github" class="flex flex-row mr-2">
-      <span class="hidden">Github</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
-</svg>
- </i>
-    </a>
-  
-  
-  
-    <a href="https://x.com/draykoes" target="_blank" title="Twitter" class="flex flex-row mr-2">
-      <span class="hidden">Twitter</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
-   <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
-</svg>
- </i>
-    </a>
-  
-  
-  
-    <a href="https://t.me/draykoes" target="_blank" title="Telegram" class="flex flex-row mr-2">
-      <span class="hidden">Telegram</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-</svg>
- </i>
-    </a>
   
   
   
   
   
-    <a href="https://www.facebook.com/draykoes" target="_blank" title="Facebook" class="flex flex-row mr-2">
-      <span class="hidden">Facebook</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
-</svg>
- </i>
-    </a>
   
   
-  
-    <a href="https://www.instagram.com/draykoes" target="_blank" title="Instagram" class="flex flex-row mr-2">
-      <span class="hidden">Instagram</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
-   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-   <path d="M16.5 7.5l0 .01"></path>
-</svg>
- </i>
-    </a>
-  
-  
-  
-    <a href="https://bsky.app/profile/draykoes.bsky.social" target="_blank" title="Bluesky" class="flex flex-row mr-2">
-      <span class="hidden">Bluesky</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path
-        d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z" />
-</svg>
- </i>
-    </a>
   
   
 
@@ -736,8 +492,14 @@ Check the request headers when clicking “Update profile”:</p>
    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
    <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
 </svg>
-</i> 2010 - 2025 Drayko Escobar
+</i> 2023 - 2025 
     
+  </div>
+  
+  <div class="flex flex-row">
+    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
+      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a> <span class="text-red-600">&hearts;</span> <a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>
+    </span>
   </div>
   
 </section>
