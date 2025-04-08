@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networks on Drayko Escobar Blog</title>
+    <link>https://drayko.github.io/tags/networks/</link>
+    <description>Recent content in Networks on Drayko Escobar Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Drayko Escobar</copyright>
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://drayko.github.io/tags/networks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taxonomy of DDoS Attacks and DDoS Defense Mechanisms</title>
+      <link>https://drayko.github.io/post/taxonomy-of-ddos/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/post/taxonomy-of-ddos/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;A Distributed Denial of Service (DDoS) attack is carried out by generating a large flow of information from multiple connection points towards a single destination. In this post, two types of taxonomies will be presented to classify them by attacks and countermeasures, highlighting similarities, characteristics, and strategies with the aim of designing appropriate measures.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;br&gt;&#xA;The development and use of DDoS attack techniques have increased over time, and attackers constantly modify their approaches. This study aims to cover both well-known attacks and potential modifications, divided by levels.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

