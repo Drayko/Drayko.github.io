@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en-US" dir="ltr">
 <head>
-  <title>WriteUp CTF CIDSI 2018 :: My New Hugo Site - Example site for hugo-theme-tailwind</title>
+  <title>WriteUp CTF CIDSI 2018 :: Drayko Escobar Blog - Passion for cybersecurity</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,11 +14,11 @@
   name="keywords"
   content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
 />
-<meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" /><meta property="og:url" content="http://localhost/post/writeup-cidsi18/">
-  <meta property="og:site_name" content="My New Hugo Site">
+<meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" /><meta property="og:url" content="https://drayko.github.io/post/writeup-cidsi18/">
+  <meta property="og:site_name" content="Drayko Escobar Blog">
   <meta property="og:title" content="WriteUp CTF CIDSI 2018">
   <meta property="og:description" content="This is the end of a series of posts from CTFs that went to the International Congress of Information Security (CIDSI)">
-  <meta property="og:locale" content="en_us">
+  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
     <meta property="article:published_time" content="2019-02-18T00:00:00+00:00">
@@ -33,7 +33,7 @@
   <meta name="twitter:description" content="This is the end of a series of posts from CTFs that went to the International Congress of Information Security (CIDSI)">
 
 
-<link rel="canonical" href="http://localhost/post/writeup-cidsi18/" />
+<link rel="canonical" href="https://drayko.github.io/post/writeup-cidsi18/" />
 
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="stylesheet" href="/css/index.min.b03d2d218fbbf7435f0f24ce5c248d756c4afb8f172e4ffa7d4cf167c7718286.css">
@@ -42,21 +42,43 @@
 
 
 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMCGWX0MQ9"></script>
+      <script>
+        var doNotTrack = false;
+        
+        
+        
+        
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BMCGWX0MQ9');
+        }
+      </script>
 
 
 
 
   
-  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","author":{"@type":"Person","name":"Drayko Escobar"},"dateModified":"2019-02-18T00:00:00Z","datePublished":"2019-02-18T00:00:00Z","description":"This CTF was composed of 74 teams from universities convened nationally for undergraduate and graduate level at the International Congress Of Computer Security (CIDSI in Spanish) which was organized by the Agency of Electronic Government and Information and Communication Technologies (AGETIC in Spanish). Thanks to the efforts of the Computer Incident Management Center(CGII) held from November 29 to December 1, 2018.\n","image":"https://drayko.github.io/post/writeup-cidsi18/images/43680061_2060615360917994_5357017926962511872_n.jpg","name":"WriteUp CTF CIDSI 2018","url":"https://drayko.github.io/post/writeup-cidsi18/"}
+</script>
 
 </head>
 <body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800"><header class="flex flex-none justify-center z-10">
     <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
   <div class="flex-none ml-2 md:ml-0">
     <a href="/" class="">
-      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="https://placehold.co/512/webp" alt="logo">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/drayko_logo_ico.webp" alt="logo">
     </a>
   </div>
+  
+  <h1 class="hidden md:flex flex-col justify-center mx-2">
+    <a href="/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+      Drayko Escobar
+    </a>
+  </h1>
   
   <div class="flex-1"></div>
   <div class="flex-none">
@@ -64,10 +86,71 @@
 
 
 
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-xs md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/post/" title="Post">Post</a>
+        </li>
+      
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
 
   </div>
   
-  <div class="flex-none mx-1"></div>
+  <div class="flex-none">
+    <div class="h-full static">
+      <button id="navbar-lang-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+        <span class="sr-only">Open language switcher</span>
+        <i class="w-8 h-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c0 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+        </i>
+      </button>
+      <div class="absolute hidden top-16 z-50" id="navbar-lang">
+        <ul class="flex flex-col rounded-xs px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+          <li class="">
+            <span class="block px-3 py-3 cursor-default hover:text-emerald-600">English</span>
+            </li>
+        
+          <li class="">
+            <a class="block px-3 py-3 hover:text-emerald-600"
+              href="/es/post/writeup-cidsi18/" title="Español">Español</a></li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
   
   <div class="flex-none md:hidden">
     <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
@@ -232,12 +315,26 @@
 
     </i>
     <span>
-      10 minutes to read
+      9 minutes to read
     </span>
   </div>
 </div>
 
-      
+      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-user">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+    </i>
+    <span>Drayko Escobar</span>
+  </div>
+</div>
 
       
         
@@ -311,7 +408,7 @@
 </div>
 </p>
 <p>then the flag is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>007
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">007
 </span></span></code></pre></div><hr>
 <h3 id="12-web-crawlers">1.2 Web crawlers</h3>
 <blockquote>
@@ -344,34 +441,34 @@ The flag/flag is: 402051f4be0cc3aad33bcf3ac3d6532b.
  */
 %&gt; 
 </code></pre><p>then that&rsquo;s where we get the flag</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>402051f4be0cc3aad33bcf3ac3d6532b
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">402051f4be0cc3aad33bcf3ac3d6532b
 </span></span></code></pre></div><hr>
 <h3 id="14-programmer-program">1.4 Programmer program</h3>
 <blockquote>
 <p>One of your friends left you a clue in java code development, but you must solve a mathematical puzzle before you can find the result. The flag is the key to enter his system (the smallest number you can find). But this is easy for you, they are not differential equations.</p></blockquote>
 <p>give us a java file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">package</span> exploit;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Scanner;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">KeithLikesToTroll</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args){
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> clave;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        Scanner scn <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner(System.<span style="color:#a6e22e">in</span>);
-</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;Introdusca la llave: &#34;</span>);
-</span></span><span style="display:flex;"><span>        clave <span style="color:#f92672">=</span> scn.<span style="color:#a6e22e">nextInt</span>();
-</span></span><span style="display:flex;"><span>        scn.<span style="color:#a6e22e">close</span>();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(1338557220 <span style="color:#f92672">/</span> clave <span style="color:#f92672">*</span> clave <span style="color:#f92672">!=</span> 1338557220 <span style="color:#f92672">&amp;&amp;</span> clave <span style="color:#f92672">&gt;</span> 0){
-</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Autenticacion correcta. La bandera es un número pequeño que te dejara entrar.&#34;</span>);
-</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span>{
-</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;Autenticacion incorrecta.&#34;</span>);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Which should be compiled and executed in such a way that the lowest number of correct, with brute force can be reached quickly.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span><span class="w"> </span><span class="nn">exploit</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Scanner</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">KeithLikesToTroll</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">clave</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&#34;Introdusca la llave: &#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">clave</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scn</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">scn</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">1338557220</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">clave</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">clave</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">1338557220</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">clave</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">0</span><span class="p">){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Autenticacion correcta. La bandera es un número pequeño que te dejara entrar.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="k">else</span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Autenticacion incorrecta.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>Which should be compiled and executed in such a way that the lowest number of correct, with brute force can be reached quickly.</p>
 <p>The Flag:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>8
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">8
 </span></span></code></pre></div><hr>
 <h3 id="15-wifi-admin-panel">1.5 Wifi admin panel</h3>
 <blockquote>
@@ -395,20 +492,19 @@ The flag/flag is: 402051f4be0cc3aad33bcf3ac3d6532b.
 </p></blockquote>
 <p>This at first puzzled us, however, the solution is to extract each printable string in the image, using <code>strings</code> <a href="http://www.linfo.org/strings.html" target="_blank" rel="noopener">from console(on Linux)</a>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>strings 8c373fd1a.jpeg
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">strings 8c373fd1a.jpeg
 </span></span></code></pre></div><p>And the Flag:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>1e5b77443345620c52d23c73dc87521c
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">1e5b77443345620c52d23c73dc87521c
 </span></span></code></pre></div><hr>
 <h3 id="22-forensics">2.2 Forensics</h3>
 <blockquote>
-<p>A dangerous criminal is passing hidden messages in pdfs sent by his accomplice abroad. You can do an analysis, you&rsquo;re almost a hacker. Did you find your flag?
-<a href="https://mega.nz/#!HFgyEaCZ!GWz3y3qfn5cxs2Vb7JOxdvjqzCKOFSm3qL4L1Gd4nuA" target="_blank" rel="noopener">Download document</a>
+<p>A dangerous criminal is passing hidden messages in pdfs sent by his accomplice abroad. You can do an analysis, you&rsquo;re almost a hacker. Did you find your flag?<a href="https://mega.nz/#!HFgyEaCZ!GWz3y3qfn5cxs2Vb7JOxdvjqzCKOFSm3qL4L1Gd4nuA" target="_blank" rel="noopener">Download document</a>
 </p></blockquote>
 <p>In this case, parsing the metadata gives us the spoils; With the use of <a href="https://en.wikipedia.org/wiki/ExifTool" target="_blank" rel="noopener">Exiftool</a>
 :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>exiftool CIDSI2018.pdf
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool CIDSI2018.pdf
 </span></span></code></pre></div><p>And the Flag:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>c47d187067c6cf9
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">c47d187067c6cf9
 </span></span></code></pre></div><hr>
 <h3 id="23-sql-injection">2.3 SQL Injection</h3>
 <blockquote>
@@ -422,29 +518,27 @@ The flag/flag is: 402051f4be0cc3aad33bcf3ac3d6532b.
 </div>
 </p></blockquote>
 <p>When I saw this one I thought it would take a while, however when I tried any injection a copy of the query I made appeared at the top, very Bricks style. So finding the solution was very quick with a typical bypass injection.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#e6db74">&#39;)or(&#39;</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">&#39;)=(&#39;</span><span style="color:#ae81ff">1</span>
-</span></span></code></pre></div><p>Which gave us the Flag.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;)or(&#39;</span><span class="mi">1</span><span class="s1">&#39;)=(&#39;</span><span class="mi">1</span><span class="w">
+</span></span></span></code></pre></div><p>Which gave us the Flag.</p>
 <hr>
 <h3 id="24-reverse-engineering">2.4 Reverse Engineering</h3>
 <blockquote>
-<p>One of the biggest dangers in mobile applications is reverse engineering. Because we can inspect the source code and find API keys, passwords, etc. We found an apk file while you were checking shared resources, luckily we saved it, now we want to know what it contains. There are several tools available to reverse engineer an APK file.
-<a href="https://mega.nz/#!CAgDzIhQ!oIUMDCtFxLuahZ3xTmtDbii8kv8Gc4-7ZtrE5VS7maM" target="_blank" rel="noopener">Download APK</a>
+<p>One of the biggest dangers in mobile applications is reverse engineering. Because we can inspect the source code and find API keys, passwords, etc. We found an apk file while you were checking shared resources, luckily we saved it, now we want to know what it contains. There are several tools available to reverse engineer an APK file.<a href="https://mega.nz/#!CAgDzIhQ!oIUMDCtFxLuahZ3xTmtDbii8kv8Gc4-7ZtrE5VS7maM" target="_blank" rel="noopener">Download APK</a>
 </p></blockquote>
 <p>As mentioned in the statement, there are several tools, I preferred to use <a href="https://github.com/iBotPeaches/Apktool" target="_blank" rel="noopener">Apktool</a>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apktool d reversing.apk
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apktool d reversing.apk
 </span></span></code></pre></div><p>which gives us a folder with everything extracted, in which you can do a quick search with <a href="https://es.wikipedia.org/wiki/Grep" target="_blank" rel="noopener">grep</a>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>user@pc:# grep <span style="color:#e6db74">&#34;flag&#34;</span> . -R
-</span></span><span style="display:flex;"><span>./reversing/smali/com/mobshep/reverseengineer/Reverse_Engineering.smali: const-string v0, <span style="color:#e6db74">&#34;The flag/flag is 9yfdsj3md0lq75&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">user@pc:# grep <span class="s2">&#34;flag&#34;</span> . -R
+</span></span><span class="line"><span class="cl">./reversing/smali/com/mobshep/reverseengineer/Reverse_Engineering.smali: const-string v0, <span class="s2">&#34;The flag/flag is 9yfdsj3md0lq75&#34;</span>
 </span></span></code></pre></div><p>and the Flag!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>9yfdsj3md0lq75
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">9yfdsj3md0lq75
 </span></span></code></pre></div><hr>
 <h2 id="level-3">Level 3</h2>
 <h3 id="31-traffic-analysis-2">3.1 Traffic analysis 2.</h3>
 <blockquote>
-<p>We are performing a traffic analysis because we detected that someone is leaking confidential information and the amount of information is so large that they compressed it with password protection, but finding the password is easy for you. Help us to find the password that will help us to access our flag.
-<a href="https://mega.nz/#!HYxF0KDC!jJcMHVg_k_p0SkvE4qo0z6sk9Z7U60UQ-qRgWhYmPnw" target="_blank" rel="noopener">Download capture</a>
+<p>We are performing a traffic analysis because we detected that someone is leaking confidential information and the amount of information is so large that they compressed it with password protection, but finding the password is easy for you. Help us to find the password that will help us to access our flag.<a href="https://mega.nz/#!HYxF0KDC!jJcMHVg_k_p0SkvE4qo0z6sk9Z7U60UQ-qRgWhYmPnw" target="_blank" rel="noopener">Download capture</a>
 </p></blockquote>
 <p><div class="not-prose">
 <picture>
@@ -464,9 +558,9 @@ The flag/flag is: 402051f4be0cc3aad33bcf3ac3d6532b.
 </div>
 </p>
 <p>the zip password</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>azulcrema
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">azulcrema
 </span></span></code></pre></div><p>and the flag!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>IW{HTTP_BASIC_AUTH_IS_EASY}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">IW{HTTP_BASIC_AUTH_IS_EASY}
 </span></span></code></pre></div><hr>
 <h3 id="32-user-list">3.2 User list</h3>
 <blockquote>
@@ -493,7 +587,7 @@ Connection: close
 
 userId%5B%5D=cfcd208495d565ef66e7dff9f98764da
 </code></pre><p>The request was identified this way: <code>cfcd208495d565ef66e7dff9f98764da</code>, which when verified was an MD5 and in plain text value <code>0</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>cfcd208495d565ef66e7dff9f98764da = 0
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">cfcd208495d565ef66e7dff9f98764da = 0
 </span></span></code></pre></div><p>When checking the others, they worked the same way, so I generated a list of MD5 hashed numbers to make requests until I found the hidden user, which was no more than the number <code>20</code>.</p>
 <hr>
 <h3 id="33-hashdump">3.3 HASHDUMP</h3>
@@ -510,7 +604,7 @@ gerencia:1015:4978646A5C99C2834D6A97A372D4BC83:C7994B298128024418AD0E9C5038570C:
 <p>This one took a while to figure out the trick, at first glance one would think that the admin account would be the one with such a name or similar, however, the trick was in the <a href="https://en.wikipedia.org/wiki/Relative_identifier" target="_blank" rel="noopener">RID</a>
 . The <code>500</code> belongs to the administrator account created during the OS installation, although in this case it is called <code>sistemas</code>.</p>
 <p>Then we have 2 ways to find it by brute force/dictionary or to look for it, to save time better to look for it and so we have, the flag!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>coldplay
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">coldplay
 </span></span></code></pre></div><hr>
 <h2 id="level-4">Level 4</h2>
 <h3 id="41-cracking-rar">4.1 Cracking rar</h3>
@@ -523,11 +617,11 @@ gerencia:1015:4978646A5C99C2834D6A97A372D4BC83:C7994B298128024418AD0E9C5038570C:
 <p>First the <code>id</code> must be converted from Hexadecimal, then we get: <code>100030193548308</code>.</p>
 <p>Now in facebook, we look for the profile: <code>https://www.facebook.com/100030193548308</code> in which we find pictures of the employee spreading critical information about the company like that for <code>rar</code> files the password must have a number of length <code>5</code>, then the only thing left is to crack the rar with a dictionary with all the possibilities of 5 digits numerals with <a href="https://es.wikipedia.org/wiki/John_the_Ripper" target="_blank" rel="noopener">John The Ripper</a>
 .</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>john --wordlist<span style="color:#f92672">=</span>six --format<span style="color:#f92672">=</span>rar5 hashrar
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">john --wordlist<span class="o">=</span>six --format<span class="o">=</span>rar5 hashrar
 </span></span></code></pre></div><p><code>hashrar</code> is the file where the hash of the RAR is located, then, we have the password.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>60372
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">60372
 </span></span></code></pre></div><p>With this we can extract the flag inside the archive:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>8743b52063cd84097a65d1633f5c74f5
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">8743b52063cd84097a65d1633f5c74f5
 </span></span></code></pre></div><hr>
 <h3 id="42-website-bank">4.2 Website bank</h3>
 <blockquote>
@@ -563,13 +657,12 @@ gerencia:1015:4978646A5C99C2834D6A97A372D4BC83:C7994B298128024418AD0E9C5038570C:
 </div>
 </p>
 <p>Voila!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>0738FF78AE98A11F579A70F3F98468097426D4652B32A5F978818FC9CCB66CE74371A28833CC1A52854697C734D66249DB8E9AAB67F024262436EC8220C9OF11
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">0738FF78AE98A11F579A70F3F98468097426D4652B32A5F978818FC9CCB66CE74371A28833CC1A52854697C734D66249DB8E9AAB67F024262436EC8220C9OF11
 </span></span></code></pre></div><hr>
 <h2 id="level-5">Level 5</h2>
 <h3 id="51-exploiting">5.1 Exploiting</h3>
 <blockquote>
-<p>We are doing safe development, Your challenge is to change the flow of the program so that the hidden function executes. Once you succeed I will congratulate you on your success. The flag is the hexadecimal address of the function beat with the correct format (0x11223344)
-<a href="https://mega.nz/#!jMhziKpa!Anhy2D_GuOI2qw3umtPfFQA2ydNJJJgCPOJbq8Jg3ZCA" target="_blank" rel="noopener">Download program</a>
+<p>We are doing safe development, Your challenge is to change the flow of the program so that the hidden function executes. Once you succeed I will congratulate you on your success. The flag is the hexadecimal address of the function beat with the correct format (0x11223344)<a href="https://mega.nz/#!jMhziKpa!Anhy2D_GuOI2qw3umtPfFQA2ydNJJJgCPOJbq8Jg3ZCA" target="_blank" rel="noopener">Download program</a>
 </p></blockquote>
 <p>For this one, we had to use <a href="https://es.wikipedia.org/wiki/Interactive_Disassembler" target="_blank" rel="noopener">IdaPro</a>
 , and look for the address.</p>
@@ -617,7 +710,7 @@ the challenges were the same for both grades</p>
 <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
     <div class="flex flex-row">
         <span>Share on:</span>
-        <a href="https://x.com/intent/tweet?url=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89http%3a%2f%2flocalhost%2fpost%2fwriteup-cidsi18%2f"
+        <a href="https://x.com/intent/tweet?url=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fpost%2fwriteup-cidsi18%2f"
             target="_blank" title="" class="flex flex-row mr-2">
             <span class="hidden">Twitter</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -627,12 +720,12 @@ the challenges were the same for both grades</p>
 </svg>
 </i>
         </a>
-        <a href="https://wa.me/?text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89 http%3a%2f%2flocalhost%2fpost%2fwriteup-cidsi18%2f"
+        <a href="https://wa.me/?text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89 https%3a%2f%2fdrayko.github.io%2fpost%2fwriteup-cidsi18%2f"
             target="_blank" title="" class="flex flex-row mr-2">
-            <span class="hidden"></span>
-            <i class="h-6 w-6 flex-none"></i>
+            <span class="hidden">Whatsapp</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg></i>
         </a>
-        <a href="https://www.facebook.com/sharer.php?u=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89http%3a%2f%2flocalhost%2fpost%2fwriteup-cidsi18%2f" target="_blank"
+        <a href="https://www.facebook.com/sharer.php?u=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fpost%2fwriteup-cidsi18%2f" target="_blank"
             title="" class="flex flex-row mr-2">
             <span class="hidden">Facebook</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -641,7 +734,7 @@ the challenges were the same for both grades</p>
 </svg>
 </i>
         </a>
-        <a href="https://www.linkedin.com/feed/?shareActive=true&text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89http%3a%2f%2flocalhost%2fpost%2fwriteup-cidsi18%2f"
+        <a href="https://www.linkedin.com/feed/?shareActive=true&text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fpost%2fwriteup-cidsi18%2f"
             target="_blank" title="" class="flex flex-row mr-2">
             <span class="hidden">LinkedIn</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -675,6 +768,61 @@ the challenges were the same for both grades</p>
       
 
 
+  
+<script type="text/javascript">
+  (function() {
+    const themeToggle = document.querySelector('.darkmode-toggle input');
+    const light = 'light';
+    const dark = 'dark';
+    let isDark = localStorage.theme === dark || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    let theme = isDark ? dark : light;
+
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    const dataset = {
+        repo: 'Drayko\/Drayko.github.io',
+        repoId: 'MDEwOlJlcG9zaXRvcnkyODM2MTA0MjY=',
+        category: 'Q\u0026A',
+        categoryId: 'DIC_kwDOEOeNOs4Co4JS',
+        mapping: 'pathname',
+        reactionsEnabled: '1',
+        emitMetadata: '0',
+        theme: theme,
+        lang: 'en',
+    };
+    s.src = 'https://giscus.app/client.js';
+    s.crossorigin = 'anonymous';
+    s.async = true;
+    Object.entries(dataset).forEach(function(a) {
+        return s.dataset[a[0]] = a[1];
+    });
+
+    const curScriptElement = document.currentScript;
+    curScriptElement.parentNode.insertBefore(s, curScriptElement);
+
+    function sendMessage(message) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        theme = dark;
+      } else {
+        theme = light;
+      }
+      sendMessage({
+        setConfig: {
+          theme: theme,
+        }
+      });
+    });
+  })();
+</script>
+  
+
 
 
     </div>
@@ -688,13 +836,105 @@ the challenges were the same for both grades</p>
     
   
   
+    <a href="https://www.linkedin.com/in/drayko" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path
+     stroke="none"
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path2" />
+  <path
+     d="m 1.5547568,1.5547568 m 0,2.6113108 A 2.6113108,2.6113108 0 0 1 4.1660676,1.5547568 H 19.833932 a 2.6113108,2.6113108 0 0 1 2.611311,2.6113108 V 19.833932 a 2.6113108,2.6113108 0 0 1 -2.611311,2.611311 H 4.1660676 A 2.6113108,2.6113108 0 0 1 1.5547568,19.833932 Z"
+     id="path4"/>
+  <path
+     d="m 6.7773784,10.694345 v 6.528277"
+     id="path6"/>
+  <path
+     d="m 6.7773784,6.7773784 v 0.013057"
+     id="path8"/>
+  <path
+     d="M 12,17.222622 V 10.694345"
+     id="path10"/>
+  <path
+     d="m 17.222622,17.222622 v -3.916967 a 2.611311,2.611311 0 0 0 -5.222622,0"
+     id="path12"/>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://github.com/drayko" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://x.com/draykoes" target="_blank" title="Twitter" class="flex flex-row mr-2">
+      <span class="hidden">Twitter</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+   <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://t.me/draykoes" target="_blank" title="Telegram" class="flex flex-row mr-2">
+      <span class="hidden">Telegram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+ </i>
+    </a>
   
   
   
   
   
+    <a href="https://www.facebook.com/draykoes" target="_blank" title="Facebook" class="flex flex-row mr-2">
+      <span class="hidden">Facebook</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+ </i>
+    </a>
   
   
+  
+    <a href="https://www.instagram.com/draykoes" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M16.5 7.5l0 .01"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://bsky.app/profile/draykoes.bsky.social" target="_blank" title="Bluesky" class="flex flex-row mr-2">
+      <span class="hidden">Bluesky</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path
+        d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z" />
+</svg>
+ </i>
+    </a>
   
   
 
@@ -707,14 +947,8 @@ the challenges were the same for both grades</p>
    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
    <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
 </svg>
-</i> 2023 - 2025 
+</i> 2010 - 2025 Drayko Escobar
     
-  </div>
-  
-  <div class="flex flex-row">
-    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
-      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a> <span class="text-red-600">&hearts;</span> <a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>
-    </span>
   </div>
   
 </section>

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SSH on My New Hugo Site</title>
-    <link>http://localhost/tags/ssh/</link>
-    <description>Recent content in SSH on My New Hugo Site</description>
+    <title>SSH on Drayko Escobar Blog</title>
+    <link>https://drayko.github.io/tags/ssh/</link>
+    <description>Recent content in SSH on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <managingEditor>user@example.com (Hugo Author)</managingEditor>
-    <webMaster>user@example.com (Hugo Author)</webMaster>
+    <language>en-US</language>
+    <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://drayko.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSH connection outside the local network</title>
-      <link>http://localhost/post/ssh-connection-outside-the-local-network/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/post/ssh-connection-outside-the-local-network/</guid>
+      <link>https://drayko.github.io/post/ssh-connection-outside-the-local-network/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/post/ssh-connection-outside-the-local-network/</guid>
       <description>&lt;p&gt;This post arose from a university job (for a Raspberry); however, it served me with other similar needs, to connect remotely without opening ports on the router.&lt;/p&gt;</description>
     </item>
   </channel>

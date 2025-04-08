@@ -1,125 +1,124 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>http://localhost/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on Drayko Escobar Blog</title>
+    <link>https://drayko.github.io/tags/</link>
+    <description>Recent content in Tags on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <managingEditor>user@example.com (Hugo Author)</managingEditor>
-    <webMaster>user@example.com (Hugo Author)</webMaster>
+    <language>en-US</language>
+    <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://drayko.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bot</title>
-      <link>http://localhost/tags/bot/</link>
-      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/bot/</guid>
+      <link>https://drayko.github.io/tags/bot/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/bot/</guid>
       <description></description>
     </item>
     <item>
       <title>Bug Bounty</title>
-      <link>http://localhost/tags/bug-bounty/</link>
-      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/bug-bounty/</guid>
+      <link>https://drayko.github.io/tags/bug-bounty/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/bug-bounty/</guid>
       <description></description>
     </item>
     <item>
       <title>Featured</title>
-      <link>http://localhost/tags/featured/</link>
-      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/featured/</guid>
+      <link>https://drayko.github.io/tags/featured/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/featured/</guid>
       <description></description>
     </item>
     <item>
       <title>Pentest</title>
-      <link>http://localhost/tags/pentest/</link>
-      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/pentest/</guid>
+      <link>https://drayko.github.io/tags/pentest/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/pentest/</guid>
       <description></description>
     </item>
     <item>
       <title>Tool</title>
-      <link>http://localhost/tags/tool/</link>
-      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/tool/</guid>
+      <link>https://drayko.github.io/tags/tool/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/tool/</guid>
       <description></description>
     </item>
     <item>
       <title>Curiosities</title>
-      <link>http://localhost/tags/curiosities/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/curiosities/</guid>
+      <link>https://drayko.github.io/tags/curiosities/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/curiosities/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>http://localhost/tags/network/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/network/</guid>
+      <link>https://drayko.github.io/tags/network/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Networks</title>
-      <link>http://localhost/tags/networks/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/networks/</guid>
+      <link>https://drayko.github.io/tags/networks/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/networks/</guid>
       <description></description>
     </item>
     <item>
       <title>Ngrok</title>
-      <link>http://localhost/tags/ngrok/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/ngrok/</guid>
+      <link>https://drayko.github.io/tags/ngrok/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/ngrok/</guid>
       <description></description>
     </item>
     <item>
       <title>Paper</title>
-      <link>http://localhost/tags/paper/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/paper/</guid>
+      <link>https://drayko.github.io/tags/paper/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/paper/</guid>
       <description></description>
     </item>
     <item>
       <title>Redes</title>
-      <link>http://localhost/tags/redes/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/redes/</guid>
+      <link>https://drayko.github.io/tags/redes/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/redes/</guid>
       <description></description>
     </item>
     <item>
       <title>SSH</title>
-      <link>http://localhost/tags/ssh/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/ssh/</guid>
+      <link>https://drayko.github.io/tags/ssh/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
       <title>Fun Facts</title>
-      <link>http://localhost/tags/fun-facts/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/fun-facts/</guid>
+      <link>https://drayko.github.io/tags/fun-facts/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/fun-facts/</guid>
       <description></description>
     </item>
     <item>
       <title>CTF</title>
-      <link>http://localhost/tags/ctf/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/ctf/</guid>
+      <link>https://drayko.github.io/tags/ctf/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/ctf/</guid>
       <description></description>
     </item>
     <item>
       <title>WriteUp</title>
-      <link>http://localhost/tags/writeup/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/writeup/</guid>
+      <link>https://drayko.github.io/tags/writeup/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/writeup/</guid>
       <description></description>
     </item>
     <item>
       <title>CustomTag</title>
-      <link>http://localhost/tags/custom/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/tags/custom/</guid>
+      <link>https://drayko.github.io/tags/custom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/custom/</guid>
       <description></description>
     </item>
   </channel>

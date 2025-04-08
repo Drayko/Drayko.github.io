@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Paper on Drayko Escobar Blog</title>
-    <link>http://localhost:1313/es/tags/paper/</link>
+    <link>https://drayko.github.io/es/tags/paper/</link>
     <description>Recent content in Paper on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/es/tags/paper/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://drayko.github.io/es/tags/paper/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Taxonomía de ataques DDoS y mecanismos de defensa DDoS</title>
-      <link>http://localhost:1313/es/post/taxonomy-of-ddos/</link>
+      <link>https://drayko.github.io/es/post/taxonomy-of-ddos/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/taxonomy-of-ddos/</guid>
+      <guid>https://drayko.github.io/es/post/taxonomy-of-ddos/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Ataque de negación de servicio distribuido(DDoS por sus siglas en inglés, Distributed Denial of Service) se lleva a cabo generando un gran flujo de información desde varios puntos de conexión hacia un mismo punto de destino. En este Post se mostrarán  2 tipos de taxonomías para clasificarlos por ataques y contramedidas, esto para resaltar similitudes, características y estrategias con la intención de diseñar medidas al respecto.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introducción&lt;/strong&gt;&#xA;El desarrollo y uso de las técnicas de ataques DDoS se incrementaron en el transcurso de tiempo al igual que los atacantes constantemente modifican el enfoque de los mismos, este estudio trata de cubrir tanto los ataques conocidos como posibles modificaciones, divididas o niveles.&lt;/p&gt;</description>
     </item>
   </channel>

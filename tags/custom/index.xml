@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CustomTag on My New Hugo Site</title>
-    <link>http://localhost/tags/custom/</link>
-    <description>Recent content in CustomTag on My New Hugo Site</description>
+    <title>CustomTag on Drayko Escobar Blog</title>
+    <link>https://drayko.github.io/tags/custom/</link>
+    <description>Recent content in CustomTag on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <managingEditor>user@example.com (Hugo Author)</managingEditor>
-    <webMaster>user@example.com (Hugo Author)</webMaster>
-    <atom:link href="http://localhost/tags/custom/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language>
+    <copyright>Drayko Escobar</copyright>
+    <atom:link href="https://drayko.github.io/tags/custom/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

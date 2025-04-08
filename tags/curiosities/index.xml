@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Curiosities on My New Hugo Site</title>
-    <link>http://localhost/tags/curiosities/</link>
-    <description>Recent content in Curiosities on My New Hugo Site</description>
+    <title>Curiosities on Drayko Escobar Blog</title>
+    <link>https://drayko.github.io/tags/curiosities/</link>
+    <description>Recent content in Curiosities on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <managingEditor>user@example.com (Hugo Author)</managingEditor>
-    <webMaster>user@example.com (Hugo Author)</webMaster>
+    <language>en-US</language>
+    <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost/tags/curiosities/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://drayko.github.io/tags/curiosities/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Taxonomy of DDoS Attacks and DDoS Defense Mechanisms</title>
-      <link>http://localhost/post/taxonomy-of-ddos/</link>
-      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/post/taxonomy-of-ddos/</guid>
+      <link>https://drayko.github.io/post/taxonomy-of-ddos/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/post/taxonomy-of-ddos/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;A Distributed Denial of Service (DDoS) attack is carried out by generating a large flow of information from multiple connection points towards a single destination. In this post, two types of taxonomies will be presented to classify them by attacks and countermeasures, highlighting similarities, characteristics, and strategies with the aim of designing appropriate measures.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;br&gt;&#xA;The development and use of DDoS attack techniques have increased over time, and attackers constantly modify their approaches. This study aims to cover both well-known attacks and potential modifications, divided by levels.&lt;/p&gt;</description>
     </item>
     <item>
       <title>The first computer in Bolivia</title>
-      <link>http://localhost/post/the-first-computer-in-bolivia/</link>
-      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/post/the-first-computer-in-bolivia/</guid>
+      <link>https://drayko.github.io/post/the-first-computer-in-bolivia/</link>
+      <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/post/the-first-computer-in-bolivia/</guid>
       <description>&lt;p&gt;Although this post is not something technical as usual, I find it quite interesting about the first computer in Bolivia.&lt;/p&gt;</description>
     </item>
   </channel>

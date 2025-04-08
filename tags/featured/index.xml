@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Featured on My New Hugo Site</title>
-    <link>http://localhost/tags/featured/</link>
-    <description>Recent content in Featured on My New Hugo Site</description>
+    <title>Featured on Drayko Escobar Blog</title>
+    <link>https://drayko.github.io/tags/featured/</link>
+    <description>Recent content in Featured on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
-    <managingEditor>user@example.com (Hugo Author)</managingEditor>
-    <webMaster>user@example.com (Hugo Author)</webMaster>
+    <language>en-US</language>
+    <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost/tags/featured/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://drayko.github.io/tags/featured/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bot Bounty, a bot for Pentesting &amp; Bug Bounty</title>
-      <link>http://localhost/post/bot-bounty-telegram-bot/</link>
-      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/post/bot-bounty-telegram-bot/</guid>
+      <link>https://drayko.github.io/post/bot-bounty-telegram-bot/</link>
+      <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/post/bot-bounty-telegram-bot/</guid>
       <description>&lt;p&gt;This project is about a Telegram bot with the ability to execute terminal commands from your Telegram account and with the command response as messages.&lt;/p&gt;</description>
     </item>
     <item>
       <title>WriteUp CTF CIDSI 2018</title>
-      <link>http://localhost/post/writeup-cidsi18/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate><author>user@example.com (Hugo Author)</author>
-      <guid>http://localhost/post/writeup-cidsi18/</guid>
+      <link>https://drayko.github.io/post/writeup-cidsi18/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/post/writeup-cidsi18/</guid>
       <description>&lt;p&gt;This CTF was composed of 74 teams from universities convened nationally for undergraduate and graduate level at the International Congress Of Computer Security (CIDSI in Spanish) which was organized by the Agency of Electronic Government and Information and Communication Technologies (AGETIC in Spanish). Thanks to the efforts of the Computer Incident Management Center(CGII) held from November 29 to December 1, 2018.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ngrok on Drayko Escobar Blog</title>
-    <link>http://localhost:1313/es/tags/ngrok/</link>
+    <link>https://drayko.github.io/es/tags/ngrok/</link>
     <description>Recent content in Ngrok on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/es/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://drayko.github.io/es/tags/ngrok/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conexión SSH fuera de la red local</title>
-      <link>http://localhost:1313/es/post/ssh-connection-outside-the-local-network/</link>
+      <link>https://drayko.github.io/es/post/ssh-connection-outside-the-local-network/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/ssh-connection-outside-the-local-network/</guid>
+      <guid>https://drayko.github.io/es/post/ssh-connection-outside-the-local-network/</guid>
       <description>&lt;p&gt;Este post surgio por un trabajo de la universidad(para una Raspberry) sin embargo me sirvio con otras necesidades similares, para conectarse de manera remota sin necesidad de abrir puertos en el router.&lt;/p&gt;</description>
     </item>
   </channel>

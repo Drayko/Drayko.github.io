@@ -2,67 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Drayko Escobar Blog</title>
-    <link>http://localhost:1313/es/</link>
+    <link>https://drayko.github.io/es/</link>
     <description>Recent content on Drayko Escobar Blog</description>
     <generator>Hugo</generator>
     <language>es</language>
     <copyright>Drayko Escobar</copyright>
     <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://drayko.github.io/es/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bot Bounty, un bot para Pentesting y Bug Bounty</title>
-      <link>http://localhost:1313/es/post/bot-bounty-telegram-bot/</link>
+      <link>https://drayko.github.io/es/post/bot-bounty-telegram-bot/</link>
       <pubDate>Sat, 08 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/bot-bounty-telegram-bot/</guid>
+      <guid>https://drayko.github.io/es/post/bot-bounty-telegram-bot/</guid>
       <description>&lt;p&gt;Este proyecto se trata de un bot de Telegram con la capacidad de ejecutar comandos de terminal desde tu cuenta de Telegram y con la respuesta del comando como mensajes.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Acerca de</title>
-      <link>http://localhost:1313/es/about/</link>
+      <link>https://drayko.github.io/es/about/</link>
       <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/about/</guid>
+      <guid>https://drayko.github.io/es/about/</guid>
       <description>&lt;p&gt;Desde hace más de 10 años me dedico al mundo de la ciberseguridad, con la convicción de que mejorar la seguridad informática no es un gasto, sino una inversión necesaria para cualquier sociedad.&lt;/p&gt;&#xA;&lt;p&gt;Actualmente, trabajo como consultor en ciberseguridad en una empresa suiza, realizando ejercicios de red teaming, análisis ofensivo y defensivo, así como respuesta a incidentes para empresas, entidades bancarias y organizaciones críticas.&lt;/p&gt;&#xA;&lt;p&gt;He sido expositor, entrenador y mentor en diversos eventos y organizaciones, y a lo largo de mi trayectoria he recibido premios y reconocimientos en programas de bug bounty y otras áreas de la ciberseguridad.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Conexión SSH fuera de la red local</title>
-      <link>http://localhost:1313/es/post/ssh-connection-outside-the-local-network/</link>
+      <link>https://drayko.github.io/es/post/ssh-connection-outside-the-local-network/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/ssh-connection-outside-the-local-network/</guid>
+      <guid>https://drayko.github.io/es/post/ssh-connection-outside-the-local-network/</guid>
       <description>&lt;p&gt;Este post surgio por un trabajo de la universidad(para una Raspberry) sin embargo me sirvio con otras necesidades similares, para conectarse de manera remota sin necesidad de abrir puertos en el router.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Taxonomía de ataques DDoS y mecanismos de defensa DDoS</title>
-      <link>http://localhost:1313/es/post/taxonomy-of-ddos/</link>
+      <link>https://drayko.github.io/es/post/taxonomy-of-ddos/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/taxonomy-of-ddos/</guid>
+      <guid>https://drayko.github.io/es/post/taxonomy-of-ddos/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Ataque de negación de servicio distribuido(DDoS por sus siglas en inglés, Distributed Denial of Service) se lleva a cabo generando un gran flujo de información desde varios puntos de conexión hacia un mismo punto de destino. En este Post se mostrarán  2 tipos de taxonomías para clasificarlos por ataques y contramedidas, esto para resaltar similitudes, características y estrategias con la intención de diseñar medidas al respecto.&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Introducción&lt;/strong&gt;&#xA;El desarrollo y uso de las técnicas de ataques DDoS se incrementaron en el transcurso de tiempo al igual que los atacantes constantemente modifican el enfoque de los mismos, este estudio trata de cubrir tanto los ataques conocidos como posibles modificaciones, divididas o niveles.&lt;/p&gt;</description>
     </item>
     <item>
       <title>La primera computadora en Bolivia</title>
-      <link>http://localhost:1313/es/post/the-first-computer-in-bolivia/</link>
+      <link>https://drayko.github.io/es/post/the-first-computer-in-bolivia/</link>
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/the-first-computer-in-bolivia/</guid>
+      <guid>https://drayko.github.io/es/post/the-first-computer-in-bolivia/</guid>
       <description>&lt;p&gt;Si bien este post no es algo técnico como acostumbro, me parece bastante interesante.&lt;/p&gt;</description>
     </item>
     <item>
       <title>WriteUp CTF CIDSI 2018</title>
-      <link>http://localhost:1313/es/post/writeup-cidsi18/</link>
+      <link>https://drayko.github.io/es/post/writeup-cidsi18/</link>
       <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/writeup-cidsi18/</guid>
+      <guid>https://drayko.github.io/es/post/writeup-cidsi18/</guid>
       <description>&lt;p&gt;Este CTF estuvo compuesto por 74 equipos de universidades convocadas a nivel nacional para nivel de pregrado y posgrado en el Congreso Internacional De Seguridad Informática (CIDSI) que fue organizado por la Agencia de Gobierno Electrónico y Tecnologías de Información y Comunicación (AGETIC) gracias a las gestiones del Centro de Gestión de Incidentes Informáticos(CGII) realizado del 29 de Noviembre al 1 de Diciembre del 2018.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Write Up CTF UMSS 2018</title>
-      <link>http://localhost:1313/es/post/writeup-ctfumss18/</link>
+      <link>https://drayko.github.io/es/post/writeup-ctfumss18/</link>
       <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/writeup-ctfumss18/</guid>
+      <guid>https://drayko.github.io/es/post/writeup-ctfumss18/</guid>
       <description>&lt;p&gt;Esta es la segunda parte de la serie de CTFs rumbo al CIDSI 2018. Esta vez el CTF fue realizado en la Universidad Mayor de San Simón (UMSS),  manera de eliminatorias para los que iríamos al evento(CIDSI) representando a nuestra universidad&lt;/p&gt;</description>
     </item>
     <item>
       <title>Write Up del CTF Demo CIDSI 2018</title>
-      <link>http://localhost:1313/es/post/writeup-democidsi18/</link>
+      <link>https://drayko.github.io/es/post/writeup-democidsi18/</link>
       <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/es/post/writeup-democidsi18/</guid>
+      <guid>https://drayko.github.io/es/post/writeup-democidsi18/</guid>
       <description>&lt;p&gt;Que tal?!&lt;/p&gt;&#xA;&lt;p&gt;Este es el inicio de una serie de posts de CTFs que fueron rumbo al Congreso Internacional De Seguridad Informática (CIDSI)&lt;/p&gt;</description>
     </item>
   </channel>
