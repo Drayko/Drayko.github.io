@@ -327,7 +327,16 @@
         
         <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
           <h2>Tabla de contenido</h2>
-          <aside><nav id="TableOfContents"></nav></aside>
+          <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-"><strong>1.-</strong></a></li>
+    <li><a href="#2-"><strong>2.-</strong></a></li>
+    <li><a href="#3-"><strong>3.-</strong></a></li>
+    <li><a href="#4-"><strong>4.-</strong></a></li>
+    <li><a href="#5-"><strong>5.-</strong></a></li>
+    <li><a href="#6-"><strong>6.-</strong></a></li>
+  </ul>
+</nav></aside>
         </section>
         
       
@@ -342,7 +351,7 @@
 , <a href="https://www.facebook.com/rrafalinux" target="_blank" rel="noopener">Rafael</a>
  y mi <a href="http://twitter.com/DraykoEs" target="_blank" rel="noopener">persona</a>
 , logrando el 1er puesto, sin mas preámbulos, empecemos!</p>
-<p><strong>1.-</strong></p>
+<h2 id="1-"><strong>1.-</strong></h2>
 <blockquote>
 <p>problema:<code>ZmxhZ3tVTVNTX2VkdV9TY2VzaV9DdGZ9Cg==</code></p></blockquote>
 <p><em>solución:</em>
@@ -350,7 +359,7 @@ Algo sencillo para empezar, como podemos ver, la solucion esta en Base64</p>
 <p>La flag es:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">flag{UMSS_edu_Scesi_Ctf}
 </span></span></code></pre></div><hr>
-<p><strong>2.-</strong></p>
+<h2 id="2-"><strong>2.-</strong></h2>
 <blockquote>
 <p>Se muy observador y encuentra el flag para este reto.</p></blockquote>
 <p><em>solución:</em>
@@ -389,7 +398,7 @@ Podríamos intentar mas de una forma de burlar el login, pero primero revisemos 
 ): <code>3thic4l_h4ck1ng</code>. Entonces el login nos dice que la flag es la password con el formato <code>flag{...}</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">flag{3thic4l_h4ck1ng}
 </span></span></code></pre></div><hr>
-<p><strong>3.-</strong></p>
+<h2 id="3-"><strong>3.-</strong></h2>
 <blockquote>
 <p><code>file_5e9666c7a0773f3785123f19986b4c5f</code></p></blockquote>
 <p>nos dan un archivo de texto, el cual contiene lo <a href="https://drive.google.com/file/d/1522YkrznSs93_M4S6Mv_OYRB8P_u98XJ/view?usp=sharing" target="_blank" rel="noopener">siguiente</a>
@@ -408,7 +417,7 @@ Podríamos intentar mas de una forma de burlar el login, pero primero revisemos 
 <p>y directamente nos da la flag</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">flag{FL4g_Facil_o_Difici1}
 </span></span></code></pre></div><hr>
-<p><strong>4.-</strong></p>
+<h2 id="4-"><strong>4.-</strong></h2>
 <blockquote>
 <p>SQLi</p></blockquote>
 <p><em>solución:</em>
@@ -433,7 +442,7 @@ por suerte nos salta la tabla que queremos al primer intento,  sin embargo, no n
 <p>la flag:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">DJC{Buen_Intento_esEl_Flag}
 </span></span></code></pre></div><hr>
-<p><strong>5.-</strong></p>
+<h2 id="5-"><strong>5.-</strong></h2>
 <blockquote>
 <p>Cuidado con ejecutar todo</p></blockquote>
 <p>en este caso nos da un host en el cual esta ejecutando hasta las imagenes que tiene, lo cual es una mala practica obviamente, nos da la puerta a un<a href="https://es.wikipedia.org/wiki/Remote_File_Inclusion" target="_blank" rel="noopener"> RFI</a>
@@ -445,7 +454,7 @@ por suerte nos salta la tabla que queremos al primer intento,  sin embargo, no n
 <p>La flag:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">flag{3hc_gr0up_h4ck1ng_Dragonjar}
 </span></span></code></pre></div><hr>
-<p><strong>6.-</strong></p>
+<h2 id="6-"><strong>6.-</strong></h2>
 <blockquote>
 <p>análisis de firmware</p></blockquote>
 <p>nos dan una imagen para analizarla: <code>open-hacking_151b4da179e4163e7e879da22e0c76e2.bin</code></p>

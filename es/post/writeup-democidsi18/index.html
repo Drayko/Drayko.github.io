@@ -328,7 +328,19 @@ Este es el inicio de una serie de posts de CTFs que fueron rumbo al Congreso Int
         
         <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
           <h2>Tabla de contenido</h2>
-          <aside><nav id="TableOfContents"></nav></aside>
+          <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-introducir-el-flag"><strong>1. Introducir el flag</strong></a></li>
+    <li><a href="#2-web-site"><strong>2. Web site</strong></a></li>
+    <li><a href="#3-panel-administrativo"><strong>3. Panel administrativo</strong></a></li>
+    <li><a href="#4-cracking"><strong>4. Cracking</strong></a></li>
+    <li><a href="#5-cracking-2"><strong>5. Cracking 2</strong></a></li>
+    <li><a href="#6-cracking-3"><strong>6. Cracking 3</strong></a></li>
+    <li><a href="#7-cracking-4"><strong>7. Cracking 4</strong></a></li>
+    <li><a href="#8-buscar-usuario"><strong>8. Buscar usuario</strong></a></li>
+    <li><a href="#9-ver-perfil"><strong>9. Ver perfil</strong></a></li>
+  </ul>
+</nav></aside>
         </section>
         
       
@@ -338,7 +350,7 @@ Este es el inicio de una serie de posts de CTFs que fueron rumbo al Congreso Int
 <p>Este es el inicio de una serie de posts de CTFs que fueron rumbo al Congreso Internacional De Seguridad Informática (CIDSI)</p>
 <p>que fue organizado por la Agencia de Gobierno Electrónico y Tecnologías de Información y Comunicación (AGETIC) gracias a las gestiones del Centro de Gestión de Incidentes Informáticos(CGII) realizado del 29 de Noviembre al 1 de Diciembre del 2018</p>
 <p>Empezamos con el primer CTF organizado como demo por el CGII.</p>
-<p><strong>1. Introducir el flag</strong></p>
+<h2 id="1-introducir-el-flag"><strong>1. Introducir el flag</strong></h2>
 <blockquote>
 <p>Este solo es un reto demostrativo para mostrar como funciona la plataforma.</p>
 <p>El reto solo consiste en enviar la bandera (flag)
@@ -347,7 +359,7 @@ La bandera (Flag) es: 327a6c4304ad5938eaf0efb6cc3e53dc</p></blockquote>
 En el enunciado nos dan directamente la Flag:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">327a6c4304ad5938eaf0efb6cc3e53dc
 </span></span></code></pre></div><hr>
-<p><strong>2. Web site</strong></p>
+<h2 id="2-web-site"><strong>2. Web site</strong></h2>
 <blockquote>
 <p>Ahora el reto sera un poco mas &ldquo;dificil&rdquo;. Uno de los programadores de la AGETIC quizo darte una ayuda y te dejo una pista del flag en el sitio del evento.
 Link: <a href="https://www.cgii.gob.bo/eventos/cidsi2018/" target="_blank" rel="noopener">https://www.cgii.gob.bo/eventos/cidsi2018/</a>
@@ -364,7 +376,7 @@ Debemos examinar el código de la pagina, podemos inspeccionar presionando F12 u
 Entonces la flag es:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">8ddeb2027a8c79b3c46510a6dcef9dda
 </span></span></code></pre></div><hr>
-<p><strong>3. Panel administrativo</strong></p>
+<h2 id="3-panel-administrativo"><strong>3. Panel administrativo</strong></h2>
 <blockquote>
 <p>Malas configuraciones de seguridad.</p>
 <p>Los desarrolladores usualmente usan passwords por defecto o fáciles de adivinar.</p>
@@ -384,7 +396,7 @@ existen muchas combinaciones de usuarios y contraseñas por defecto o usuales, p
 <p>estupendo! esta es la flag:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">58FD79FEF76B8D579819C5FA615A25930F111C04627C3F374C5D7DF898A5FEADE1598AA0680BDF5B922ACBE396691FD1943A181E362F32FFCC0B29A6DD725BA0
 </span></span></code></pre></div><hr>
-<p><strong>4. Cracking</strong></p>
+<h2 id="4-cracking"><strong>4. Cracking</strong></h2>
 <blockquote>
 <p>Crackeando el hash</p>
 <p>Hoy en dia el algoritmo de encriptación MD5 ya no es considerado seguro.</p>
@@ -393,7 +405,7 @@ existen muchas combinaciones de usuarios y contraseñas por defecto o usuales, p
 Buscamos en Google el hash y por suerte, muchas paginas tienen ya almacenado ese. Caso contrario tenemos herramientas como Hashcat o el clásico John The Ripper. Por suerte la respuesta esta en Google.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Pa$$w0rd
 </span></span></code></pre></div><hr>
-<p><strong>5. Cracking 2</strong></p>
+<h2 id="5-cracking-2"><strong>5. Cracking 2</strong></h2>
 <blockquote>
 <p>Estas de vacaciones en un hotel 5 estrellas. A un amigo tuyo se le ocurrio capturar trafico con la herramienta wireshark y para la alegria del grupo pudo capturar el ingreso de un empleado a la intranet donde estan las promociones para ganar noches gratis en el hotel. Lamentablemente el password parece estar &ldquo;encriptado&rdquo;, pero esto es fácil para ti, si lo descubres el password es la bandera. El hash capturado es : <code>ODcwMzM2NzA5ODUwMDUzNA==</code></p></blockquote>
 <p><em>solución:</em>
@@ -401,7 +413,7 @@ Si tienes mas experiencia se puede notar a simple vista q es un Base64, o en su 
 <p>La flag es:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">8703367098500534
 </span></span></code></pre></div><hr>
-<p><strong>6. Cracking 3</strong></p>
+<h2 id="6-cracking-3"><strong>6. Cracking 3</strong></h2>
 <blockquote>
 <p>Haciendo pruebas de captura de tráfico capturas lo que aparentemente es un hash: <code>MNQXA4TJMNXXE3TJN4======</code></p>
 <p>Tu misión es obtener el texto plano de ese &ldquo;hash&rdquo;</p>
@@ -411,7 +423,7 @@ En el enunciado nos dan la pista de base32
 La flag es:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">capricornio
 </span></span></code></pre></div><hr>
-<p><strong>7. Cracking 4</strong></p>
+<h2 id="7-cracking-4"><strong>7. Cracking 4</strong></h2>
 <blockquote>
 <p>Un amigo esta haciendo un postgrado en seguridad de la información pero se falto a la primera clase de criptografia y te pide ayuda para resolver su tarea que es decodificar el texto : <code>ynivqnrftravny</code></p>
 <p>Pista: Si hoy fuera &ldquo;martes 13&rdquo; las cosas serian mas fáciles.</p></blockquote>
@@ -421,7 +433,7 @@ La pista hace referencia a <a href="https://en.wikipedia.org/wiki/ROT13" target=
 <p>La flag es:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">lavidaesgenial
 </span></span></code></pre></div><hr>
-<p><strong>8. Buscar usuario</strong></p>
+<h2 id="8-buscar-usuario"><strong>8. Buscar usuario</strong></h2>
 <blockquote>
 <p>Muy a menudo los programadores no sanitizan las entradas por parte de un usuario.</p>
 <p>Encontramos un sitio en linea, que te ofrece invitaciones VIP a eventos especiales, para poder acceder a ellos necesitas mostrar un alert con javascript. Obviamente debes ejecutarlo. ¿Te animas a probar? Sabemos que eres un programador experto. Si lo logras el flag sera tu premio.</p></blockquote>
@@ -450,7 +462,7 @@ Nos sugiere un ataque de <a href="https://es.wikipedia.org/wiki/Cross-site_scrip
 <p>La flag:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">11B0C9EBB6D5A0E0E4AE5B1F604B9E8111FEDF991173667AEB2D14F91ACC3B62FB6A5FD4E9AF37BAF09932150BF0D89A3B89F2B9F135347799D95DB38A4AC515
 </span></span></code></pre></div><hr>
-<p><strong>9. Ver perfil</strong></p>
+<h2 id="9-ver-perfil"><strong>9. Ver perfil</strong></h2>
 <blockquote>
 <p>Vamos avanzando, la empresa de chocolates esta realizando envios gratuitos a una lista aleatorea y son muchos chocolates. Para entrar al sistema que contiene la lista. Debes cambiar el permiso porque ahora solo tienes el rol de técnico, pero si eres administrador podria tener todo el chocolate que quieras. Tu reto es tener acceso al perfil del administrador. Tu recompenza además del chocolate es el flag que es la persona de contacto.</p></blockquote>
 <p><div class="not-prose">

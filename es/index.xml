@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>es</language>
     <copyright>Drayko Escobar</copyright>
-    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://drayko.github.io/es/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resolución de la maquina Monkey (WriteUp)</title>
+      <link>https://drayko.github.io/es/post/monkey-hm-writeup/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/es/post/monkey-hm-writeup/</guid>
+      <description>&lt;p&gt;El domingo 5 de abril se realizó un evento por el &lt;strong&gt;Día Internacional de la Mujer&lt;/strong&gt;. Entre varias actividades, se llevó a cabo un taller de ciberseguridad. Y claro, me metí un rato de colado 😜.&lt;/p&gt;&#xA;&lt;p&gt;El taller tenía como requisito contar con una máquina con Kali Linux. Por suerte, yo andaba con mi laptop y mi celular (que también tiene Kali, para más placer 💁‍♂️), así que pensé: &lt;em&gt;¡la hago!&lt;/em&gt; Pero para mi sorpresa, también se necesitaba una máquina virtual adicional (que luego un amigo me pasó). Como no la tenía en ese momento, tuve que salirme del taller.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Bot Bounty, un bot para Pentesting y Bug Bounty</title>
       <link>https://drayko.github.io/es/post/bot-bounty-telegram-bot/</link>

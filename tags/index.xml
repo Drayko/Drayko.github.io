@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Drayko Escobar</copyright>
-    <lastBuildDate>Sat, 08 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://drayko.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTF</title>
+      <link>https://drayko.github.io/tags/ctf/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WriteUp</title>
+      <link>https://drayko.github.io/tags/writeup/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/tags/writeup/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Bot</title>
       <link>https://drayko.github.io/tags/bot/</link>
@@ -98,20 +112,6 @@
       <link>https://drayko.github.io/tags/fun-facts/</link>
       <pubDate>Wed, 14 Aug 2019 00:00:00 +0000</pubDate>
       <guid>https://drayko.github.io/tags/fun-facts/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CTF</title>
-      <link>https://drayko.github.io/tags/ctf/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/tags/ctf/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>WriteUp</title>
-      <link>https://drayko.github.io/tags/writeup/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://drayko.github.io/tags/writeup/</guid>
       <description></description>
     </item>
     <item>

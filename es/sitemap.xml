@@ -2,6 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://drayko.github.io/es/</loc>
+    <lastmod>2026-04-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://drayko.github.io/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://drayko.github.io/es/"
+                />
+  </url><url>
+    <loc>https://drayko.github.io/es/post/</loc>
+    <lastmod>2026-04-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://drayko.github.io/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://drayko.github.io/es/post/"
+                />
+  </url><url>
+    <loc>https://drayko.github.io/es/tags/ctf/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://drayko.github.io/tags/ctf/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://drayko.github.io/es/tags/ctf/"
+                />
+  </url><url>
+    <loc>https://drayko.github.io/es/post/monkey-hm-writeup/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://drayko.github.io/post/monkey-hm-writeup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://drayko.github.io/es/post/monkey-hm-writeup/"
+                />
+  </url><url>
+    <loc>https://drayko.github.io/es/tags/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://drayko.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://drayko.github.io/es/tags/"
+                />
+  </url><url>
+    <loc>https://drayko.github.io/es/tags/writeup/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-US"
+                href="https://drayko.github.io/tags/writeup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="https://drayko.github.io/es/tags/writeup/"
+                />
+  </url><url>
     <loc>https://drayko.github.io/es/tags/bot/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -41,19 +119,6 @@
                 href="https://drayko.github.io/es/tags/bug-bounty/"
                 />
   </url><url>
-    <loc>https://drayko.github.io/es/</loc>
-    <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://drayko.github.io/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://drayko.github.io/es/"
-                />
-  </url><url>
     <loc>https://drayko.github.io/es/tags/featured/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -78,32 +143,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/pentest/"
-                />
-  </url><url>
-    <loc>https://drayko.github.io/es/post/</loc>
-    <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://drayko.github.io/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://drayko.github.io/es/post/"
-                />
-  </url><url>
-    <loc>https://drayko.github.io/es/tags/</loc>
-    <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://drayko.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://drayko.github.io/es/tags/"
                 />
   </url><url>
     <loc>https://drayko.github.io/es/tags/tool/</loc>
@@ -237,32 +276,6 @@
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/the-first-computer-in-bolivia/"
-                />
-  </url><url>
-    <loc>https://drayko.github.io/es/tags/ctf/</loc>
-    <lastmod>2019-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://drayko.github.io/tags/ctf/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://drayko.github.io/es/tags/ctf/"
-                />
-  </url><url>
-    <loc>https://drayko.github.io/es/tags/writeup/</loc>
-    <lastmod>2019-02-18T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-US"
-                href="https://drayko.github.io/tags/writeup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="es"
-                href="https://drayko.github.io/es/tags/writeup/"
                 />
   </url><url>
     <loc>https://drayko.github.io/es/post/writeup-cidsi18/</loc>
