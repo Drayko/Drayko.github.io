@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NetExec on Drayko Escobar Blog</title>
+    <link>https://drayko.github.io/tags/netexec/</link>
+    <description>Recent content in NetExec on Drayko Escobar Blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <copyright>Drayko Escobar</copyright>
+    <lastBuildDate>Fri, 11 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://drayko.github.io/tags/netexec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Attacking Active Directory - Part 1 - Reconnaissance</title>
+      <link>https://drayko.github.io/post/attacking-active-directory-p1/</link>
+      <pubDate>Fri, 11 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/post/attacking-active-directory-p1/</guid>
+      <description>&lt;p&gt;Hey everyone! It&amp;rsquo;s been a while since my last post.&lt;/p&gt;&#xA;&lt;p&gt;This time, I’m kicking off a new series that will serve as both a practice guide and a follow-up to the GOAD WriteUp. We&amp;rsquo;ll go from reconnaissance all the way to gaining control and analyzing an &lt;strong&gt;Active Directory (AD)&lt;/strong&gt; infrastructure. I’ll mostly follow the same route but with some tweaks to reflect changes and sprinkle in some real-life experience from my work. I won’t go super deep into the technical details—otherwise, I’d end up writing a book (or two! 😄)—but I’ll include helpful resources if you want to dive deeper. And as always, the comments section is open! My goal here is to explain technical concepts in a clear and friendly way so that even beginners can follow along and learn.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <title>Atacando Active Directory - parte 1 - reconocimiento y escaneo :: Drayko Escobar Blog - Passion for cybersecurity</title>
+<head>
+  <title>Atacando Active Directory - parte 1 - reconocimiento :: Drayko Escobar Blog - Passion for cybersecurity</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
   name="description"
-  content="Hola a todos acá de mucho tiempo con nuevos posts. Esta vez sera una serie a manera de practica y actualización del WriteUp oficial de GOAD. Vamos a ir desde el reconocimiento hasta tomar control y análisis de una infraestructura de un Directorio Activo o Active Directory(AD). De manera general iré siguiendo la misma ruta pero modificando cosas que cambiaron y metiendo un poco de experiencia que tuve en el trabajo. No podre explicar a tanto detalle sobre cosas mas técnicas porque sino me puedo terminar escribiendo un libro(tal vez dos :P), así que tratare de poner recursos para que profundicen o busquen. Igual la sección de comentarios esta siempre disponible. Mi objetivo es introducir conceptos técnicos de forma clara y amigable para que cualquier principiante pueda seguir y aprender.
+  content="¡Hola a todos! Hace tiempo que no subo nuevos posts.
+Esta vez será una serie a manera de práctica y seguimiento del WriteUp de GOAD. Vamos a ir desde el reconocimiento hasta tomar control y análisis de una infraestructura de un Directorio Activo o Active Directory(AD). De manera general iré siguiendo la misma ruta pero modificando cosas que cambiaron y metiendo un poco de experiencia que tuve en el trabajo. No podré entrar en demasiado detalle técnico, o terminaría escribiendo un libro (¡o dos! 😄), así que tratare de poner recursos para que profundicen o busquen. Igual la sección de comentarios esta siempre disponible. Mi objetivo es introducir conceptos técnicos de forma clara y amigable para que cualquier principiante pueda seguir y aprender.
 "
 />
 <meta
@@ -15,19 +16,19 @@
   content="InfoSec Specialist, Web Security, Pentesting, Bug Bounty, CTF,CTF write-ups, GitHub for security tools, cybersecurity, pentest, bugbounty, OWASP, Drayko Escobar cybersecurity, Information Security Specialist, Web Security Testing expert, Penetration Tester, Bug Bounty hunter, Ransomware analysis, Python, speaker, Capture The Flag, Ethical hacking, Linux security"
 />
 <meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" />
-    <meta property="og:image" content="http://localhost:1313/es/post/attacking-active-directory-p1//images/bot.jpg">
-    <meta name="twitter:image" content="http://localhost:1313/es/post/attacking-active-directory-p1//images/bot.jpg">
+  <meta property="og:image" content="https://drayko.github.io//post/attacking-active-directory-p1//images/ADATTCK.png">
+    <meta name="twitter:image" content="https://drayko.github.io/es/post/attacking-active-directory-p1//home/drayko/Documents/Projects/Personal/blog/newBlogDrayko/content/post/Attacking-Active-Directory-p1/index.es.md">
 
 
-<meta property="og:url" content="http://localhost:1313/es/post/attacking-active-directory-p1/">
+<meta property="og:url" content="https://drayko.github.io/es/post/attacking-active-directory-p1/">
   <meta property="og:site_name" content="Drayko Escobar Blog">
-  <meta property="og:title" content="Atacando Active Directory - parte 1 - reconocimiento y escaneo">
+  <meta property="og:title" content="Atacando Active Directory - parte 1 - reconocimiento">
   <meta property="og:description" content="¿Nuevo en el mundo del Active Directory? 💡 En esta serie te acompaño desde cero para explorar una infraestructura real paso a paso. Aprenderás a reconocer la red, encontrar los servidores clave y entender cómo funciona todo… sin abrumarte con tecnicismos. ¡Ideal para comenzar con buen pie!">
   <meta property="og:locale" content="es">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-04-01T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-04-01T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-04-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-11T00:00:00+00:00">
     <meta property="article:tag" content="ActiveDirectory">
     <meta property="article:tag" content="Pentesting">
     <meta property="article:tag" content="GOAD">
@@ -37,14 +38,14 @@
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Atacando Active Directory - parte 1 - reconocimiento y escaneo">
+  <meta name="twitter:title" content="Atacando Active Directory - parte 1 - reconocimiento">
   <meta name="twitter:description" content="¿Nuevo en el mundo del Active Directory? 💡 En esta serie te acompaño desde cero para explorar una infraestructura real paso a paso. Aprenderás a reconocer la red, encontrar los servidores clave y entender cómo funciona todo… sin abrumarte con tecnicismos. ¡Ideal para comenzar con buen pie!">
 
 
-<link rel="canonical" href="http://localhost:1313/es/post/attacking-active-directory-p1/" />
+<link rel="canonical" href="https://drayko.github.io/es/post/attacking-active-directory-p1/" />
 
 <link rel="shortcut icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/index.f7daeecd479d8baf38a04bad2648e6d6f3e9f4b621d50c8f300e3f48b454564b.css">
+<link rel="stylesheet" href="/css/index.min.b03d2d218fbbf7435f0f24ce5c248d756c4afb8f172e4ffa7d4cf167c7718286.css">
 
 
 
@@ -70,22 +71,11 @@
 
   
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Article","author":{"@type":"Person","name":"Drayko Escobar"},"dateModified":"2025-04-01T00:00:00Z","datePublished":"2025-04-01T00:00:00Z","description":"Hola a todos acá de mucho tiempo con nuevos posts. Esta vez sera una serie a manera de practica y actualización del WriteUp oficial de GOAD. Vamos a ir desde el reconocimiento hasta tomar control y análisis de una infraestructura de un Directorio Activo o Active Directory(AD). De manera general iré siguiendo la misma ruta pero modificando cosas que cambiaron y metiendo un poco de experiencia que tuve en el trabajo. No podre explicar a tanto detalle sobre cosas mas técnicas porque sino me puedo terminar escribiendo un libro(tal vez dos :P), así que tratare de poner recursos para que profundicen o busquen. Igual la sección de comentarios esta siempre disponible. Mi objetivo es introducir conceptos técnicos de forma clara y amigable para que cualquier principiante pueda seguir y aprender.\n","image":"/images/bot.jpg","name":"Atacando Active Directory - parte 1 - reconocimiento y escaneo","url":"http://localhost:1313/es/post/attacking-active-directory-p1/"}
+  {"@context":"https://schema.org","@type":"Article","author":{"@type":"Person","name":"Drayko Escobar"},"dateModified":"2025-04-11T00:00:00Z","datePublished":"2025-04-11T00:00:00Z","description":"¡Hola a todos! Hace tiempo que no subo nuevos posts.\nEsta vez será una serie a manera de práctica y seguimiento del WriteUp de GOAD. Vamos a ir desde el reconocimiento hasta tomar control y análisis de una infraestructura de un Directorio Activo o Active Directory(AD). De manera general iré siguiendo la misma ruta pero modificando cosas que cambiaron y metiendo un poco de experiencia que tuve en el trabajo. No podré entrar en demasiado detalle técnico, o terminaría escribiendo un libro (¡o dos! 😄), así que tratare de poner recursos para que profundicen o busquen. Igual la sección de comentarios esta siempre disponible. Mi objetivo es introducir conceptos técnicos de forma clara y amigable para que cualquier principiante pueda seguir y aprender.\n","image":"https://drayko.github.io/post/attacking-active-directory-p1/images/ADATTCK.png","name":"Atacando Active Directory - parte 1 - reconocimiento","url":"https://drayko.github.io/es/post/attacking-active-directory-p1/"}
 </script>
 
 </head>
-<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
-    
-<div class="fixed right-0 top-0 z-50 flex items-center justify-center bg-gray-200 p-2 text-sm uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
-  <span class="block sm:hidden">all</span>
-  <span class="hidden sm:block md:hidden">sm</span>
-  <span class="hidden md:block lg:hidden">md</span>
-  <span class="hidden lg:block xl:hidden">lg</span>
-  <span class="hidden xl:block 2xl:hidden">xl</span>
-  <span class="hidden 2xl:block">2xl</span>
-</div>
-
-  <header class="flex flex-none justify-center z-10">
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800"><header class="flex flex-none justify-center z-10">
     <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
   <div class="flex-none ml-2 md:ml-0">
     <a href="/es/" class="">
@@ -159,6 +149,10 @@
       <div class="absolute hidden top-16 z-50" id="navbar-lang">
         <ul class="flex flex-col rounded-xs px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
           <li class="">
+            <a class="block px-3 py-3 hover:text-emerald-600"
+              href="/post/attacking-active-directory-p1/" title="English">English</a></li>
+        
+          <li class="">
             <span class="block px-3 py-3 cursor-default hover:text-emerald-600">Español</span>
             </li>
         
@@ -220,17 +214,16 @@
   <div class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
     <div>
       <a href="/es/post/attacking-active-directory-p1/">
-        <figure>
-    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="/images/bot.jpg"
-      alt="Atacando Active Directory - parte 1 - reconocimiento y escaneo" title="Atacando Active Directory - parte 1 - reconocimiento y escaneo"
-      loading="lazy"
-    >
-  </figure>
+        <picture>
+    <source type="image/webp" srcset="/post/attacking-active-directory-p1/images/ADATTCK_hu_f45e1dd6ee70654e.webp 960w, /post/attacking-active-directory-p1/images/ADATTCK_hu_a43a7564e3550215.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/attacking-active-directory-p1/images/ADATTCK_hu_b79e4e574cdd0f6b.jpg 960w, /post/attacking-active-directory-p1/images/ADATTCK_hu_3ea2222f42292248.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="/post/attacking-active-directory-p1/images/ADATTCK_hu_e140374a5a0ca382.jpg" width="1920" height="1080" alt="Atacando Active Directory - parte 1 - reconocimiento" title="Atacando Active Directory - parte 1 - reconocimiento" loading="lazy" />
+  </picture>
       </a>
     </div>
     <div class="flex flex-col gap-y-3 p-6">
       <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
-        <a href="/es/post/attacking-active-directory-p1/">Atacando Active Directory - parte 1 - reconocimiento y escaneo</a>
+        <a href="/es/post/attacking-active-directory-p1/">Atacando Active Directory - parte 1 - reconocimiento</a>
       </h1>
 
       
@@ -383,8 +376,8 @@
 </svg>
 
     </i>
-    <time datetime="2025-04-01T00:00:00&#43;00:00">
-      2025-04-01
+    <time datetime="2025-04-11T00:00:00&#43;00:00">
+      2025-04-11
     </time>
   </div>
 
@@ -399,7 +392,7 @@
 
     </i>
     <span>
-      6 minutos de lectura
+      7 minutos de lectura
     </span>
   </div>
 </div>
@@ -426,14 +419,14 @@
           <h2>Tabla de contenido</h2>
           <aside><nav id="TableOfContents">
   <ul>
-    <li><a href="#que-es-un-ad">Que es un AD?</a></li>
+    <li><a href="#qué-es-un-ad">¿Qué es un AD?</a></li>
     <li><a href="#consideraciones-iniciales">Consideraciones Iniciales</a>
       <ul>
         <li><a href="#que-es-un-domain-controllerdc">Que es un Domain Controller(DC)?</a></li>
         <li><a href="#estructura-del-laboratorio">Estructura del laboratorio</a></li>
       </ul>
     </li>
-    <li><a href="#enumeración-de-la-red">Enumeración de la Red</a>
+    <li><a href="#enumeración-en-la-red">Enumeración en la Red</a>
       <ul>
         <li><a href="#reconocimiento-con-netexecex-crackmapexec">Reconocimiento con NetExec(ex crackmapexec)</a></li>
         <li><a href="#reconocimiento-con-nmap">Reconocimiento con NMAP</a></li>
@@ -448,8 +441,9 @@
       
 
       <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
-        <p>Hola a todos acá de mucho tiempo con nuevos posts. Esta vez sera una serie a manera de practica y actualización del WriteUp oficial de GOAD. Vamos a ir desde el reconocimiento hasta tomar control y análisis de una infraestructura de un <strong>Directorio Activo o Active Directory(AD)</strong>. De manera general iré siguiendo la misma ruta pero modificando cosas que cambiaron y metiendo un poco de experiencia que tuve en el trabajo. No podre explicar a tanto detalle sobre cosas mas técnicas porque sino me puedo terminar escribiendo un libro(tal vez dos :P), así que tratare de poner recursos para que profundicen o busquen. Igual la sección de comentarios esta siempre disponible. Mi objetivo es introducir conceptos técnicos de forma clara y amigable para que cualquier principiante pueda seguir y aprender.</p>
-<h2 id="que-es-un-ad">Que es un AD?</h2>
+        <p>¡Hola a todos! Hace tiempo que no subo nuevos posts.</p>
+<p>Esta vez será una serie a manera de práctica y seguimiento del WriteUp de GOAD. Vamos a ir desde el reconocimiento hasta tomar control y análisis de una infraestructura de un <strong>Directorio Activo o Active Directory(AD)</strong>. De manera general iré siguiendo la misma ruta pero modificando cosas que cambiaron y metiendo un poco de experiencia que tuve en el trabajo. No podré entrar en demasiado detalle técnico, o terminaría escribiendo un libro (¡o dos! 😄), así que tratare de poner recursos para que profundicen o busquen. Igual la sección de comentarios esta siempre disponible. Mi objetivo es introducir conceptos técnicos de forma clara y amigable para que cualquier principiante pueda seguir y aprender.</p>
+<h2 id="qué-es-un-ad">¿Qué es un AD?</h2>
 <blockquote>
 <p>Un directorio activo es una estructura jerárquica que almacena información sobre objetos en la red. Un servicio de directorio, como Active Directory Domain Services (AD DS), proporciona los métodos para almacenar datos de directorio y poner dichos datos a disposición de los usuarios y administradores de la red. Por ejemplo, AD DS almacena información acerca de las cuentas de usuario, como nombres, contraseñas, números de teléfono, etc., y permite que otros usuarios autorizados de la misma red tengan acceso a dicha información.</p></blockquote>
 <p>Un buen recurso y resumido sobre los AD pueden revisarlo en este <a href="https://www.hackthebox.com/blog/active-directory-penetration-testing-cheatsheet-and-guide" target="_blank" rel="noopener">link de HTB</a>
@@ -471,23 +465,36 @@
 <p><strong>3 Dominios:</strong> Distribuidos en 2 bosques.</p>
 </li>
 <li>
-<p><strong>3 Controladores de Dominio (DC):</strong> Cada uno correspondiente a un dominio.
-![[Pasted image 20240328153859.png]]3 Dominios con dos bosques y en este caso teniendo tres Controladores de Dominio(Domain Controller o DC), osea un DC por cada Dominio.</p>
+<p><strong>3 Controladores de Dominio (DC):</strong> Cada uno correspondiente a un dominio.<div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/attacking-active-directory-p1/images/GOAD_schema_hu_fee79ddbb1d33a8d.webp 320w, /post/attacking-active-directory-p1/images/GOAD_schema_hu_545509eb656d85a5.webp 640w, /post/attacking-active-directory-p1/images/GOAD_schema_hu_7da207755773be95.webp 960w, /post/attacking-active-directory-p1/images/GOAD_schema_hu_ce7b0b0cd98cfffe.webp 1280w, /post/attacking-active-directory-p1/images/GOAD_schema_hu_77a92b7b3923ac97.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/attacking-active-directory-p1/images/GOAD_schema_hu_4fe8fa41e3f37ef2.jpg 320w, /post/attacking-active-directory-p1/images/GOAD_schema_hu_471e7a92a39edbc6.jpg 640w, /post/attacking-active-directory-p1/images/GOAD_schema_hu_52154ca748663f9b.jpg 960w, /post/attacking-active-directory-p1/images/GOAD_schema_hu_1636654f9220f5a7.jpg 1280w, /post/attacking-active-directory-p1/images/GOAD_schema_hu_b9a9ff382d71a472.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/attacking-active-directory-p1/images/GOAD_schema_hu_471e7a92a39edbc6.jpg" width="1662" height="848" alt="3 Dominios con dos bosques y en este caso teniendo tres Controladores de Dominio(Domain Controller o DC), osea un DC por cada Dominio." title="3 Dominios con dos bosques y en este caso teniendo tres Controladores de Dominio(Domain Controller o DC), osea un DC por cada Dominio." loading="lazy" />
+  </picture>
+</div>
+</p>
 </li>
 </ul>
-<h2 id="enumeración-de-la-red">Enumeración de la Red</h2>
-<p>Empecemos con un reconocimiento del laboratorio, buscando las IPs disponibles. Sin embargo existen dos maneras de ver esto como se ve en el writeup. Mediante un escaneo directo  a las IPs y otra un escaneo con NetExec.</p>
+<h2 id="enumeración-en-la-red">Enumeración en la Red</h2>
+<p>Empecemos con un reconocimiento del laboratorio, buscando las IPs disponibles. Sin embargo, como se muestra en el writeup, existen dos formas de hacerlo. Mediante un escaneo directo  a las IPs y otra un escaneo con NetExec.</p>
 <blockquote>
 <p>Considerar que con el tipo de escaneo de NetExec solo se detectara si se tiene el protocolo respectivo activado. No como Nmap que escanea en busca de todos los puertos que se especifiquen.</p></blockquote>
 <h3 id="reconocimiento-con-netexecex-crackmapexec">Reconocimiento con NetExec(ex crackmapexec)</h3>
-<p><strong>NetExec</strong> es una herramienta utilizada en el contexto de pruebas de penetración y auditorías de seguridad que permite entre otras cosas, ejecutar comandos de manera remota en máquinas de una red, incluyendo aquellas que forman parte de un dominio de <strong>Active Directory</strong>. Su función principal es facilitar la ejecución de comandos sobre sistemas remotos dentro de la infraestructura de red, o para ejecutar scripts de administración en sistemas que forman parte de un dominio, todo ello a través de la red, sin necesidad de acceso físico.</p>
-<p>*<em>No ire muy a detalle de la sintaxis o todo lo que nos ayuda a hacer NetExec(ex crackmapexec), porque no es el objetivo del post. Si quieren una serie mas detallada solo de NetExec dejen en sus comentarios</em> :)</p>
+<p><strong>NetExec</strong> es una herramienta utilizada en el contexto de pruebas de penetración y auditorías de seguridad que permite entre otras cosas, ejecutar comandos de manera remota en máquinas de una red, incluyendo aquellas que forman parte de un dominio de <strong>Active Directory</strong>. Su función principal es facilitar la ejecución remota de comandos o scripts dentro de una red, especialmente en sistemas que forman parte de un dominio, todo ello a través de la red, sin necesidad de acceso físico.</p>
+<p>*<em>No iré muy a detalle de la sintaxis o todo lo que nos ayuda a hacer NetExec(ex crackmapexec), porque no es el objetivo del post. Si quieren una serie mas detallada solo de NetExec dejen en sus comentarios</em> :)</p>
 <p>Una técnica bastante rápida es usar este comando para poder ver las IPs de un rango en el que están maquinas del AD. Ademas de obtener nombres de los hosts, y dominios a los que pertenecen:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">netexec smb 192.168.56.0/24
 </span></span></code></pre></div><blockquote>
 <p>Este comando solo mostrará aquellos hosts con el protocolo SMB activo. Es ideal para empezar a conocer la red del AD.</p></blockquote>
-<p>![[Pasted image 20240328172554.png]]</p>
-<p>Con este resultado obtenemos mucha información como les dije al inicio. Con esto ahora sabemos:</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/attacking-active-directory-p1/images/netexecGOAD_hu_e1d472e1e36a7cd3.webp 320w, /post/attacking-active-directory-p1/images/netexecGOAD_hu_fd880dcf3d3fe07a.webp 640w, /post/attacking-active-directory-p1/images/netexecGOAD_hu_1638a25c44f6c85b.webp 960w, /post/attacking-active-directory-p1/images/netexecGOAD_hu_4b98952e6bee24f0.webp 1280w, /post/attacking-active-directory-p1/images/netexecGOAD_hu_45cbb11cb56e0e93.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/attacking-active-directory-p1/images/netexecGOAD_hu_3c67d72439d72485.jpg 320w, /post/attacking-active-directory-p1/images/netexecGOAD_hu_4a0ba1f2af5bb3b1.jpg 640w, /post/attacking-active-directory-p1/images/netexecGOAD_hu_c8d8b9241acb3b49.jpg 960w, /post/attacking-active-directory-p1/images/netexecGOAD_hu_2e8b4a9a29e3e39f.jpg 1280w, /post/attacking-active-directory-p1/images/netexecGOAD_hu_d52197a0d6a9cdd9.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/attacking-active-directory-p1/images/netexecGOAD_hu_4a0ba1f2af5bb3b1.jpg" width="1796" height="154" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
+<p>Como mencioné al inicio, este resultado nos da mucha información útil. Con esto ahora sabemos:</p>
 <ol>
 <li>north.sevenkingdoms.local (2 IPs)
 <ul>
@@ -495,39 +502,64 @@
 <li>WINTERFELL (windows server 2019)</li>
 </ul>
 </li>
-<li>sevenkingdoms.local (1 ip)
+<li>sevenkingdoms.local (1 IP)
 <ul>
 <li>KINGSLANDING (windows server 2019)</li>
 </ul>
 </li>
-<li>essos.local (2 ip)
+<li>essos.local (2 IPs)
 <ul>
 <li>BRAAVOS (windows server 2016) (signing false)</li>
-<li>MEEREEN (windows server 2019)</li>
+<li>MEEREEN (windows server 2016)</li>
 </ul>
 </li>
 </ol>
-<p>Mencionar que la configuración predeterminada de Microsoft asigna la firma de SMB como verdadera o requerida de forma predeterminada para los DCs. Entonces es posible que los servidores que tienen esta opción activa posiblemente sean los DC .</p>
+<p>Mencionar que la configuración predeterminada de Microsoft asigna la firma de SMB como verdadera o requerida de forma predeterminada para los DCs. Por lo tanto, es probable que los servidores con esta opción activa sean los DC.</p>
 <blockquote>
 <p>En un entorno seguro, la firma debe ser válida en todas partes para evitar la retransmisión NTLM o NTLM Relay.</p></blockquote>
 <h3 id="reconocimiento-con-nmap">Reconocimiento con NMAP</h3>
 <p>Nmap es una herramienta de escaneo de redes que nos ayuda a descubrir dispositivos o servicios activos en una red en la cual este a nuestro alcance. <em>Al igual que con netexec no se entrara en mucho detalle sobre el funcionamiento, existen muchos blogs o recursos para aprender NMAP</em>.</p>
 <p>Un Controlador de Dominio(DC) suele tener el puerto 53 activo. Cual es el puerto 53? el de DNS. Entonces nos basta con buscar hosts en nuestra red para encontrar los controladores de dominio escaneando ese puerto:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -Pn -p <span class="m">53</span> 192.168.56.0/24
-</span></span></code></pre></div><p>![[Pasted image 20240328183812.png]]</p>
+</span></span></code></pre></div><p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/attacking-active-directory-p1/images/nmapGOAD_hu_ef0ce7384a49a07e.webp 320w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/attacking-active-directory-p1/images/nmapGOAD_hu_d50aac3010c28d37.jpg 320w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/attacking-active-directory-p1/images/nmapGOAD_hu_4bc8ec4b73fae9bb.jpg" width="635" height="980" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>En los resultados que obtenemos vemos 3 hosts con el puerto 53 abierto, por lo que serian muy posiblemente los DC.</p>
 <blockquote>
 <p><strong>Por que queremos identificar el DC?</strong>
 Es el principal objetivo dentro de una infraestructura de AD, por lo que si obtenemos un acceso de administración controlamos el dominio o con una cuenta de dominio podríamos sacar mayor información útil.</p></blockquote>
+<p>Ahora claro, siempre nos puede ayudar y servir un escaneo mas detallado con NMAP,pero en un entorno real puede no ser eficiente si buscas mantenerte sigiloso o si la red está muy saturada. Pero sino:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -Pn -p- -sC -sV -oA full_scan_goad 192.168.56.10-12,22-23
+</span></span></code></pre></div><p>Donde:</p>
+<ul>
+<li><code>-Pn</code> le dice a nmap que no haga ping durante el escaneo, para verificar que este vivo el host</li>
+<li><code>-p-</code> escanea los 65535 puertos en vez de los 1000 puertos por defecto que trae nmap</li>
+<li><code>-sC</code> ejecuta un script de reconocimiento básico sobre los hosts</li>
+<li><code>-sV</code> para obtener la versión del servicio</li>
+<li><code>-oA</code> escribe los resultados en 3 formatos de archivos (nmap clásico, grep, xml)</li>
+<li><code>192.168.56.10-12,22-23</code> le especificamos que escanee las IPs del 192.168.56.10 al 192.168.56.12, y luego del 192.168.56.22 al 192.168.56.23</li>
+</ul>
 <h3 id="encontrando-las-ips-de-los-dcs-con-nslookup">Encontrando las IPs de los DCs con nslookup</h3>
-<p>Para confirmar si una IP corresponde a un DC, podemos utilizar <code>nslookup</code>. Por ejemplo, para el dominio <code>sevenkingdoms</code>:</p>
+<p>Para confirmar si una IP corresponde a un DC, podemos utilizar <code>nslookup</code>. Por ejemplo, para el dominio <code>sevenkingdoms</code>(que lo vimos con netexec):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nslookup -type<span class="o">=</span>srv _ldap._tcp.dc._msdcs.sevenkingdoms.local 192.168.56.10
 </span></span></code></pre></div><p>Si recibes una respuesta, es una buena indicación de que se trata de un controlador de dominio.(DC). Como en la imagen:</p>
-<p>![[Pasted image 20240401092647.png]]</p>
+<p><div class="not-prose">
+<picture>
+    <source type="image/webp" srcset="/post/attacking-active-directory-p1/images/nslookupGOAD_hu_cbb37eed4e0bb2c4.webp 320w, /post/attacking-active-directory-p1/images/nslookupGOAD_hu_4b86c4e6d876e587.webp 640w, /post/attacking-active-directory-p1/images/nslookupGOAD_hu_9ecc3bf0ae4853a5.webp 960w, /post/attacking-active-directory-p1/images/nslookupGOAD_hu_ff869c7aac4fe3f8.webp 1280w, /post/attacking-active-directory-p1/images/nslookupGOAD_hu_ef9f1586eb86f5ca.webp 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <source type="image/jpeg" srcset="/post/attacking-active-directory-p1/images/nslookupGOAD_hu_628d4037e01e95ea.jpg 320w, /post/attacking-active-directory-p1/images/nslookupGOAD_hu_32a590a909747a40.jpg 640w, /post/attacking-active-directory-p1/images/nslookupGOAD_hu_c1253b959fb91682.jpg 960w, /post/attacking-active-directory-p1/images/nslookupGOAD_hu_2d4cda49f6dd9e0a.jpg 1280w, /post/attacking-active-directory-p1/images/nslookupGOAD_hu_a17dd6a6f0bf0ede.jpg 1600w" sizes="(min-width: 1024px) 100vw, 50vw" />
+    <img class="h-auto max-w-full rounded-lg" src="/post/attacking-active-directory-p1/images/nslookupGOAD_hu_32a590a909747a40.jpg" width="1822" height="193" alt="" title="" loading="lazy" />
+  </picture>
+</div>
+</p>
 <p>Si este no responde como en la imagen, podríamos sugerir que no es un DC del dominio.</p>
-<p>![[Pasted image 20240401092803.png]]</p>
+<p>Ahora te toca hacerlo con el resto de servidores!</p>
 <h3 id="configuración-básica-en-linux">Configuración Básica en Linux</h3>
-<p>Ahora que ya tenemos indentificados a los DCs denemos configurar su direccion en nuestra maquina para poder iteractuar con ellos de manera eficiente.</p>
+<p>Ahora que ya identificamos los DC, debemos configurar su dirección en nuestra máquina para poder interactuar con ellos de manera eficiente.</p>
 <h4 id="configurar-dns">Configurar DNS</h4>
 <p>Edita el archivo <code>/etc/hosts</code> para asociar direcciones IP con nombres de host:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># /etc/hosts</span>
@@ -539,11 +571,21 @@ Es el principal objetivo dentro de una infraestructura de AD, por lo que si obte
 </span></span><span class="line"><span class="cl">192.168.56.23   braavos.essos.local braavos
 </span></span></code></pre></div><h4 id="configurar-kerberos">Configurar Kerberos</h4>
 <p>Para utilizar kerberos en nuestro entorno Linux haremos algunas configuraciones. Primero instalar un cliente de kerberos.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install krb5-user
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install krb5-user
 </span></span></code></pre></div><p>Si krb5-user ya está instalado podemos reconfigurarlo con (dpkg-reconfigure o modificando /etc/krb5.conf). Sea como fuere para configurarlo podemos usar este comando.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dpkg-reconfigure krb5-config
 </span></span></code></pre></div><blockquote>
 <p>Esto te permitirá integrar tu entorno Linux con los servicios de AD y Kerberos.</p></blockquote>
+<p>Durante la configuración nos pedirá datos para la relación de autenticacion que tendrá, en nuestro paso lo haremos para el dominio essos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">realm : ESSOS.LOCAL
+</span></span><span class="line"><span class="cl">el resto de servidores : MEEREEN.ESSOS.LOCAL
+</span></span></code></pre></div><p>Hasta aquí llega esta primera parte del reconocimiento atacando a Active Directory 🔍🎯</p>
+<p>Hemos dado los primeros pasos para entender el entorno y sentar las bases para los siguientes movimientos dentro del dominio.</p>
+<p>En la próxima entrega, nos enfocaremos en la enumeración de usuarios, una fase clave para identificar objetivos dentro del AD y planear los siguientes vectores de ataque.</p>
+<p>¡Nos vemos pronto en la siguiente parte!</p>
+<p><em>-Hackers are people too 😜</em></p>
+<p>Y si tienes dudas, sugerencias o simplemente quieres compartir tu experiencia, los comentarios están abiertos 👇💬</p>
 
       </article>
 
@@ -556,7 +598,7 @@ Es el principal objetivo dentro de una infraestructura de AD, por lo que si obte
 <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
     <div class="flex flex-row">
         <span>Compartir en:</span>
-        <a href="https://x.com/intent/tweet?url=%f0%9f%99%8c%20Me%20encontr%c3%a9%20con%20este%20art%c3%adculo%20y%20vale%20la%20pena%20leerlo%21.%0a%f0%9f%91%89http%3a%2f%2flocalhost%3a1313%2fes%2fpost%2fattacking-active-directory-p1%2f"
+        <a href="https://x.com/intent/tweet?url=%f0%9f%99%8c%20Me%20encontr%c3%a9%20con%20este%20art%c3%adculo%20y%20vale%20la%20pena%20leerlo%21.%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fes%2fpost%2fattacking-active-directory-p1%2f"
             target="_blank" title="" class="flex flex-row mr-2">
             <span class="hidden">Twitter</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -566,12 +608,12 @@ Es el principal objetivo dentro de una infraestructura de AD, por lo que si obte
 </svg>
 </i>
         </a>
-        <a href="https://wa.me/?text=%f0%9f%99%8c%20Me%20encontr%c3%a9%20con%20este%20art%c3%adculo%20y%20vale%20la%20pena%20leerlo%21.%0a%f0%9f%91%89 http%3a%2f%2flocalhost%3a1313%2fes%2fpost%2fattacking-active-directory-p1%2f"
+        <a href="https://wa.me/?text=%f0%9f%99%8c%20Me%20encontr%c3%a9%20con%20este%20art%c3%adculo%20y%20vale%20la%20pena%20leerlo%21.%0a%f0%9f%91%89 https%3a%2f%2fdrayko.github.io%2fes%2fpost%2fattacking-active-directory-p1%2f"
             target="_blank" title="" class="flex flex-row mr-2">
             <span class="hidden">Whatsapp</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-whatsapp" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /><path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></svg></i>
         </a>
-        <a href="https://www.facebook.com/sharer.php?u=%f0%9f%99%8c%20Me%20encontr%c3%a9%20con%20este%20art%c3%adculo%20y%20vale%20la%20pena%20leerlo%21.%0a%f0%9f%91%89http%3a%2f%2flocalhost%3a1313%2fes%2fpost%2fattacking-active-directory-p1%2f" target="_blank"
+        <a href="https://www.facebook.com/sharer.php?u=%f0%9f%99%8c%20Me%20encontr%c3%a9%20con%20este%20art%c3%adculo%20y%20vale%20la%20pena%20leerlo%21.%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fes%2fpost%2fattacking-active-directory-p1%2f" target="_blank"
             title="" class="flex flex-row mr-2">
             <span class="hidden">Facebook</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -580,7 +622,7 @@ Es el principal objetivo dentro de una infraestructura de AD, por lo que si obte
 </svg>
 </i>
         </a>
-        <a href="https://www.linkedin.com/feed/?shareActive=true&text=%f0%9f%99%8c%20Me%20encontr%c3%a9%20con%20este%20art%c3%adculo%20y%20vale%20la%20pena%20leerlo%21.%0a%f0%9f%91%89http%3a%2f%2flocalhost%3a1313%2fes%2fpost%2fattacking-active-directory-p1%2f"
+        <a href="https://www.linkedin.com/feed/?shareActive=true&text=%f0%9f%99%8c%20Me%20encontr%c3%a9%20con%20este%20art%c3%adculo%20y%20vale%20la%20pena%20leerlo%21.%0a%f0%9f%91%89https%3a%2f%2fdrayko.github.io%2fes%2fpost%2fattacking-active-directory-p1%2f"
             target="_blank" title="" class="flex flex-row mr-2">
             <span class="hidden">LinkedIn</span>
             <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -800,7 +842,7 @@ Es el principal objetivo dentro de una infraestructura de AD, por lo que si obte
 </section>
 
   </footer>
-  <script src="/main.js"></script>
+  <script src="/main.min.65ca5b0808abf278fcec5d424701ebf0b4bc46a737129cd5e57fdb739f463e79.js"></script>
 
 <div class="hidden top-1 right-1" id="code-copy">
   <i class="h-6 w-6 block">
@@ -820,7 +862,7 @@ Es el principal objetivo dentro de una infraestructura de AD, por lo que si obte
 </svg>
 
   </i>
-</div><script src="/code-copy.js"></script>
+</div><script src="/code-copy.min.e7b2a74adef1ed474c335c8bd5e7832b2316b8842b0f9184d65286c5bd64f51a.js"></script>
 
 
 
