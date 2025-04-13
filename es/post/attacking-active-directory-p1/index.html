@@ -17,7 +17,7 @@ Esta vez será una serie a manera de práctica y seguimiento del WriteUp de GOAD
 />
 <meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" />
   <meta property="og:image" content="https://drayko.github.io//post/attacking-active-directory-p1//images/ADATTCK.png">
-    <meta name="twitter:image" content="https://drayko.github.io/es/post/attacking-active-directory-p1//home/drayko/Documents/Projects/Personal/blog/newBlogDrayko/content/post/Attacking-Active-Directory-p1/index.es.md">
+    <meta name="twitter:image" content="https://drayko.github.io//post/attacking-active-directory-p1//images/ADATTCK.png">
 
 
 <meta property="og:url" content="https://drayko.github.io/es/post/attacking-active-directory-p1/">
@@ -519,7 +519,7 @@ Esta vez será una serie a manera de práctica y seguimiento del WriteUp de GOAD
 <p>En un entorno seguro, la firma debe ser válida en todas partes para evitar la retransmisión NTLM o NTLM Relay.</p></blockquote>
 <h3 id="reconocimiento-con-nmap">Reconocimiento con NMAP</h3>
 <p>Nmap es una herramienta de escaneo de redes que nos ayuda a descubrir dispositivos o servicios activos en una red en la cual este a nuestro alcance. <em>Al igual que con netexec no se entrara en mucho detalle sobre el funcionamiento, existen muchos blogs o recursos para aprender NMAP</em>.</p>
-<p>Un Controlador de Dominio(DC) suele tener el puerto 53 activo. Cual es el puerto 53? el de DNS. Entonces nos basta con buscar hosts en nuestra red para encontrar los controladores de dominio escaneando ese puerto:</p>
+<p>Un Controlador de Dominio(DC) suele tener los puertos 53 o 88 activos. Cual es el puerto 53? el de DNS y el 88 es de kerberos. Entonces nos basta con buscar hosts en nuestra red para encontrar los controladores de dominio escaneando uno de estos puertos:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -Pn -p <span class="m">53</span> 192.168.56.0/24
 </span></span></code></pre></div><p><div class="not-prose">
 <picture>

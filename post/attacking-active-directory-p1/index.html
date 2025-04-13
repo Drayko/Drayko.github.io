@@ -17,7 +17,7 @@ This time, I’m kicking off a new series that will serve as both a practice gui
 />
 <meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" />
   <meta property="og:image" content="https://drayko.github.io//post/attacking-active-directory-p1//images/ADATTCK.png">
-    <meta name="twitter:image" content="https://drayko.github.io/post/attacking-active-directory-p1//home/drayko/Documents/Projects/Personal/blog/newBlogDrayko/content/post/Attacking-Active-Directory-p1/index.md">
+    <meta name="twitter:image" content="https://drayko.github.io//post/attacking-active-directory-p1//images/ADATTCK.png">
 
 
 <meta property="og:url" content="https://drayko.github.io/post/attacking-active-directory-p1/">
@@ -515,7 +515,7 @@ This time, I’m kicking off a new series that will serve as both a practice gui
 <p>In a secure environment, SMB signing should be valid everywhere to avoid NTLM relaying attacks.</p></blockquote>
 <h3 id="recon-with-nmap">Recon with Nmap</h3>
 <p>Nmap is a network scanning tool that helps discover active devices and services on a reachable network. <em>As with NetExec, I won’t go too deep here—there are tons of blogs and tutorials on Nmap.</em></p>
-<p>A Domain Controller typically has port 53 (DNS) open. So we can scan for that:</p>
+<p>A Domain Controller typically has port 53 (DNS) and port 88 (Kerberos) open. So we can scan for that:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -Pn -p <span class="m">53</span> 192.168.56.0/24
 </span></span></code></pre></div><p><div class="not-prose">
 <picture>
