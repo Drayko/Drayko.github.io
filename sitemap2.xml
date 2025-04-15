@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://drayko.github.io/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/about/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/search/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/attacking-active-directory-p1/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/activedirectory/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/pentesting/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/goad/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/network/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/enumeration/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/netexec/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/nmap/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/monkey-hm-writeup/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/writeup/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/ctf/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/machines/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/bot-bounty-telegram-bot/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/bot/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/featured/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/bug-bounty/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/pentest/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/tool/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/ssh-connection-outside-the-local-network/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/redes/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/ssh/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/ngrok/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/taxonomy-of-ddos/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/networks/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/curiosities/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/paper/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/tags/fun-facts/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/page/2/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/page/2/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/about/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/search/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/attacking-active-directory-p1/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/activedirectory/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/pentesting/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/goad/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/network/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/enumeration/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/netexec/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/nmap/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/monkey-hm-writeup/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/writeup/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/ctf/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/machines/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/bot-bounty-telegram-bot/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/bot/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/featured/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/bug-bounty/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/pentest/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/tool/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/ssh-connection-outside-the-local-network/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/redes/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/ssh/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/ngrok/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/taxonomy-of-ddos/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/curiosidades/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/paper/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/tags/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/page/2/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/writeup-cidsi18/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/writeup-ctfumss18/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/writeup-democidsi18/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/post/the-first-computer-in-bolivia/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/page/2/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/writeup-cidsi18/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/writeup-ctfumss18/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/writeup-democidsi18/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://drayko.github.io/es/post/the-first-computer-in-bolivia/</loc>
+  <lastmod>2025-04-13T23:49:13+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
