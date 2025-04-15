@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh-CN" dir="ltr">
+<html lang="en-US" dir="ltr">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <title>自定义 Slug 的分类 :: Drayko Escobar Blog - Passion for cybersecurity</title>
+  <title>ActiveDirectory :: Drayko Escobar Blog - Passion for cybersecurity</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,28 +11,49 @@
 />
 <meta
   name="keywords"
-  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+  content="InfoSec Specialist, Web Security, Pentesting, Bug Bounty, CTF,CTF write-ups, GitHub for security tools, cybersecurity, pentest, bugbounty, OWASP, Drayko Escobar cybersecurity, Information Security Specialist, Web Security Testing expert, Penetration Tester, Bug Bounty hunter, Ransomware analysis, Python, speaker, Capture The Flag, Ethical hacking, Linux security"
 />
-<meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" /><meta property="og:url" content="http://localhost:1313/zh-cn/categories/with-slug/">
+<meta name="robots" content="noodp" /><link rel="manifest" href="/manifest.json" />
+  <meta property="og:image" content="http://localhost:1313/thumb.png
+  ">
+  <meta name="twitter:image" content="http://localhost:1313/thumb.png
+  ">
+
+
+<meta property="og:url" content="http://localhost:1313/series/activedirectory/">
   <meta property="og:site_name" content="Drayko Escobar Blog">
-  <meta property="og:title" content="自定义 Slug 的分类">
-  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="ActiveDirectory">
+  <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="自定义 Slug 的分类">
+  <meta name="twitter:title" content="ActiveDirectory">
 
 
-<link rel="canonical" href="http://localhost:1313/zh-cn/categories/with-slug/" />
+<link rel="canonical" href="http://localhost:1313/series/activedirectory/" />
 
 <link rel="shortcut icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/index.9c21dba62387f09be556b5d2eb63ca301b510c097d9efc09e2fa112770fe4302.css">
+<link rel="stylesheet" href="/css/index.f7daeecd479d8baf38a04bad2648e6d6f3e9f4b621d50c8f300e3f48b454564b.css">
 
 
 
 
 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BMCGWX0MQ9"></script>
+      <script>
+        var doNotTrack = false;
+        
+        
+        
+        
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BMCGWX0MQ9');
+        }
+      </script>
 
 
 
@@ -53,13 +74,13 @@
   <header class="flex flex-none justify-center z-10">
     <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
   <div class="flex-none ml-2 md:ml-0">
-    <a href="/zh-cn/" class="">
+    <a href="/" class="">
       <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/drayko_logo_ico.webp" alt="logo">
     </a>
   </div>
   
   <h1 class="hidden md:flex flex-col justify-center mx-2">
-    <a href="/zh-cn/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+    <a href="/" class="text-2xl font-semibold text-slate-800 dark:text-slate-200">
       Drayko Escobar
     </a>
   </h1>
@@ -72,7 +93,7 @@
 
 <nav class="h-full static">
   <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
-    <span class="sr-only">打开菜单</span>
+    <span class="sr-only">Open main menu</span>
     <i class="w-8 h-8">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -88,13 +109,13 @@
     
         <li id="post" class="">
           <a class="block px-3 py-3 hover:text-emerald-600"
-            href="/zh-cn/post/" title="文章">文章</a>
+            href="/post/" title="Post">Post</a>
         </li>
       
     
         <li id="about" class="">
           <a class="block px-3 py-3 hover:text-emerald-600"
-            href="/zh-cn/about/" title="关于">关于</a>
+            href="/about/" title="About">About</a>
         </li>
       
     
@@ -108,7 +129,7 @@
   <div class="flex-none">
     <div class="h-full static">
       <button id="navbar-lang-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
-        <span class="sr-only">打开语言切换</span>
+        <span class="sr-only">Open language switcher</span>
         <i class="w-8 h-8">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -124,11 +145,7 @@
       <div class="absolute hidden top-16 z-50" id="navbar-lang">
         <ul class="flex flex-col rounded-xs px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
           <li class="">
-            <a class="block px-3 py-3 hover:text-emerald-600"
-              href="/categories/with-slug/" title="English">English</a></li>
-        
-          <li class="">
-            <span class="block px-3 py-3 cursor-default hover:text-emerald-600">中文</span>
+            <span class="block px-3 py-3 cursor-default hover:text-emerald-600">English</span>
             </li>
         
         </ul>
@@ -137,8 +154,8 @@
   </div>
   
   <div class="flex-none md:hidden">
-    <a href=/zh-cn/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
-      <span class="sr-only">搜索</span>
+    <a href=/search/ class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
       <i class="w-8 h-8">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -150,8 +167,8 @@
     </a>
   </div>
   <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
-    <label for="darkmode-toggle" class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="切换夜间模式">
-      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="切换夜间模式">
+    <label for="darkmode-toggle" class="relative flex items-center gap-1 px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
       <div class="absolute z-10 w-15 h-8 rounded-full bg-white dark:bg-gray-700"></div>
       <i class="h-6 w-6 z-20 ml-1 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:invisible">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -197,125 +214,12 @@
     <div class="flex flex-row">
       <section class="flex flex-col w-full md:w-2/3">
         
-          <article class="flex flex-col mt-6 mx-2 md:mx-0 rounded-lg overflow-hidden shadow-md bg-white dark:bg-gray-700">
-            <div>
-              <a href="/zh-cn/post/image-process/">
-                <figure>
-    <img class="w-full object-cover h-36 md:h-48 xl:h-60" src="/post/image-process/images/hugo-logo-wide.svg"
-      alt="图片处理" title="图片处理"
-      loading="lazy"
-    >
-  </figure>
-              </a>
-            </div>
-            <div class="flex flex-col gap-y-3 p-6">
-              <h2 class="text-4xl font-semibold text-slate-800 dark:text-slate-200">
-                <a href="/zh-cn/post/image-process/">图片处理</a>
-              </h2>
-
-              
-  <div class="my-4 text-large text-slate-600 dark:text-slate-300">
-    关于Hugo中图片处理的示例
-  </div>
-
-
-              
-  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
-    
-      
-      <li>
-        <a href="/zh-cn/categories/with-slug/"
-          class="text-sm mr-2 px-2 py-1 rounded-sm border border-emerald-800 bg-emerald-800 text-slate-50">
-          自定义 Slug 的分类
-        </a>
-      </li>
-      
-    
-    
-      
-      <li>
-        <a href="/zh-cn/tags/custom/"
-          class="flex flex-row text-sm mr-2 py-1">
-          <i class="h-5 w-5 flex-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M5 9l14 0"></path>
-   <path d="M5 15l14 0"></path>
-   <path d="M11 4l-4 16"></path>
-   <path d="M17 4l-4 16"></path>
-</svg>
-
-          </i>
-          <span class="ml-0">随便一个标签</span>
-        </a>
-      </li>
-      
-    
-  </ul>
-
-
-
-              <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
-  
-  
-  <div class="flex flex-row text-base gap-x-1">
-    <i class="h-6 w-6 flex-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
-   <path d="M16 3v4"></path>
-   <path d="M8 3v4"></path>
-   <path d="M4 11h16"></path>
-   <path d="M11 15h1"></path>
-   <path d="M12 15v3"></path>
-</svg>
-
-    </i>
-    <time datetime="2023-12-01T00:00:00&#43;00:00">
-      2023-12-01
-    </time>
-  </div>
-
-  <div class="flex flex-row text-base gap-x-1">
-    <i class="h-6 w-6 flex-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M6.5 7h11"></path>
-   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
-   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
-</svg>
-
-    </i>
-    <span>
-      阅读时长1分钟
-    </span>
-  </div>
-</div>
-
-              <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
-  <div class="flex flex-row text-base gap-x-1">
-    <i class="h-6 w-6 flex-none">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-    class="icon icon-tabler icons-tabler-outline icon-tabler-user">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-    <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-</svg>
-
-    </i>
-    <span>Drayko Escobar</span>
-  </div>
-</div>
-            </div>
-          </article>
-        
       </section>
       <aside class="hidden md:flex flex-col md:w-1/3 ml-3 top-0 sticky self-start">
         <section class="pl-6 mt-6 w-full max-w-4xl lg:max-w-5xl">
-  <form class="" action=/zh-cn/search/ method="get">
+  <form class="" action=/search/ method="get">
     <div class="flex">
-      <input type="text" name="search" id="search-input" required placeholder="搜索..." class="rounded-none rounded-s-lg border border-gray-300 text-slate-800 focus:outline-hidden focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-3  dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-slate-200 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      <input type="text" name="search" id="search-input" required placeholder="Search..." class="rounded-none rounded-s-lg border border-gray-300 text-slate-800 focus:outline-hidden focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-3  dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-slate-200 dark:focus:ring-blue-500 dark:focus:border-blue-500">
       <button class="inline-flex items-center px-3 text-sm text-slate-900 bg-slate-200 border border-e-0 border-gray-300 rounded-e-lg dark:bg-slate-600 dark:text-slate-400 dark:border-slate-600">
         <i class="h-6 w-6 flex-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -333,92 +237,13 @@
 
   
 
-<section class="flex flex-col w-full gap-y-3 pl-6 py-3 mt-6 text-slate-800 dark:text-slate-200">
-  <div class="flex flex-row">
-    <a class="flex flex-row" href='/zh-cn/categories/'>
-      <i class="h-6 w-6 flex-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-category-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M14 4h6v6h-6z"></path>
-   <path d="M4 14h6v6h-6z"></path>
-   <path d="M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-   <path d="M7 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-</svg>
-
-      </i>
-      <h2 class="pl-1 uppercase">
-        分类
-      </h2>
-    </a>
-  </div>
-
-  <ul class="flex flex-row flex-wrap">
-    
-    <li class="mt-2 mr-2">
-      <a href="/zh-cn/categories/syntax/"
-        class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Syntax
-      </a>
-    </li>
-    
-    <li class="mt-2 mr-2">
-      <a href="/zh-cn/categories/themes/"
-        class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Themes
-      </a>
-    </li>
-    
-    <li class="mt-2 mr-2">
-      <a href="/zh-cn/categories/with-slug/"
-        class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        自定义 Slug 的分类
-      </a>
-    </li>
-    
-  </ul>
-</section>
-
   
 
   
 
 <section class="flex flex-col w-full gap-y-3 pl-6 py-3 mt-6 text-slate-800 dark:text-slate-200">
   <div class="flex flex-row">
-    <a class="flex flex-row" href='/zh-cn/series/'>
-      <i class="h-6 w-6 flex-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tags" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M3 8v4.172a2 2 0 0 0 .586 1.414l5.71 5.71a2.41 2.41 0 0 0 3.408 0l3.592 -3.592a2.41 2.41 0 0 0 0 -3.408l-5.71 -5.71a2 2 0 0 0 -1.414 -.586h-4.172a2 2 0 0 0 -2 2z"></path>
-   <path d="M18 19l1.592 -1.592a4.82 4.82 0 0 0 0 -6.816l-4.592 -4.592"></path>
-   <path d="M7 10h-.01"></path>
-</svg>
-
-      </i>
-      <h2 class="pl-1 uppercase">
-        系列
-      </h2>
-    </a>
-  </div>
-
-  <ul class="flex flex-row flex-wrap">
-    
-    <li class="mt-2 mr-2">
-      <a href="/zh-cn/series/themes-guide/"
-        class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Themes Guide
-      </a>
-    </li>
-    
-  </ul>
-</section>
-
-  
-
-  
-
-<section class="flex flex-col w-full gap-y-3 pl-6 py-3 mt-6 text-slate-800 dark:text-slate-200">
-  <div class="flex flex-row">
-    <a class="flex flex-row" href='/zh-cn/tags/'>
+    <a class="flex flex-row" href='/tags/'>
       <i class="h-6 w-6 flex-none">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -430,7 +255,7 @@
 
       </i>
       <h2 class="pl-1 uppercase">
-        标签
+        Tags
       </h2>
     </a>
   </div>
@@ -438,65 +263,72 @@
   <ul class="flex flex-row flex-wrap">
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/css/"
+      <a href="/tags/ctf/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Css
+        CTF
       </a>
     </li>
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/custom/"
+      <a href="/tags/writeup/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        随便一个标签
+        WriteUp
       </a>
     </li>
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/emoji/"
+      <a href="/tags/network/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Emoji
+        Network
       </a>
     </li>
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/html/"
+      <a href="/tags/curiosities/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Html
+        Curiosities
       </a>
     </li>
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/markdown/"
+      <a href="/tags/featured/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Markdown
+        Featured
       </a>
     </li>
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/privacy/"
+      <a href="/tags/activedirectory/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Privacy
+        ActiveDirectory
       </a>
     </li>
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/shortcodes/"
+      <a href="/tags/bot/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Shortcodes
+        Bot
       </a>
     </li>
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/tag1/"
+      <a href="/tags/bug-bounty/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Tag1
+        Bug Bounty
       </a>
     </li>
     
     <li class="mt-2 mr-2">
-      <a href="/zh-cn/tags/tag2/"
+      <a href="/tags/enumeration/"
         class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
-        Tag2
+        Enumeration
+      </a>
+    </li>
+    
+    <li class="mt-2 mr-2">
+      <a href="/tags/fun-facts/"
+        class="rounded-sm px-2 py-1 text-sm text-slate-800 dark:text-slate-300 ring-1 ring-slate-900/5 dark:ring-slate-50/5 backdrop-blur-sm bg-slate-50 dark:bg-gray-700">
+        Fun Facts
       </a>
     </li>
     
@@ -520,11 +352,40 @@
     
   
   
-    <a href="https://www.facebook.com/draykoes" target="_blank" title="Facebook" class="flex flex-row mr-2">
-      <span class="hidden">Facebook</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <a href="https://www.linkedin.com/in/drayko" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
+      <span class="hidden">LinkedIn</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path
+     stroke="none"
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path2" />
+  <path
+     d="m 1.5547568,1.5547568 m 0,2.6113108 A 2.6113108,2.6113108 0 0 1 4.1660676,1.5547568 H 19.833932 a 2.6113108,2.6113108 0 0 1 2.611311,2.6113108 V 19.833932 a 2.6113108,2.6113108 0 0 1 -2.611311,2.611311 H 4.1660676 A 2.6113108,2.6113108 0 0 1 1.5547568,19.833932 Z"
+     id="path4"/>
+  <path
+     d="m 6.7773784,10.694345 v 6.528277"
+     id="path6"/>
+  <path
+     d="m 6.7773784,6.7773784 v 0.013057"
+     id="path8"/>
+  <path
+     d="M 12,17.222622 V 10.694345"
+     id="path10"/>
+  <path
+     d="m 17.222622,17.222622 v -3.916967 a 2.611311,2.611311 0 0 0 -5.222622,0"
+     id="path12"/>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://github.com/drayko" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
 </svg>
  </i>
     </a>
@@ -543,6 +404,29 @@
   
   
   
+    <a href="https://t.me/draykoes" target="_blank" title="Telegram" class="flex flex-row mr-2">
+      <span class="hidden">Telegram</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
+</svg>
+ </i>
+    </a>
+  
+  
+  
+  
+  
+    <a href="https://www.facebook.com/draykoes" target="_blank" title="Facebook" class="flex flex-row mr-2">
+      <span class="hidden">Facebook</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
     <a href="https://www.instagram.com/draykoes" target="_blank" title="Instagram" class="flex flex-row mr-2">
       <span class="hidden">Instagram</span>
       <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -550,32 +434,6 @@
    <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"></path>
    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
    <path d="M16.5 7.5l0 .01"></path>
-</svg>
- </i>
-    </a>
-  
-  
-  
-    <a href="https://www.linkedin.com/in/drayko" target="_blank" title="LinkedIn" class="flex flex-row mr-2">
-      <span class="hidden">LinkedIn</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
-   <path d="M8 11l0 5"></path>
-   <path d="M8 8l0 .01"></path>
-   <path d="M12 16l0 -5"></path>
-   <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
-</svg>
- </i>
-    </a>
-  
-  
-  
-    <a href="https://github.com/drayko" target="_blank" title="Github" class="flex flex-row mr-2">
-      <span class="hidden">Github</span>
-      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
 </svg>
  </i>
     </a>
