@@ -86,5 +86,68 @@
       <guid>https://drayko.github.io/manifest.json</guid>
       <description></description>
     </item>
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/search/_index.de/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/search/_index.de/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/search/_index.fr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/search/_index.fr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/search/_index.hi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/search/_index.hi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/search/_index.jp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/search/_index.jp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/search/_index.nl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/search/_index.nl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/search/_index.pl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/search/_index.pl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/search/_index.ru/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/search/_index.ru/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://drayko.github.io/search/_index.zh-cn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/search/_index.zh-cn/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>自定义 Slug 的分类</title>
+      <link>https://drayko.github.io/categories/with-slug/with-slug/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drayko.github.io/categories/with-slug/with-slug/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

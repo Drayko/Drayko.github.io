@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://drayko.github.io/es/tags/activedirectory/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/activedirectory/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/activedirectory/"
@@ -16,12 +17,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/attacking-active-directory-p1/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/attacking-active-directory-p1/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/attacking-active-directory-p1/"
@@ -29,12 +30,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/"
@@ -42,12 +43,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/enumeration/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/enumeration/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/enumeration/"
@@ -55,12 +56,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/goad/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/goad/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/goad/"
@@ -68,12 +69,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/netexec/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/netexec/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/netexec/"
@@ -81,12 +82,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/network/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/network/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/network/"
@@ -94,12 +95,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/nmap/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/nmap/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/nmap/"
@@ -107,12 +108,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/pentesting/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/pentesting/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/pentesting/"
@@ -120,12 +121,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/"
@@ -133,12 +134,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/</loc>
     <lastmod>2025-04-11T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/"
@@ -146,12 +147,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/ctf/</loc>
     <lastmod>2025-04-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/ctf/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/ctf/"
@@ -159,12 +160,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/machines/</loc>
     <lastmod>2025-04-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/machines/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/machines/"
@@ -172,12 +173,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/monkey-hm-writeup/</loc>
     <lastmod>2025-04-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/monkey-hm-writeup/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/monkey-hm-writeup/"
@@ -185,12 +186,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/writeup/</loc>
     <lastmod>2025-04-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/writeup/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/writeup/"
@@ -198,12 +199,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/bot/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/bot/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/bot/"
@@ -211,12 +212,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/bot-bounty-telegram-bot/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/bot-bounty-telegram-bot/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/bot-bounty-telegram-bot/"
@@ -224,12 +225,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/bug-bounty/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/bug-bounty/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/bug-bounty/"
@@ -237,12 +238,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/featured/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/featured/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/featured/"
@@ -250,12 +251,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/pentest/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/pentest/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/pentest/"
@@ -263,12 +264,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/tool/</loc>
     <lastmod>2020-08-08T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/tool/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/tool/"
@@ -276,12 +277,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/about/</loc>
     <lastmod>2020-07-29T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/about/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/about/"
@@ -289,12 +290,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/ssh-connection-outside-the-local-network/</loc>
     <lastmod>2020-05-30T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/ssh-connection-outside-the-local-network/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/ssh-connection-outside-the-local-network/"
@@ -305,12 +306,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/ngrok/</loc>
     <lastmod>2020-05-30T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/ngrok/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/ngrok/"
@@ -318,12 +319,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/paper/</loc>
     <lastmod>2020-05-30T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/paper/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/paper/"
@@ -331,12 +332,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/redes/</loc>
     <lastmod>2020-05-30T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/redes/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/redes/"
@@ -344,12 +345,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/tags/ssh/</loc>
     <lastmod>2020-05-30T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/ssh/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/ssh/"
@@ -357,12 +358,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/taxonomy-of-ddos/</loc>
     <lastmod>2020-05-30T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/taxonomy-of-ddos/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/taxonomy-of-ddos/"
@@ -370,12 +371,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/the-first-computer-in-bolivia/</loc>
     <lastmod>2019-08-14T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/the-first-computer-in-bolivia/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/the-first-computer-in-bolivia/"
@@ -383,12 +384,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/writeup-cidsi18/</loc>
     <lastmod>2019-02-18T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/writeup-cidsi18/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/writeup-cidsi18/"
@@ -396,12 +397,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/writeup-ctfumss18/</loc>
     <lastmod>2019-02-16T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/writeup-ctfumss18/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/writeup-ctfumss18/"
@@ -409,12 +410,12 @@
   </url><url>
     <loc>https://drayko.github.io/es/post/writeup-democidsi18/</loc>
     <lastmod>2019-02-15T00:00:00+00:00</lastmod>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/post/writeup-democidsi18/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/post/writeup-democidsi18/"
@@ -422,48 +423,48 @@
   </url><url>
     <loc>https://drayko.github.io/es/search/</loc>
     <priority>0.1</priority>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/search/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/search/"
                 />
   </url><url>
     <loc>https://drayko.github.io/es/categories/</loc>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/categories/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/categories/"
                 />
   </url><url>
     <loc>https://drayko.github.io/es/series/</loc>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/series/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/series/"
                 />
   </url><url>
     <loc>https://drayko.github.io/es/tags/custom/</loc>
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="en-US"
                 href="https://drayko.github.io/tags/custom/"
                 />
-    <link
+    <xhtml:link
                 rel="alternate"
                 hreflang="es"
                 href="https://drayko.github.io/es/tags/custom/"
