@@ -1,6 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://drayko.github.io/sitemap.xml
-Sitemap: https://drayko.github.io/sitemap2.xml
-Sitemap: https://drayko.github.io/es/sitemap.xml
-Sitemap: https://drayko.github.io/en/sitemap.xml
